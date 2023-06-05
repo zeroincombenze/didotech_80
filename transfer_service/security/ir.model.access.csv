@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_transfer_transfer,access_transfer_transfer,model_transfer_transfer,,1,1,1,1
+access_transfer_itinerary,access_transfer_itinerary,model_transfer_itinerary,,1,1,1,1
+access_transfer_template,access_transfer_template,model_transfer_template,,1,1,1,1
+access_transfer_template_line,access_transfer_template_line,model_transfer_template_line,,1,1,1,1
+access_transfer_price,access_transfer_price,model_transfer_price,,1,1,1,1
+access_transfer_template_price,access_transfer_template_price,model_transfer_template_price,,1,1,1,1
+access_sale_order_template_line,access_sale_order_template_line,model_sale_order_template_line,,1,1,1,1

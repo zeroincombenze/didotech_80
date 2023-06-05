@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_account_invoice_due_dates" model="ir.ui.view">
+            <field name="name">account.invoice.due.dates</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet[@string='Invoice']/notebook" position="inside">
+                    <page string="Payment Due Dates">
+                        <field name="due_dates">
+                            <tree>
+                                <field name="date_maturity" />
+                                <field name="debit" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

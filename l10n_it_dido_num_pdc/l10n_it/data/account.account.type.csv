@@ -1,0 +1,4 @@
+"id","code","name","report_type","close_method"
+"account_type_view","view","Viste diverse","none","none"
+"account_type_view_assets","account_type_view_assets","Viste Attivo","asset","none"
+"account_type_view_liability","account_type_view_liability","Viste Passivo","liability","none"

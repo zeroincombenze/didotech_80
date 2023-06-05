@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data>
+
+        <record id="wizard_test_string_form" model="ir.ui.view">
+            <field name="name">wizard.test.pattern.form</field>
+            <field name="model">wizard.test.pattern</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <!--<h1>-->
+                        <!--<label string="Itinerary"/>-->
+                    <!--</h1>-->
+                    <group>
+                        <group>
+                            <field name="pattern" />
+                            <field name="text" />
+                        </group>
+                        <group>
+                            <button name="action_test_string" string="Test" type="object"/>
+                            <newline />
+                            <strong><field name="result" nolabel="1" /></strong>
+                        </group>
+                    </group>
+
+                </sheet>
+            </field>
+        </record>
+
+    </data>
+</openerp>

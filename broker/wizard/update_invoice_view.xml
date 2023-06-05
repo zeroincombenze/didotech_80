@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_update_invoice_form" model="ir.ui.view">
+            <field name="name">wizard.update.invoice.form</field>
+            <field name="model">wizard.update.invoice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="date_invoice" />
+                    <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                    <button type="object" name="action_update_invoices" string="Update Invoices" icon="gtk-ok"/>
+                </form>
+            </field>
+        </record>
+    </data>
+
+
+</openerp>

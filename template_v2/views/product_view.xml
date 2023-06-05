@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_description_form_view" model="ir.ui.view">
+            <field name="name">product.template.description.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="description" position="before">
+                    <label for="description_in_invoice" />
+                    <field name="description_in_invoice" />
+                </field>
+                <field name="description_sale" position="replace">
+                    <field name="description_sale" placeholder="Description appears under the product name in invoice..."/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

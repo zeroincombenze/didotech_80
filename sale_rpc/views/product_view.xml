@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_pricelist_otc_form_inherit" model="ir.ui.view">
+            <field name="name">product.pricelist.otc.form</field>
+            <field name="model">product.pricelist</field>
+            <field name="inherit_id" ref="product.product_pricelist_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="type" position="after">
+                        <field name="otc" />
+                    </field>
+                    <field name="version_id" position="replace">
+                        <notebook>
+                            <page string="Pricelist Versions">
+                                <field name="version_id" context="{'type':type}">
+                                    <form string="Pricelist Version">
+                                        <group col="4">
+                                            <field name="name"/>
+                                            <field name="active"/>
+                                            <field name="date_start"/>
+                                            <field name="date_end"/>
+                                        </group>
+                                        <field name="items_id" context="{'type':type}"/>
+                                    </form>
+                                    <tree string="Pricelist Version">
+                                        <field name="name"/>
+                                        <field name="active"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Clienti che hanno già usufruito del codice promo" attrs="{'invisible': [('otc', '=', False)]}">
+                                <field name="black_partner_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="create_date" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </field>
+
+                </data>
+            </field>
+        </record>
+
+        <record id="product_product_ext_form_inherit" model="ir.ui.view">
+            <field name="name">product.product.ext.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="website_sequence" position="after">
+                    <field name="ext_product_id" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

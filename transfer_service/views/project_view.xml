@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_task_transfer_form2" model="ir.ui.view">
+            <field name="name">project.task.transfer.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="stage_id" position="replace" />
+                <field name="project_id" position="after">
+                    <field name="client_order_ref" />
+                    <!--<field name="client_id" />-->
+                </field>
+                <field name="project_id" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="user_id" position="after">
+                    <field name="supplier"/>
+                    <label string="--" />
+                    <button name="action_change_supplier" states="draft,assigned,confirmed" string="Change Supplier" type="object"/>
+                </field>
+                <field name="date_deadline" position="replace">
+                    <field name="transfer_date" />
+                    <field name="itinerary_id" />
+                </field>
+                <field name="categ_ids" position="replace">
+                    <field name="product_id" />
+                    <field name="state" />
+                </field>
+                <page string="Description" position="before">
+                    <page string="Transfer">
+                        <group>
+                            <group>
+                                <field name="passenger_qty" />
+                                <field name="bag_qty" />
+                                <field name="passengers" />
+                                <field name="taking" />
+                            </group>
+                            <group>
+                                <field name="passenger_name" />
+                                <field name="passenger_phone" />
+                                <field name="passenger_email" />
+                                <field name="commissions" />
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Itinerary details">
+                        <group>
+                            <group>
+                                <field name="start_address" />
+                                <field name="connection" />
+                            </group>
+                            <group>
+                                <field name="finish_address" />
+                                <field name="note" />
+                            </group>
+                        </group>
+                    </page>
+                </page>
+                <notebook position="after">
+                    <button name="action_assign" states="draft" string="Assign" type="object"/>
+                    <button name="create_invoice" string="Create Invoice" type="object" states="done" attrs="{'invisible': ['|', ('invoiced', '=', True)]}"/>
+                    <field name="invoiced" invisible="True" />
+                    <!--<field name="invoiced" />-->
+                </notebook>
+
+            </field>
+        </record>
+
+        <record id="view_transfer_task_tree2" model="ir.ui.view">
+            <field name="name">project.transfer.task.tree</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <tree position="attributes">
+                     <attribute name="colors">aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';</attribute>
+                </tree>
+                <field name="sequence" position="after">
+                    <field name="row_color" invisible="True" />
+                    <field name="id" />
+                    <field name="transfer_date" />
+                    <field name="itinerary_id" />
+                    <field name="start_address" />
+                    <field name="finish_address" />
+                    <field name="client_passenger" />
+                    <field name="client_order_ref" />
+                    <field name="pax_bag" />
+                </field>
+
+                <field name="name" position="replace">
+                    <field name="product_id" />
+                    <field name="connection" />
+                    <field name="note" />
+                    <field name="taking" />
+                    <field name="supplier" />
+                    <field name="state" invisible="True" />
+                    <field name="company_id" />
+                    <field name="taking" />
+                    <field name="commissions" />
+                    <field name="price_subtotal" />
+                    <field name="tax_amount" />
+                    <field name="total_amount" />
+                </field>
+
+                <field name="project_id" position="replace" />
+                <field name="user_id" position="replace" />
+                <field name="delegated_user_id" position="replace" />
+                <field name="stage_id" position="replace" />
+                <field name="date_start" position="replace" />
+                <field name="date_end" position="replace" />
+                <field name="progress" position="replace" />
+
+            </field>
+        </record>
+
+        <!--<record id="project.act_project_project_2_project_task_all" model="ir.actions.act_window">-->
+            <!--<field name="name">Tasks</field>-->
+            <!--<field name="res_model">project.task</field>-->
+            <!--<field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>-->
+            <!--<field name="context">{-->
+                <!--'search_default_project_id': 0,-->
+                <!--'default_project_id': active_id,-->
+                <!--'active_test': False,-->
+                <!--'search_default_active': 1-->
+            <!--}</field>-->
+            <!--<field name="search_view_id" ref="project.view_task_search_form"/>-->
+            <!--<field name="help" type="html">-->
+                <!--<p>-->
+                    <!--Odoo's project management allows you to manage the pipeline-->
+                    <!--of tasks in order to get things done efficiently. You can-->
+                    <!--track progress, discuss on tasks, attach documents, etc.-->
+                <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record id="project.action_view_task" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
+            <field name="help" type="html">
+                <p>
+                    Odoo's project management allows you to manage the pipeline
+                    of tasks in order to get things done efficiently. You can
+                    track progress, discuss on tasks, attach documents, etc.
+                </p>
+            </field>
+            <field name="context">{'search_default_active': 0, 'search_default_today': 1}</field>
+        </record>
+
+        <record id="project.open_view_task_list_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">kanban</field>
+            <field name="act_window_id" ref="project.action_view_task"/>
+        </record>
+
+
+        <record id="view_transfer_task_filter" model="ir.ui.view">
+            <field name="name">transfer.project.task.select</field>
+            <field name="model">project.task</field>
+            <field name="type">search</field>
+            <field name='inherit_id' ref='project.view_task_search_form'/>
+            <field name="arch" type="xml">
+                <search string="Tasks" position="inside">
+                    <group colspan="4" col="5" string="Transfer Service">
+
+                        <filter string="Active" name="active"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done'))
+                            ]"
+                        />
+                        <filter string="Last 7 Days"
+                            name="day7"
+                            help="Activity during last 7 days"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done')),
+                                ('transfer_date', '&gt;=', (datetime.date.today() - datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d 00:00:00')),
+                                ('transfer_date', '&lt;=', (datetime.date.today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d 23:59:59'))
+                            ]"
+                        />
+                        <filter string="Today"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done')),
+                                ('transfer_date', '&gt;=', datetime.date.today().strftime('%%Y-%%m-%%d 00:00:00')),
+                                ('transfer_date', '&lt;=', datetime.date.today().strftime('%%Y-%%m-%%d 23:59:59'))
+                            ]"
+                            help="Activity for Today"
+                            name="today"
+                        />
+                        <filter string="Tomorrow"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done')),
+                                ('transfer_date', '&gt;=', (datetime.date.today() + datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00')),
+                                ('transfer_date', '&lt;=', (datetime.date.today() + datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d 23:59:59'))
+                            ]"
+                            help="Activity for Tomorrow"
+                            name="tomorrow"
+                        />
+                        <filter string="Next 7 Days"
+                            name="day7"
+                            help="Activity during next 7 days"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done')),
+                                ('transfer_date', '&gt;=', (datetime.date.today() + datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00')),
+                                ('transfer_date', '&lt;=', (datetime.date.today() + datetime.timedelta(days=7)).strftime('%%Y-%%m-%%d 23:59:59'))
+                            ]"
+                        />
+
+                        <filter string="30 Days"
+                            name="day30"
+                            help="Activity during next 30 days"
+                            domain="[
+                                ('state', 'not in', ('cancel', 'done')),
+                                ('transfer_date', '&gt;=', (datetime.date.today() - datetime.timedelta(days=1)).strftime('%%Y-%%m-%%d 00:00:00')),
+                                ('transfer_date', '&lt;=', (datetime.date.today() + datetime.timedelta(days=30)).strftime('%%Y-%%m-%%d 23:59:59'))
+                            ]"
+                        />
+                        <separator orientation="vertical" colspan="5"/>
+
+                        <filter string="Draft"
+                            name="draft"
+                            domain="[('state', '=', 'draft')]"
+                        />
+                        <filter string="Assigned"
+                            name="assigned"
+                            domain="[('state', '=', 'assigned')]"
+                        />
+                        <!--
+                        <filter icon="gtk-cancel"
+                            string="Cancelled"
+                            name="cancelled"
+                            domain="[('state','=','cancelled')]"
+                        />
+                        -->
+                        <filter string="Finished"
+                            name="done"
+                            domain="[('state', '=', 'done')]"
+                        />
+                        <filter string="To Invoice"
+                            name="done"
+                            domain="[('state', '=', 'done'), ('invoiced', '=', False)]"
+                        />
+
+                        <field name="client_order_ref" />
+                        <field name="transfer_date_from" filter_domain="[('transfer_date', '&gt;=', self)]" />
+                        <field name="transfer_date_to" filter_domain="[('transfer_date', '&lt;=', self)]" />
+                        <field name="passengers" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="task_type_color_tree" model="ir.ui.view">
+            <field name="name">project.task.color.type.tree</field>
+            <field name="model">project.task.type</field>
+            <field name='inherit_id' ref='project.task_type_tree'/>
+            <field name="arch" type="xml">
+                <tree string="Task Stage" position="attributes">
+                     <attribute name="colors">aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';</attribute>
+                </tree>
+                <field name="fold" position="after">
+                    <field name="color" />
+                    <field name="row_color" invisible="1" />
+                    <field name="state" />
+                </field>
+            </field>
+        </record>
+
+        <record id="task_color_type_view" model="ir.ui.view">
+            <field name="name">project.task.type.color.form</field>
+            <field name="model">project.task.type</field>
+            <field name='inherit_id' ref='project.task_type_edit'/>
+            <field name="arch" type="xml">
+                <field name="sequence" position="after">
+                    <field name="color" />
+                </field>
+            </field>
+        </record>
+
+        <!-- Task-related subtypes for messaging / Chatter -->
+        <!--<record id="mt_task_invoiced" model="mail.message.subtype">-->
+            <!--<field name="name">Task Invoiced</field>-->
+            <!--<field name="res_model">project.task</field>-->
+            <!--<field name="default" eval="True"/>-->
+            <!--<field name="description">Task Invoiced</field>-->
+        <!--</record>-->
+
+    </data>
+</openerp>

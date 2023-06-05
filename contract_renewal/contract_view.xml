@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem name="CSE" id="main_menu_contract" sequence="70"/>
+
+        <menuitem name="Configuration" id="contract_renewal.main_configuration" parent="contract_renewal.main_menu_contract" sequence="70"/>
+        
+        <record id="view_contract_form" model="ir.ui.view">
+            <field name="name">contract.form</field>
+            <field name="model">contract.contract</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="cancel" states="draft,wait_payment" string="Cancel" />
+                        <!--<button name="suspend" states="active,expiring" string="Suspend" />-->
+                        <button name="reactivate" states="suspended" string="Reactivate" />
+                        <button name="confirm" states="draft" string="Confirmed" class="oe_highlight" />
+                        <button name="active" states="wait_payment" string="Payed" class="oe_highlight" />
+                        <button name="action_renew" states="expiring,done" attrs="{'invisible': ['|', ('renewed', '=', True)]}" string="Renew" type="object" class="oe_highlight" />
+                
+                        <field name="state" widget="statusbar" statusbar_visible="draft, wait_payment, active, expiring, done" statusbar_colors='{}' colspan="13" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="partner_id" />
+                            <field name="parent_id" />
+                            <field name="origin" />
+                        </group>
+                        <group>
+                            <field name="contract_date" col="2" />
+                            <field name="expiry_date" col="2" />
+                            <field name="card" col="2" />
+                            <field name="expiry_days" />
+                            <field name="renewed" />
+                        </group>
+                    </group>
+                    <footer>
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" colspan="4" widget="mail_thread" nolabel="1"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_contract_tree" model="ir.ui.view">
+            <field name="name">contract.tree</field>
+            <field name="model">contract.contract</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="orange:state=='wait_payment'; lightslategrey:state=='done'">
+                    <field name="partner_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_contract" model="ir.actions.act_window" >
+            <field name="name">Card Management</field>
+            <field name="res_model">contract.contract</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_contract_tree"/>
+        </record>
+
+        <menuitem name="Contracts" id="menu_contracts"  parent="main_menu_contract" sequence="1"/>
+        <menuitem name="Card Contracts" id="menu_card_contracts"  parent="menu_contracts"
+            sequence="2" action="action_contract" />
+    </data>
+</openerp>

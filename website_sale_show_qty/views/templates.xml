@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<template id="assets_frontend" inherit_id="website.assets_frontend" name="Shop Product Qty Selection">
+  <xpath expr="." position="inside">
+      <link rel='stylesheet' href='/website_sale_show_qty/static/src/css/website_sale.css'/>
+      <script type="text/javascript" src="/website_sale_show_qty/static/src/js/website_sale_show.js"></script>
+  </xpath>
+</template>
+<template id="products_add_to_cart" inherit_id="website_sale.products_item" active="True" customize_show="True" name="Select Qty with Auto Update Cart">
+  <xpath expr="//div[@class='product_price']" position="inside">
+    <div
+        class="css_quantity input-group oe_website_spinner"
+        t-att-data-product-id="product.product_variant_ids[0].id" 
+        t-att-data-line-id="order_products.has_key(product.product_variant_ids[0].id) and order_products[product.product_variant_ids[0].id]['line_id']">
+        <span class="input-group-addon">
+            <a t-attf-href="#" class="mb8 js_add_cart_json">
+                <i class="fa fa-minus"></i>
+            </a>
+        </span>
+        <input type="text" class="js_quantity form-control" data-min="0" name="add_qty" 
+			t-att-value="order_products.has_key(product.product_variant_ids[0].id) and order_products[product.product_variant_ids[0].id]['qty'] or '0.0'"
+            t-att-data-product-id="product.product_variant_ids[0].id" 
+            t-att-data-line-id="order_products.has_key(product.product_variant_ids[0].id) and order_products[product.product_variant_ids[0].id]['line_id']"
+        />
+        <span class="input-group-addon">
+            <a t-attf-href="#" class="mb8 float_left js_add_cart_json">
+                <i class="fa fa-plus"></i>
+            </a>
+        </span>
+    </div>
+  </xpath>
+</template>
+<template id="product_quantity" inherit_id="website_sale.product_quantity" active="True" name="Select Quantity">
+	<xpath expr="//input[@name='add_qty']" position="replace">
+		<input type="text" class="js_quantity form-control" data-min="1" name="add_qty"
+			  t-att-data-line-id="line_id" 
+			  t-att-data-product-id="product.product_variant_ids[0].id"
+			  t-att-value="int(qty)"/>
+	</xpath>
+</template>
+</data>
+</openerp>

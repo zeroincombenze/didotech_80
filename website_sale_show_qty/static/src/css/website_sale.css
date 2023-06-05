@@ -1,0 +1,29 @@
+.oe_website_spinner{
+    width: 121px;
+    float: left;
+    padding-right: 5px;
+}
+
+.oe_product section{
+    padding: 0 121px 24px 10px;
+}
+
+.oe_website_spinner input {
+    height: 29px;
+    padding: 0px;
+}
+
+.btn-lg {
+  position: relative;
+  top: 32px;
+}
+
+.fa-shopping-cart {
+    display: none;
+}
+
+.oe_currency_value {
+  position: absolute;
+  padding: 0px 0px 0px 10px;
+  margin-right: 0px
+}

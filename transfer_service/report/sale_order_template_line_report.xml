@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <report
+        id="sale_order_template_report"
+        model="sale.order"
+        string="Transfer Detail"
+        report_type="qweb-pdf"
+        name="transfer_service.report_sale_order_template"
+        file="transfer_service.report_sale_order_template"
+        attachment_use="0"
+        attachment="('ATT' + (object.client_order_ref or '').replace('/', '') + '.pdf')"
+    />
+
+    <template id="report_sale_order_template">
+        <t t-call="report.html_container">
+            <div class="header">
+                <div class="row">
+                    <t t-if="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id"/>
+                    </t>
+                    <t t-if="not o or not 'company_id' in o">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+
+                    <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style=""/>
+
+                    <div class="row"></div>
+
+                </div>
+            </div>
+
+            <div class="page">
+                <!--<t t-call="report.external_layout">-->
+                    <t t-foreach="docs" t-as="o">
+                        <h2>Dettaglio pacchetto</h2>
+                        <p>Ordine <span t-field="o.name"/></p>
+                        <t t-foreach="o.order_line" t-as="line">
+                            <t t-if="line.has_template">
+                                <p><strong><span t-field="line.product_id.name"/>:</strong></p>
+                                <ul style="list-style-type:none">
+                                    <t t-foreach="line.template_line" t-as="t_line">
+                                        <p>
+                                            <li><span t-field="t_line.itinerary_id.name"/> <span t-field="t_line.itinerary_id.distance"/> km</li>
+                                        </p>
+                                    </t>
+                                </ul>
+                            </t>
+                        </t>
+
+                    </t>
+                <!--</t>-->
+            </div>
+            <div class="footer">
+                <div class="text-left" style="border-top: 1px solid black; font-size: 10px;">
+                    <ul class="list-inline text-right" style="font-size: 11px;">
+                        <li><span class="page"/></li>
+                        <li>/</li>
+                        <li><span class="topage"/></li>
+                    </ul>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</data>
+</openerp>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_assign_supplier" model="ir.ui.view">
+            <field name="name">assign.supplier.form</field>
+            <field name="model">assign.supplier</field>
+            <field name="arch" type="xml">
+                <form string="Select Supplier">
+                    <group>
+                        <field name="service_supplier_id" />
+                        <field name="driver_id" />
+                        <field name="driver_ids" invisible="True" />
+                        <button name="set_supplier" string="Ok" type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

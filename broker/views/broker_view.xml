@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="broker_purchase_order_form" model="ir.ui.view">
+            <field name="name">broker.purchase.order.form</field>
+            <field name="model">broker.purchase.order</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Orders">
+                    <header>
+                        <button name="create_distribution_list" string="Export distribution list" class="oe_highlight" attrs="{'invisible': [('transmitted_to_carrier', '=', True)]}" type="object" icon="gtk-go-up" />
+                        <button name="create_distribution_list" string="Export distribution list" attrs="{'invisible': [('transmitted_to_carrier', '=', False)]}" type="object" icon="gtk-go-up" />
+                        <button name="create_purchase_order" string="Export Purchase Order" type="object" icon="gtk-go-up" context="{'show_prices': True}"/>
+                        <button name="confirm_all_orders" states="draft,sent,accepted" string="Confirm And Create Invoices" type="object" icon="terp-camera_test" />
+                        <button name="import_purchase_order" string="Import Purchase Order" type="object" icon="gtk-go-down" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,accepted,confirmed,done" />
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Order Reference" />
+                            <field name="name" class="oe_inline" readonly="True"/>
+                        </h1>
+                        <group col="3">
+                            <group>
+                                <field name="supplier_id" />
+                                <field name="carrier_id" />
+                            </group>
+                            <group>
+                                <field name="date_order" />
+                                <field name="delivery_date" />
+                                <field name="date_cmr" />
+                                <field name="user_id" />
+                                <field name="transmitted_to_carrier" />
+                                <field name="transmitted_to_supplier" />
+                            </group>
+                            <group>
+                                <button name="change_orders_date" states="draft" string="All Orders" type="object" context="{'field': 'date_order'}"/>
+                                <newline />
+                                <button name="change_orders_date" states="draft" string="All Orders" type="object" context="{'field': 'delivery_date'}" />
+                            </group>
+                        </group>
+
+                        <field name="order_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="date_order" />
+                                <field name="delivery_date" />
+                                <field name="partner_id" />
+                                <field name="user_id" />
+                                <field name="amount_total" />
+                                <field name="state" />
+                                <button name="confirm_order" string="Confirm And Invoice" type="object" icon="terp-camera_test"
+                                    attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="broker_purchase_order_tree" model="ir.ui.view">
+            <field name="name">broker.purchase.order.tree</field>
+            <field name="model">broker.purchase.order</field>
+            <field name="arch" type="xml">
+                <!--<tree string="Orders" colors="black:state=='black';blue:state=='blue';brown:state=='brown';cadetblue:state=='cadetblue';darkblue:state=='draft';fuchsia:state=='need_resending';forestgreen:state=='forestgreen';orange:state=='orange';green:state=='sent';grey:state=='done';red:state=='red';">-->
+                <tree string="Orders" colors="darkgrey:state=='cancel';blue:state=='blue';darkblue:state=='draft';fuchsia:state=='need_resending';forestgreen:state=='confirmed';green:state=='sent';grey:state=='done';">
+                    <field name="name"/>
+                    <field name="date_order" />
+                    <field name="delivery_date" />
+                    <field name="supplier_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="broker_purchase_order_act" model="ir.actions.act_window">
+            <field name="name">Purchase Orders</field>
+            <field name="res_model">broker.purchase.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="broker_purchase_order_tree"/>
+        </record>
+
+        <menuitem action="broker_purchase_order_act"
+            id="menu_broker_purchase_order_act" sequence="8"
+            groups="base.group_sale_salesman,base.group_sale_manager"
+            parent="base.menu_sales"/>
+
+    </data>
+</openerp>

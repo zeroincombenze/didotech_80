@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="account_protocol_form" model="ir.ui.view">
+            <field name="name">view.account.protocol.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/notebook/page[@string='Advanced Settings']/group/group/field[@name='sequence_id']" position="after">           
+                    <field name="iva_registry_id" required="0" on_change="onchange_iva_registry_id(iva_registry_id)" />
+                </xpath>
+            </field>
+    </record>
+  </data>
+</openerp>

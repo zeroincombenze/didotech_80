@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_product_form_variant_active" model="ir.ui.view">
+            <field name="name">product.product.variant.active.tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view" />
+            <field name="arch" type="xml">
+                <!--Just not works-->
+                <tree string="Product Variants" position="attributes">
+                     <attribute name="colors">red:active==False;blue:active==True;</attribute>
+                </tree>
+                <field name="default_code" position="after"  >
+                    <field name="active" />
+                </field>
+            </field>
+        </record>
+
+        <record id="product_all_variants_action" model="ir.actions.act_window">
+            <field name="name">All Variants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="view_type">form</field>
+            <field name="context">{'search_default_product_tmpl_id': [active_id], 'default_product_tmpl_id': active_id}</field>
+            <field name="search_view_id" ref="product.product_search_form_view"/>
+            <field name="view_id" eval="False"/> <!-- Force empty -->
+            <field name="domain">['|', ('active', '=', False), ('product_tmpl_id', '=', active_id)]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new product.
+              </p><p>
+                You must define a product for everything you buy or sell,
+                whether it's a physical product, a consumable or service.
+              </p>
+            </field>
+        </record>
+
+        <record id="product_template_all_variants_form_view" model="ir.ui.view">
+            <field name="name">product.template.all.product.form</field>
+            <field name="model">product.template</field>
+            <field name="mode">primary</field>
+            <field name="priority" eval="6" />
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='variants']/div[@class='oe_right']" position="inside">
+                    <button class="oe_inline oe_stat_button" name="%(product_variant_extended.product_all_variants_action)d" type="action" icon="fa-sitemap">
+                        <field string="All Variants" name="all_product_variant_count" widget="statinfo" />
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

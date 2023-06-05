@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_transfer_itinerary_form" model="ir.ui.view">
+            <field name="name">transfer.itinerary.form</field>
+            <field name="model">transfer.itinerary</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <h1>
+                        <label string="Itinerary"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="start_city_id" />
+                            <field name="end_city_id" />
+                            <field name="mirror" />
+                            <field name="is_description" />
+                        </group>
+                        <group>
+                            <field name="distance" />
+                            <!--<field name="duration_time" />-->
+                            <button name="get_distance" string="Get distance" type="object"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Suppliers" attrs="{'invisible': [('is_description', '=', True)]}">
+                            <field name="supplier_price_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id" />
+                                    <field name="partner_id" string="Supplier" domain="[('supplier', '=', True)]"/>
+                                    <field name="start_date" />
+                                    <field name="end_date" />
+                                    <field name="price" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Customers" attrs="{'invisible': [('is_description', '=', True)]}">
+                            <field name="customer_price_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id" />
+                                    <field name="partner_id" string="Customer" domain="[('customer', '=', True)]"/>
+                                    <field name="start_date" />
+                                    <field name="end_date" />
+                                    <field name="price" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+
+            </field>
+        </record>
+
+        <record id="view_transfer_itinerary_tree" model="ir.ui.view">
+            <field name="name">transfer.itinerary.tree</field>
+            <field name="model">transfer.itinerary</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="distance" />
+                    <field name="is_description" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_transfer_itinerary" model="ir.actions.act_window" >
+            <field name="name">Transfer Itinerary</field>
+            <field name="res_model">transfer.itinerary</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_transfer_itinerary_tree"/>
+        </record>
+
+        <menuitem name="Transfer" id="menu_transfer" parent="base.menu_sales" sequence="10" />
+        <menuitem name="Transfer Itinerary" id="menu_transfer_itinerary" action="action_transfer_itinerary" parent="menu_transfer" />
+
+        <record id="view_transfer_template_form" model="ir.ui.view">
+            <field name="name">transfer.template.form</field>
+            <field name="model">transfer.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <h1>
+                        <label string="Transfer Template"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="descriptive_itinerary_id" context="{'default_is_description': True, 'default_mirror': False}"/>
+                            <field name="price" attrs="{'invisible': [('product_id', '!=', False)]}"/>
+                            <field name="product_price" attrs="{'invisible': [('product_id', '=', False)]}" />
+                            <field name="product_id" readonly="True" />
+                            <!--<field name="product_id" readonly="False" />-->
+                        </group>
+                        <group>
+                            <button name="create_quotation" string="Create Quotation" type="object"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Itineraries">
+                            <field name="template_line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id" />
+                                    <field name="itinerary_id" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Customers prices">
+                            <field name="customer_price_ids">
+                                <tree editable="bottom">
+                                    <!--<field name="product_id" />-->
+                                    <field name="partner_id" string="Customer" domain="[('customer', '=', True)]"/>
+                                    <field name="start_date" />
+                                    <field name="end_date" />
+                                    <field name="price" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_transfer_template_tree" model="ir.ui.view">
+            <field name="name">transfer.template.tree</field>
+            <field name="model">transfer.template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_transfer_template" model="ir.actions.act_window" >
+            <field name="name">Transfer Template</field>
+            <field name="res_model">transfer.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_transfer_template_tree"/>
+        </record>
+
+        <menuitem name="Transfer Templates" id="menu_transfer_templates" action="action_transfer_template" parent="menu_transfer" />
+
+    </data>
+</openerp>

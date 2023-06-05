@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_company_qweb_report" model="ir.ui.view">
+            <field name="name">res.company.qweb.report</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="custom_footer" position="before">
+                    <field name="custom_header"/>
+                    <field name="qweb_header" attrs="{'invisible': [('custom_header', '=', False)]}" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

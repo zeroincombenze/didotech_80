@@ -1,0 +1,117 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* spare_parts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-23 10:50+0000\n"
+"PO-Revision-Date: 2015-08-03 12:47+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: it\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#. module: spare_parts
+#: field:spare.part.number,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: spare_parts
+#: field:spare.part.number,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: spare_parts
+#: code:addons/spare_parts/spare_parts.py:31
+#, python-format
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: spare_parts
+#: field:spare.part.number,description:0
+msgid "Descrizione"
+msgstr "Descrizione"
+
+#. module: spare_parts
+#: code:addons/spare_parts/sale.py:29
+#: field:sale.order.line,product_destination:0
+#, python-format
+msgid "Destination"
+msgstr "Destinazione"
+
+#. module: spare_parts
+#: field:spare.part.number,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: spare_parts
+#: code:addons/spare_parts/spare_parts.py:30 field:spare.part.number,name:0
+#, python-format
+msgid "Identification Number"
+msgstr "Numero Identificativo"
+
+#. module: spare_parts
+#: field:spare.part.number,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: spare_parts
+#: field:spare.part.number,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: spare_parts
+#: code:addons/spare_parts/product.py:43
+#: field:product.template,part_number_id:0
+#, python-format
+msgid "Part number"
+msgstr "Part number"
+
+#. module: spare_parts
+#: field:spare.part.number,product_template_ids:0
+msgid "Prodotto"
+msgstr "Prodotto"
+
+#. module: spare_parts
+#: code:addons/spare_parts/spare_parts.py:32
+#, python-format
+msgid "Product"
+msgstr "Product"
+
+#. module: spare_parts
+#: model:ir.model,name:spare_parts.model_product_category
+msgid "Product Category"
+msgstr "Categoria Prodotto"
+
+#. module: spare_parts
+#: model:ir.model,name:spare_parts.model_product_template
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: spare_parts
+#: model:ir.model,name:spare_parts.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: spare_parts
+#: code:addons/spare_parts/product.py:42 field:product.template,source:0
+#, python-format
+msgid "Source"
+msgstr "Source"
+
+#. module: spare_parts
+#: code:addons/spare_parts/product.py:29 field:product.category,spareparts:0
+#, python-format
+msgid "Spare parts classification"
+msgstr "Spare parts classification"
+
+#. module: spare_parts
+#: model:ir.model,name:spare_parts.model_spare_part_number
+msgid "Unified identification number"
+msgstr "Unified identification number"

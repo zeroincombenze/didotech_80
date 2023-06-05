@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+        <record id="view_partner_form_inherit_payment" model="ir.ui.view">
+		<field name="name">partner.form.zip</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+           <field name="property_supplier_payment_term" position="replace">
+               <field name="journal_id" />
+           </field>
+		</field>
+	 </record>
+
+    </data>
+</openerp>

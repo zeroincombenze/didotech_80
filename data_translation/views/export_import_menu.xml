@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="data_translation_menu" name="Data Translation" parent="base.menu_config" />
+
+        <record id="data_translation_export" model="ir.actions.act_window">
+            <field name="name">Export translations in Excel (xls) format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">data.translation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_data_translation_export_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="data_translation_export" id="menu_translations_export" name="Export Translations" parent="data_translation_menu"/>
+
+        <record id="data_translation_import" model="ir.actions.act_window">
+            <field name="name">Import translations in Excel (xls) format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">data.translation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_data_translation_import_form"/>
+            <field name="target">new</field>
+            <field name="context">{'default_state': 'import'}</field>
+        </record>
+
+        <menuitem action="data_translation_import" id="menu_translations_import" name="Import Translations" parent="data_translation_menu"/>
+
+    </data>
+</openerp>

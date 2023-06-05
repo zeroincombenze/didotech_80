@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_broker_purchase_orders_salesman,"broker.purchase.order base.group_sale_salesman",model_broker_purchase_order,base.group_sale_salesman,1,1,1,1
+access_broker_truck_info_salesman,"broker.truck.info base.group_sale_salesman",model_broker_truck_info,base.group_sale_salesman,1,1,1,1
+access_broker_delivery_info_salesman,"broker.delivery.info base.group_sale_salesman",model_broker_delivery_info,base.group_sale_salesman,1,1,1,1
+access_customer_supplier_info,"customer.supplier.info base.group_sale_salesman",model_customer_supplier_info,base.group_sale_salesman,1,1,1,1

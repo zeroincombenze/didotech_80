@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_plus_order_form" model="ir.ui.view">
+            <field name="name">sale.order.plus.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree[@string='Sales Order Lines']" position="attributes">
+                        <attribute name="editable" />
+                    </xpath>
+
+                    <!--<xpath expr="//form[@string='Sales Order Lines']/group/group/field[@name='th_weight']" position="replace" />-->
+
+                    <xpath expr="//form[@string='Sales Order Lines']/group/group/field[@name='address_allotment_id']" position="replace">
+                        <field name="product_uom" />
+                    </xpath>
+
+                    <xpath expr="//form[@string='Sales Order Lines']/div/field[@name='invoice_lines']" position="replace" />
+                    <xpath expr="//form[@string='Sales Order Lines']/field[@name='name']" position="after" >
+                        <label for="description" attrs="{'invisible': [('product_id', '!=', False)]}"/>
+                        <field name="description" attrs="{'invisible': [('product_id', '!=', False)]}"/>
+                    </xpath>
+
+                    <field name="note" position="attributes">
+                        <attribute name="placeholder">Note</attribute>
+                    </field>
+
+                </data>
+            </field>
+        </record>
+
+        <record id="view_sale_stock_form_inherit" model="ir.ui.view">
+            <field name="name">sale.stock.form.plus</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page[@string='Order Lines']/field[@name='order_line']/form[@string='Sales Order Lines']/group/group/div/field[@name='delay']" position="replace" />
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

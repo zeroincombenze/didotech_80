@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+    
+
+    <!--REMAKE OF STANDARD VIEW FOR INCREASE USABILITY-->
+
+    <record model="ir.ui.view" id="crm.crm_case_form_view_leads">
+        <field name="name">CRM - Leads Form</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Leads Form">
+                <header>
+                    <button name="%(crm.action_crm_lead2opportunity_partner)d" string="Convert to Opportunity" type="action"
+                            help="Convert to Opportunity" class="oe_highlight"/>
+                    <field name="stage_id" widget="statusbar" clickable="True" domain="['&amp;', '|', ('case_default', '=', True), ('section_ids', '=', section_id), '|', ('type', '=', type), ('type', '=', 'both')]" options="{'fold_field': 'fold'}" on_change="onchange_stage_id(stage_id)"/>
+                </header>
+                <sheet>
+                    <div class="oe_right oe_button_box" name="buttons">
+                        <button class="oe_inline oe_stat_button" type="action" 
+                            context="{'default_opportunity_id': active_id, 'search_default_opportunity_id': active_id, 'default_partner_id': partner_id, 'default_duration': 1.0}" 
+                            name="%(crm.crm_case_categ_phone_incoming0)d" icon="fa-phone">
+                            <div>Schedule/Log<br/>Calls</div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Describe the lead..."/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_name" string="Company Name"/>
+                            <!-- Preload all the partner's information -->
+                            <field name="partner_id" string="Customer" on_change="on_change_partner_id(partner_id)" options="{&quot;create_name_field&quot;: &quot;name&quot;}" context="{'default_name': contact_name, 'default_street': street, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_function': function, 'default_phone': phone, 'default_mobile': mobile, 'default_fax': fax, 'default_email': email_from, 'default_user_id': user_id, 'default_section_id': section_id}"/>
+                            <label for="street" string="Address"/>
+                            <div>
+                                <field name="street" placeholder="Street..."/>
+                                <field name="street2"/>
+                                <div class="address_format">
+                                    <field name="zip" placeholder="ZIP" style="width: 24%" on_change="on_change_zip(zip)"/>
+                                    <field name="city" placeholder="City" style="width: 50%" on_change="on_change_city(city,zip)"/>
+                                    <field name="state_id" on_change="on_change_province(state_id)" attrs="{'readonly':[('find_city','!=',False)]}" placeholder="Province" nolabel="1" style="width: 24%" />
+                                    <field name="region" on_change="on_change_region(region)" attrs="{'readonly':[('state_id','!=',False)]}" placeholder="Region" string=" " style="width: 24%" />
+                                    <field name="state_id" on_change="onchange_state(state_id)" options="{&quot;no_open&quot;: True}" placeholder="State" style="width: 50%" />
+                                    <field name="country_id" placeholder="Country" options="{&quot;no_open&quot;: True}" style="width: 50%"/>
+                                   <field name="find_city" invisible="1" />
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="contact_name"/>
+                            <div>
+                                <field name="title" placeholder="Title" domain="[('domain', '=', 'contact')]" class="oe_inline" options="{&quot;no_open&quot;: True}"/>
+                                <field name="contact_name" class="oe_inline"/><span attrs="{'invisible': [('title', '=', '')]}">, </span>
+                                <field name="function_id" on_change="on_change_function_id(function_id)" widget="selection"  placeholder="Function" />
+                                <field name="function" invisible="1" />
+                            </div>
+                            <field name="email_from" widget="email"/>
+                            
+                            <field name="phone"/>
+                            <field name="mobile"/>
+                            <field name="fax"/>
+                        </group>
+                        <group>
+                            <field name="user_id" on_change="on_change_user(user_id, context)" context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager', 'base.group_sale_salesman_all_leads'] }"/>
+                            <label for="section_id" groups="base.group_multi_salesteams"/>
+                            <div groups="base.group_multi_salesteams">
+                                <field name="section_id"/>
+                                <button name="case_escalate" string="Escalate" type="object" class="oe_link" attrs="{'invisible': ['|', ('section_id','=',False), ('probability', '=', 100)]}"/>
+                            </div>
+                            <field name="type" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="priority" widget="priority"/>
+                            <field name="categ_ids" widget="many2many_tags" domain="[('object_id.model','=','crm.lead')]" context="{'object_name': 'crm.lead'}"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                    <page string="Internal Notes">
+                        <field name="description"/>
+                    </page>
+                    <page string="Extra Info">
+                        <group>
+                            <group string="Categorization" groups="base.group_multi_company,base.group_no_one" name="categorization">
+                                <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                            </group>
+                            <group string="Mailings">
+                                <field name="opt_out"/>
+                                <field name="message_bounce"/>
+                            </group>
+                            <group string="Misc">
+                                <field name="probability" groups="base.group_no_one"/>
+                                <field name="active"/>
+                                <field name="referred"/>
+                            </group>
+                            <group>
+                                <field name="date_open" groups="base.group_no_one"/>
+                                <field name="date_closed" groups="base.group_no_one"/>
+                            </group>
+                        </group>
+                    </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+        <record id="view_lead_form_inherit_city_search" model="ir.ui.view">
+            <field name="name">crm.lead.city.search</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <field name="country_id" position="before">
+                    <newline/>
+                    <field name="city" />
+                    <field name="state_id" widget="selection"/>
+                    <field name="region" widget="selection"/>
+                </field>
+
+
+            </field>
+        </record>
+
+		<record model="ir.ui.view" id="crm.crm_case_tree_view_leads">
+			<field name="name">Leads</field>
+			<field name="model">crm.lead</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+
+				<tree string="Leads" fonts="bold:message_unread==True" colors="aqua:row_color=='aqua';black:row_color=='black';blue:row_color=='blue';brown:row_color=='brown';cadetblue:row_color=='cadetblue';darkblue:row_color=='darkblue';fuchsia:row_color=='fuchsia';forestgreen:row_color=='forestgreen';orange:row_color=='orange';green:row_color=='green';grey:row_color=='grey';red:row_color=='red';">
+                    <field name="row_color" invisible="1" />
+					<field name="date_deadline" invisible="1"/>
+                    <field name="create_date"/>
+                    <field name="name"/>
+                    <field name="contact_name"/>
+                    <field name="country_id"/>
+                    <field name="email_from"/>
+                    <field name="phone"/>
+                    <field name="stage_id"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="partner_id" invisible="1"/>
+                    <field name="section_id" groups="base.group_multi_salesteams"/>
+                    <field name="probability" invisible="1"/>
+                    <field name="campaign_id" invisible="1"/>
+                    <field name="referred" invisible="1"/>
+                    <field name="medium_id" invisible="1"/>
+                    <field name="message_unread" invisible="1"/>
+                </tree>
+			</field>
+		</record>
+    </data>
+</openerp>

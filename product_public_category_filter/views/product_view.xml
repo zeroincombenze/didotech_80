@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="product_public_category_childless_tree_view" model="ir.ui.view">
+            <field name="name">product.public.category.childless.tree</field>
+            <field name="model">product.public.category</field>
+            <field name="inherit_id" ref="website_sale.product_public_category_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="complete_name" position="after">
+                    <field name="childless" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

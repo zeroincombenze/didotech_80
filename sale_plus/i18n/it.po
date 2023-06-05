@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_plus
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-16 15:20+0000\n"
+"PO-Revision-Date: 2016-03-16 15:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_plus
+#: code:addons/sale_plus/models/sale.py:30
+#: field:sale.order.line,description:0
+#, python-format
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: sale_plus
+#: code:addons/sale_plus/models/sale.py:29
+#: field:sale.order.line,name:0
+#, python-format
+msgid "Name"
+msgstr "Nome"
+
+#. module: sale_plus
+#: model:ir.model,name:sale_plus.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga d'ordine di vendita"
+

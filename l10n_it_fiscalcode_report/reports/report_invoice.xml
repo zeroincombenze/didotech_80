@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="report_address_fiscalcode" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@class='page']/div[@class='row']/div/address" position="after">
+                <span t-if="o.partner_id.fiscalcode">C.F.: <span t-field="o.partner_id.fiscalcode"/></span><br/>
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

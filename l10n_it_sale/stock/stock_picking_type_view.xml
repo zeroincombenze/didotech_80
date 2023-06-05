@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_stock_picking_type_form_ddt_sequence">
+			<field name="name">stock.picking.type.form.ddt.sequence</field>
+			<field name="model">stock.picking.type</field>
+			<field name="inherit_id" ref="stock.view_picking_type_form"/>
+			<field name="type">form</field> 
+			<field name="arch" type="xml">
+				<field name="sequence_id" position="after">
+                    <field name="ddt_sequence" />
+                </field>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="view_stock_picking_type_tree_ddt_sequence">
+			<field name="name">stock.picking.type.form.ddt.sequence</field>
+			<field name="model">stock.picking.type</field>
+			<field name="inherit_id" ref="stock.view_picking_type_tree"/>
+			<field name="type">form</field> 
+			<field name="arch" type="xml">
+                <field name="sequence_id" position="after">
+                    <field name="ddt_sequence" />
+                </field>
+			</field>
+		</record>
+		
+	</data>
+</openerp>

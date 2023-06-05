@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_data_translation_export_form" model="ir.ui.view">
+            <field name="name">data.translation.export.form</field>
+            <field name="model">data.translation</field>
+            <field name="arch" type="xml">
+                <form string="Translation export">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="export">
+                        <!--<field name="file_name" />-->
+                        <field name="model" />
+                        <field name="language" required="True" />
+                    </group>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <group colspan="4" col="4" states="export">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="action_start_export" string="Start export" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <group colspan="4" col="4" states="end">
+                        <field name="name" invisible="1"/>
+                        <field name="data" filename="name"/>
+                        <separator string="" colspan="4"/>
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_data_translation_import_form" model="ir.ui.view">
+            <field name="name">data.translation.import.form</field>
+            <field name="model">data.translation</field>
+            <field name="arch" type="xml">
+                <form string="Translation import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="import">
+                        <field name="model" />
+                        <field name="language" required="True" />
+                        <field name="name" invisible="1"/>
+                        <field name="data" filename="name" readonly="False" />
+                    </group>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <group colspan="4" col="4" states="import">
+                        <separator string="" colspan="8"/>
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button type="object" name="action_start_import" string="Start import" icon="gtk-ok"/>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <group colspan="4" col="4" states="end">
+                        <separator string="" colspan="4"/>
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

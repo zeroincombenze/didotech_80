@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view__edit_stock_quant_form" model="ir.ui.view">
+            <field name="name">edit.stock.quant.form</field>
+            <field name="model">stock.quant</field>
+            <field eval="100" name="priority"/>
+            <field name="inherit_id" ref="stock.view_stock_quant_form"/>
+            <field name="arch" type="xml">
+                <field name="note" position="after">
+                    <field name="image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                        <kanban>
+                            <field name="name" />
+                            <field name="datas_fname" />
+                            <field name="datas" />
+                            <field name="res_id" />
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_module_vignette" style="width:132px;">
+                                        <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-href="kanban_image('ir.attachment', 'datas', record.id.value)" >
+                                            <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                t-att-src="kanban_image('ir.attachment', 'datas', record.id.value)" />
+                                        </a>
+                                        <div class="oe_module_desc" style="width:132px;height:30px;">
+                                            <t t-esc="record.name.raw_value"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <form>
+                            <field name="name" />
+                            <field name="datas_fname" />
+                            <field name="datas" />
+                        </form>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_edit_stock_quant_tree" model="ir.ui.view">
+            <field name="name">edit.stock.quant.tree</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_id" position="before">
+                    <field name="image" widget="image" height="64" />
+                </field>
+                <!--<field name="company_id" position="after">-->
+                    <!--<field name="has_image" invisible="1"/>-->
+                    <!--<button name="action_dummy" string="Image" type="object" icon="color-picker" attrs="{'invisible': [('has_image', '=', False)]}"/>-->
+                <!--</field>-->
+            </field>
+        </record>
+
+    </data>
+</openerp>

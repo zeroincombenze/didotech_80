@@ -1,0 +1,1026 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* transfer_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-24 07:58+0000\n"
+"PO-Revision-Date: 2015-08-03 12:47+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: it\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "30 Days"
+msgstr "30 Giorni"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Active"
+msgstr "Attivo"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Activity during last 7 days"
+msgstr "Attività degli scorsi 7 giorni"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Activity during next 30 days"
+msgstr "Attività dei prossimi 30 Giorni"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Activity during next 7 days"
+msgstr "Attività dei prossimi 7 giorni"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Activity for Today"
+msgstr "Attività Odierne"
+
+#. module: transfer_service
+#: view:website:transfer_service.report_account_invoice_list
+msgid "Allegato alla Fattura n°"
+msgstr "Allegato alla Fattura n°"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Aqua"
+msgstr "Acqua"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:86
+#: field:transfer.itinerary,end_city_id:0
+#, python-format
+msgid "Arrival city"
+msgstr "Città d'Arrivo"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+msgid "Assign"
+msgstr "Assign"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Assigned"
+msgstr "Assegnato"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:58
+#: code:addons/transfer_service/sale.py:33
+#: code:addons/transfer_service/transfer.py:54 field:sale.order,bag_qty:0
+#: field:sale.order.line,bag_qty:0 field:sale.order.template.line,bag_qty:0
+#: field:transfer.transfer,bag_qty:0
+#, python-format
+msgid "Bag"
+msgstr "Bagagli"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_transfer_transfer
+msgid "Base Transfer Fields"
+msgstr "Base Transfer Fields"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Black"
+msgstr "Nero"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Blue"
+msgstr "Blu"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Brown"
+msgstr "Marrone"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Cadet Blue"
+msgstr "Blu Cadetto"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:48 field:project.task,supplier:0
+#, python-format
+msgid "Car and Driver"
+msgstr "Auto e Autista"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+msgid "Change Supplier"
+msgstr "Cambia Fornitore"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:42
+#, python-format
+msgid "Client & Passenger"
+msgstr "Cliente & Passeggero"
+
+#. module: transfer_service
+#: field:wizard.create.quotation,partner_id:0
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: transfer_service
+#: field:project.task.type,color:0
+msgid "Color"
+msgstr "Colore"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:61
+#: code:addons/transfer_service/sale.py:36
+#: code:addons/transfer_service/transfer.py:57
+#: field:sale.order,passenger_name:0 field:sale.order.line,passenger_name:0
+#: field:sale.order.template.line,passenger_name:0
+#: field:transfer.transfer,passenger_name:0
+#, python-format
+msgid "Contact Name"
+msgstr "Nome Contatto"
+
+#. module: transfer_service
+#: view:sale.order:transfer_service.view_transfer_order_form
+msgid "Create Additional Order"
+msgstr "Create Additional Order"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+msgid "Create Invoice"
+msgstr "Crea Fattura"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:427
+#: code:addons/transfer_service/wizard/create_quotation_order.py:127
+#: view:transfer.template:transfer_service.view_transfer_template_form
+#: field:wizard.quotation.line,create_quotation_id:0
+#, python-format
+msgid "Create Quotation"
+msgstr "Crea Preventivo"
+
+#. module: transfer_service
+#: view:wizard.create.quotation:transfer_service.view_create_quotation_form
+msgid "Create Quotation Order"
+msgstr "Crea un Preventivo di Vendita"
+
+#. module: transfer_service
+#: code:addons/transfer_service/product.py:28
+#: field:product.template,auto_create_task:0
+#, python-format
+msgid "Create Task Automatically"
+msgstr "Crea Attività Automaticamente"
+
+#. module: transfer_service
+#: field:assign.supplier,create_uid:0
+#: field:sale.order.template.line,create_uid:0
+#: field:transfer.itinerary,create_uid:0 field:transfer.price,create_uid:0
+#: field:transfer.template,create_uid:0
+#: field:transfer.template.line,create_uid:0
+#: field:wizard.create.quotation,create_uid:0
+#: field:wizard.quotation.line,create_uid:0
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: transfer_service
+#: field:assign.supplier,create_date:0
+#: field:sale.order.template.line,create_date:0
+#: field:transfer.itinerary,create_date:0 field:transfer.price,create_date:0
+#: field:transfer.template,create_date:0
+#: field:transfer.template.line,create_date:0
+#: field:wizard.create.quotation,create_date:0
+#: field:wizard.quotation.line,create_date:0
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: transfer_service
+#: code:addons/transfer_service/wizard/create_quotation_order.py:28
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+#, python-format
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:359
+#, python-format
+msgid "Customer Invoices"
+msgstr "Customer Invoices"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:93
+#: field:transfer.itinerary,customer_price_ids:0
+#, python-format
+msgid "Customer Price for Service"
+msgstr "Prezzo del servizio per Cliente"
+
+#. module: transfer_service
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+msgid "Customers"
+msgstr "Clienti"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Dark Blue"
+msgstr "Blu Scuro"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:235
+#, python-format
+msgid "Define purchase journal for this company: \"%s\" (id:%d)."
+msgstr "definire il sezionale di acquisto per l'azienda: \"%s\" (id:%d)."
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:65
+#: code:addons/transfer_service/transfer.py:40
+#: field:sale.order.line,start_address:0
+#: field:sale.order.template.line,start_address:0
+#: field:transfer.transfer,start_address:0
+#, python-format
+msgid "Departure Address"
+msgstr "Indirizzo di partenza"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:85
+#: field:transfer.itinerary,start_city_id:0
+#, python-format
+msgid "Departure city"
+msgstr "Città di partenza"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+#: field:sale.order.template.line,name:0
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:66
+#: code:addons/transfer_service/transfer.py:41
+#: field:sale.order.line,finish_address:0
+#: field:sale.order.template.line,finish_address:0
+#: field:transfer.transfer,finish_address:0
+#, python-format
+msgid "Destination Address"
+msgstr "Indirizzo Di Destinazione"
+
+#. module: transfer_service
+#: view:website:transfer_service.report_account_invoice_list
+#: view:website:transfer_service.report_sale_order_template
+msgid "Dettaglio pacchetto"
+msgstr "Dettaglio pacchetto"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:87
+#: field:transfer.itinerary,distance:0
+#, python-format
+msgid "Distance (km)"
+msgstr "Distanza (km)"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:142
+#, python-format
+msgid "Distance: {status}"
+msgstr "Distanza: {status}"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Draft"
+msgstr "Bozza"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:50
+#: code:addons/transfer_service/transfer.py:46
+#: code:addons/transfer_service/wizard/assign_supplier.py:30
+#: code:addons/transfer_service/wizard/create_quotation_order.py:130
+#: field:assign.supplier,driver_id:0 field:project.task,driver_id:0
+#: field:sale.order.line,driver_id:0
+#: field:sale.order.template.line,driver_id:0
+#: field:transfer.transfer,driver_id:0 field:wizard.quotation.line,driver_id:0
+#, python-format
+msgid "Driver"
+msgstr "Autista"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:47
+#: code:addons/transfer_service/wizard/assign_supplier.py:31
+#: code:addons/transfer_service/wizard/create_quotation_order.py:131
+#, python-format
+msgid "Drivers"
+msgstr "Autisti"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:63
+#: code:addons/transfer_service/sale.py:38
+#: code:addons/transfer_service/transfer.py:59
+#: field:sale.order,passenger_email:0 field:sale.order.line,passenger_email:0
+#: field:sale.order.template.line,passenger_email:0
+#: field:transfer.transfer,passenger_email:0
+#, python-format
+msgid "Email"
+msgstr "Email"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:217
+#: field:transfer.price,end_date:0
+#, python-format
+msgid "End Date"
+msgstr "End Date"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Finished"
+msgstr "Concluso"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:144
+#: code:addons/transfer_service/transfer.py:214
+#: field:sale.order.line,fixed_price:0 field:transfer.price,price:0
+#, python-format
+msgid "Fixed Price"
+msgstr "Prezzo Fisso"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:67
+#: code:addons/transfer_service/transfer.py:43
+#: field:sale.order.line,connection:0
+#: field:sale.order.template.line,connection:0
+#: field:transfer.transfer,connection:0
+#, python-format
+msgid "Flight / Train / Ship"
+msgstr "Volo / Treno / Nave"
+
+#. module: transfer_service
+#: field:account.invoice,force_delete:0
+#: code:addons/transfer_service/account.py:30
+#, python-format
+msgid "Force"
+msgstr "Forza"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Forest Green"
+msgstr "Verde Chiaro"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Fuchsia"
+msgstr "Fuchsia"
+
+#. module: transfer_service
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+msgid "Get distance"
+msgstr "Calcola Distanza"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:135
+#, python-format
+msgid "Google Maps Error: {error}"
+msgstr "Errore di Google Maps: {error}"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Green"
+msgstr "Verde"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Grey"
+msgstr "Grigio"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:143
+#: field:sale.order.line,has_template:0
+#, python-format
+msgid "Has Template"
+msgstr "Ha Template"
+
+#. module: transfer_service
+#: field:assign.supplier,id:0 field:sale.order.template.line,id:0
+#: field:transfer.itinerary,id:0 field:transfer.price,id:0
+#: field:transfer.template,id:0 field:transfer.template.line,id:0
+#: field:transfer.transfer,id:0 field:wizard.create.quotation,id:0
+#: field:wizard.quotation.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:71 field:project.task,invoiced:0
+#, python-format
+msgid "Invoiced"
+msgstr "Fatturato"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:39
+#: code:addons/transfer_service/transfer.py:212
+#: code:addons/transfer_service/transfer.py:443
+#: code:addons/transfer_service/wizard/create_quotation_order.py:125
+#: field:sale.order.line,itinerary_id:0
+#: field:sale.order.template.line,itinerary_id:0
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+#: field:transfer.price,itinerary_id:0
+#: field:transfer.template.line,itinerary_id:0
+#: field:transfer.transfer,itinerary_id:0
+#: field:wizard.quotation.line,itinerary_id:0
+#, python-format
+msgid "Itinerary"
+msgstr "Itinerario"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+msgid "Itinerary details"
+msgstr "Dettaglio Itinerario"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:106
+#, python-format
+msgid "Itinerary {start} - {finish} is already exists"
+msgstr "Itinerario {start} - {finish} è già esistente"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Last 7 Days"
+msgstr "Ultimi 7 Giorni"
+
+#. module: transfer_service
+#: field:assign.supplier,write_uid:0
+#: field:sale.order.template.line,write_uid:0
+#: field:transfer.itinerary,write_uid:0 field:transfer.price,write_uid:0
+#: field:transfer.template,write_uid:0
+#: field:transfer.template.line,write_uid:0
+#: field:wizard.create.quotation,write_uid:0
+#: field:wizard.quotation.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultimo Aggiornamento da"
+
+#. module: transfer_service
+#: field:assign.supplier,write_date:0
+#: field:sale.order.template.line,write_date:0
+#: field:transfer.itinerary,write_date:0 field:transfer.price,write_date:0
+#: field:transfer.template,write_date:0
+#: field:transfer.template.line,write_date:0
+#: field:wizard.create.quotation,write_date:0
+#: field:wizard.quotation.line,write_date:0
+msgid "Last Updated on"
+msgstr "Ultimo Aggiornamento il"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_sale_order_template_line
+msgid "Lines connected to Product 'Template'"
+msgstr "Lines connected to Product 'Template'"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:83
+#: code:addons/transfer_service/transfer.py:377
+#: code:addons/transfer_service/transfer.py:441
+#: code:addons/transfer_service/wizard/create_quotation_order.py:122
+#, python-format
+msgid "Name"
+msgstr "Nome"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Next 7 Days"
+msgstr "Prossimi 7 Giorni"
+
+#. module: transfer_service
+#: field:transfer.itinerary,name:0 field:transfer.template,name:0
+msgid "Nome"
+msgstr "Nome"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:68
+#: code:addons/transfer_service/transfer.py:49 field:sale.order.line,note:0
+#: field:sale.order.template.line,note:0 field:transfer.transfer,note:0
+#, python-format
+msgid "Note"
+msgstr "Note"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Orange"
+msgstr "Arancione"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_sale_service_inherit_form2
+msgid "Order Line"
+msgstr "Linea Ordine"
+
+#. module: transfer_service
+#: view:sale.order:transfer_service.view_transfer_order_form
+msgid "Order Lines"
+msgstr "Righe Ordine"
+
+#. module: transfer_service
+#: view:website:transfer_service.report_sale_order_template
+msgid "Ordine"
+msgstr "Ordine"
+
+#. module: transfer_service
+#: field:account.invoice.line,origin_line:0
+#: code:addons/transfer_service/account.py:73
+#: code:addons/transfer_service/project.py:38 field:project.task,origin_line:0
+#, python-format
+msgid "Origin"
+msgstr "Origine"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:215
+#: model:ir.model,name:transfer_service.model_res_partner
+#: field:transfer.price,partner_id:0
+#, python-format
+msgid "Partner"
+msgstr "Partner"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:59
+#: code:addons/transfer_service/sale.py:34
+#: code:addons/transfer_service/transfer.py:55 field:sale.order,passengers:0
+#: field:sale.order.line,passengers:0
+#: field:sale.order.template.line,passengers:0
+#: field:transfer.transfer,passengers:0
+#, python-format
+msgid "Passengers"
+msgstr "Passeggeri"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:57
+#: code:addons/transfer_service/sale.py:32
+#: code:addons/transfer_service/transfer.py:53
+#: field:sale.order,passenger_qty:0 field:sale.order.line,passenger_qty:0
+#: field:sale.order.template.line,passenger_qty:0
+#: field:transfer.transfer,passenger_qty:0
+#, python-format
+msgid "Pax"
+msgstr "Pax"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:62
+#: code:addons/transfer_service/sale.py:37
+#: code:addons/transfer_service/transfer.py:58
+#, python-format
+msgid "Phone"
+msgstr "Telefono"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:46
+#: code:addons/transfer_service/sale.py:66
+#, python-format
+msgid "Please set transfer date"
+msgstr "Inserisci la data del trasferimento"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:43
+#, python-format
+msgid "Practice"
+msgstr "Pratica"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:380
+#: code:addons/transfer_service/transfer.py:381
+#: field:transfer.template,price:0
+#, python-format
+msgid "Price"
+msgstr "Prezzo"
+
+#. module: transfer_service
+#: field:transfer.price,price_mirror_id:0
+msgid "Price mirror id"
+msgstr "Price mirror id"
+
+#. module: transfer_service
+#: field:transfer.template,product_id:0
+msgid "Prodotto"
+msgstr "Prodotto"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:379
+#: model:ir.model,name:transfer_service.model_product_product
+#, python-format
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_product_category
+msgid "Product Category"
+msgstr "Categoria Prodotto"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_product_template
+msgid "Product Template"
+msgstr "Modello Prodotto"
+
+#. module: transfer_service
+#: field:sale.order.template.line,product_uos:0
+msgid "Product UoS"
+msgstr "Product UoS"
+
+#. module: transfer_service
+#: view:product.template:transfer_service.view_product_task_form
+msgid "Project Management Information"
+msgstr "Project Management Information"
+
+#. module: transfer_service
+#: field:project.task.type,state:0
+msgid "Provincia"
+msgstr "Provincia"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:53
+#: field:project.task,purchase_order_id:0
+#, python-format
+msgid "Purchase Order"
+msgstr "Ordine Acquisto"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Riga Ordine d'Acquisto"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:219
+#: field:sale.order.template.line,product_uom_qty:0
+#, python-format
+msgid "Quantity"
+msgstr "Quantità"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:221
+#: field:sale.order.template.line,product_uos_qty:0
+#, python-format
+msgid "Quantity (UoS)"
+msgstr "Quantity (UoS)"
+
+#. module: transfer_service
+#: code:addons/transfer_service/wizard/create_quotation_order.py:114
+#, python-format
+msgid "Quotation"
+msgstr "Quotazione"
+
+#. module: transfer_service
+#: code:addons/transfer_service/wizard/create_quotation_order.py:29
+#: field:wizard.create.quotation,quotation_line_ids:0
+#, python-format
+msgid "Quotation Lines"
+msgstr "Quotation Lines"
+
+#. module: transfer_service
+#: selection:project.task.type,color:0
+msgid "Red"
+msgstr "Rosso"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:52
+#, python-format
+msgid "Row color"
+msgstr "Row color"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:101
+#, python-format
+msgid "Sale Order"
+msgstr "Sale Order"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:211
+#: field:sale.order.template.line,order_line_id:0
+#, python-format
+msgid "Sale Order Line"
+msgstr "Sale Order Line"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_sale_order_line
+#: field:project.task,sale_line_id:0
+msgid "Sales Order Line"
+msgstr "Linea d'ordine di vendita"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:262
+#: view:assign.supplier:transfer_service.view_assign_supplier
+#, python-format
+msgid "Select Supplier"
+msgstr "Select Supplier"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:46
+#: code:addons/transfer_service/sale.py:216
+#: code:addons/transfer_service/transfer.py:213
+#: code:addons/transfer_service/transfer.py:442
+#: code:addons/transfer_service/wizard/create_quotation_order.py:124
+#: field:sale.order.template.line,product_id:0
+#: field:transfer.price,product_id:0 field:transfer.template.line,product_id:0
+#: field:wizard.quotation.line,product_id:0
+#, python-format
+msgid "Service"
+msgstr "Service"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:49
+#: code:addons/transfer_service/transfer.py:44
+#: code:addons/transfer_service/wizard/create_quotation_order.py:128
+#: field:project.task,service_supplier_id:0
+#: field:sale.order.line,service_supplier_id:0
+#: field:sale.order.template.line,service_supplier_id:0
+#: field:transfer.transfer,service_supplier_id:0
+#: field:wizard.quotation.line,service_supplier_id:0
+#, python-format
+msgid "Service Supplier"
+msgstr "Fornitore del Servizio"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:45
+#: code:addons/transfer_service/wizard/assign_supplier.py:29
+#: code:addons/transfer_service/wizard/create_quotation_order.py:129
+#: field:assign.supplier,service_supplier_id:0
+#, python-format
+msgid "Service Suppliers"
+msgstr "Fornitori del Servizio"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:216
+#: field:transfer.price,start_date:0
+#, python-format
+msgid "Start Date"
+msgstr "Data inizio"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:54
+#: code:addons/transfer_service/project.py:375
+#, python-format
+msgid "State"
+msgstr "Stato"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:383
+#, python-format
+msgid "State '{state}' already exists"
+msgstr "Stato '{state}' già esiste"
+
+#. module: transfer_service
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+msgid "Supplier"
+msgstr "Fornitore"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:92
+#: field:transfer.itinerary,supplier_price_ids:0
+#, python-format
+msgid "Supplier Price for Service"
+msgstr "Supplier Price for Service"
+
+#. module: transfer_service
+#: view:transfer.itinerary:transfer_service.view_transfer_itinerary_form
+msgid "Suppliers"
+msgstr "Suppliers"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:56
+#: code:addons/transfer_service/transfer.py:38 field:sale.order.line,taking:0
+#: field:sale.order.template.line,taking:0 field:transfer.transfer,taking:0
+#, python-format
+msgid "Taking"
+msgstr "Taking"
+
+#. module: transfer_service
+#: field:assign.supplier,task_id:0
+#: model:ir.model,name:transfer_service.model_project_task
+msgid "Task"
+msgstr "Attività"
+
+#. module: transfer_service
+#: model:ir.model,name:transfer_service.model_project_task_type
+#: view:project.task.type:transfer_service.task_type_color_tree
+msgid "Task Stage"
+msgstr "Stadio attività"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:131
+#, python-format
+msgid "Task {task.name} can't be deleted because Purchase Order '{task.purchase_order_id.name}' is in state '{task.purchase_order_id.state}'"
+msgstr "Attività {task.name} non può essere cancellata perchè l'Ordine di Acquisto '{task.purchase_order_id.name}' è in stato '{task.purchase_order_id.state}'"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Tasks"
+msgstr "Attività"
+
+#. module: transfer_service
+#: field:sale.order.template.line,tax_id:0
+msgid "Taxes"
+msgstr "Tasse"
+
+#. module: transfer_service
+#: field:sale.order,passenger_phone:0 field:sale.order.line,passenger_phone:0
+#: field:sale.order.template.line,passenger_phone:0
+#: field:transfer.transfer,passenger_phone:0
+msgid "Telefono"
+msgstr "Telefono"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:444
+#: code:addons/transfer_service/wizard/create_quotation_order.py:30
+#: field:transfer.template.line,template_id:0
+#: field:wizard.create.quotation,template_id:0
+#, python-format
+msgid "Template"
+msgstr "Template"
+
+#. module: transfer_service
+#: code:addons/transfer_service/wizard/create_quotation_order.py:126
+#: field:wizard.quotation.line,template_line_id:0
+#, python-format
+msgid "Template Line"
+msgstr "Template Line"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:142
+#: code:addons/transfer_service/transfer.py:378
+#: view:sale.order:transfer_service.view_transfer_order_form
+#: field:sale.order.line,template_line:0
+#: field:transfer.template,template_line_ids:0
+#, python-format
+msgid "Template Lines"
+msgstr "Template Lines"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:102
+#, python-format
+msgid "The beginning and the end of itinerary can't be the same"
+msgstr "La partenza e l'arrivo dell'itinerario non poò essere lo stessa"
+
+#. module: transfer_service
+#: help:product.template,auto_create_task:0
+msgid "Tick this option if you want to create a task automatically each time this product is sold"
+msgstr "Selezionare questa opzione se si desidera creare automaticamente un attività ogni volta che questo prodotto è venduto"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_transfer_task_filter
+msgid "Today"
+msgstr "Oggi"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:30
+#: model:ir.ui.menu,name:transfer_service.menu_transfer
+#: view:project.task:transfer_service.view_task_transfer_form2
+#: view:sale.order:transfer_service.view_transfer_order_form
+#: field:sale.order,transfer:0
+#, python-format
+msgid "Transfer"
+msgstr "Itinerario"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:40
+#: field:project.task,transfer_date:0
+#, python-format
+msgid "Transfer Date"
+msgstr "Data Itinerario"
+
+#. module: transfer_service
+#: model:ir.actions.report.xml,name:transfer_service.sale_order_template_report
+msgid "Transfer Detail"
+msgstr "Dettagli Itinerario"
+
+#. module: transfer_service
+#: model:ir.actions.report.xml,name:transfer_service.invoice_template_report
+msgid "Transfer Detail List"
+msgstr "Lista dettagli Itinerario"
+
+#. module: transfer_service
+#: view:sale.order:transfer_service.view_transfer_order_form
+msgid "Transfer Details"
+msgstr "TDettagli Itinerari"
+
+#. module: transfer_service
+#: view:sale.order:transfer_service.view_transfer_order_form
+msgid "Transfer Information"
+msgstr "Informazioni Itinerario"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:76
+#: model:ir.model,name:transfer_service.model_transfer_itinerary
+#, python-format
+msgid "Transfer Itineraries"
+msgstr "Itinerari Trasferimento"
+
+#. module: transfer_service
+#: model:ir.actions.act_window,name:transfer_service.action_transfer_itinerary
+#: model:ir.ui.menu,name:transfer_service.menu_transfer_itinerary
+msgid "Transfer Itinerary"
+msgstr "Itinerario Trasferimento"
+
+#. module: transfer_service
+#: model:ir.actions.act_window,name:transfer_service.action_transfer_template
+#: view:transfer.template:transfer_service.view_transfer_template_form
+msgid "Transfer Template"
+msgstr "Transfer Template"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:213
+#: field:sale.order.template.line,transfer_template_line_id:0
+#, python-format
+msgid "Transfer Template Line"
+msgstr "Transfer Template Line"
+
+#. module: transfer_service
+#: code:addons/transfer_service/product.py:34
+#: model:ir.ui.menu,name:transfer_service.menu_transfer_templates
+#: field:product.product,template_ids:0
+#, python-format
+msgid "Transfer Templates"
+msgstr "Transfer Templates"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:88
+#: field:transfer.itinerary,duration:0
+#, python-format
+msgid "Transfer duration"
+msgstr "Durata Trasferimento"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:89
+#, python-format
+msgid "Transfer duration (hh:mm)"
+msgstr "Durata Trasferimento (hh:mm)"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:31
+#: code:addons/transfer_service/transfer.py:52
+#: code:addons/transfer_service/wizard/create_quotation_order.py:123
+#: field:sale.order,transfer_date:0 field:sale.order.line,transfer_date:0
+#: field:sale.order.template.line,transfer_date:0
+#: field:transfer.transfer,transfer_date:0
+#: field:wizard.quotation.line,transfer_date:0
+#, python-format
+msgid "Travel date and time"
+msgstr "Travel date and time"
+
+#. module: transfer_service
+#: view:project.task:transfer_service.view_task_transfer_form2
+msgid "True"
+msgstr "True"
+
+#. module: transfer_service
+#: field:sale.order.template.line,price_unit:0
+msgid "Unit Price"
+msgstr "Prezzo Unitario"
+
+#. module: transfer_service
+#: field:sale.order.template.line,product_uom:0
+msgid "Unit of Measure "
+msgstr "Unità di Misura "
+
+#. module: transfer_service
+#: field:sale.order.template.line,th_weight:0
+msgid "Weight"
+msgstr "Peso"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:90
+#: field:transfer.itinerary,mirror:0
+#, python-format
+msgid "With Mirror Itinerary"
+msgstr "Itinerario A/R"
+
+#. module: transfer_service
+#: code:addons/transfer_service/sale.py:119
+#, python-format
+msgid "You can't delete order with tasks that are already done"
+msgstr "Non puoi cancellare un Ordine con delle attività eseguite"
+
+#. module: transfer_service
+#: code:addons/transfer_service/transfer.py:111
+#, python-format
+msgid "You can't insert itinerary with just one end"
+msgstr "You can't insert itinerary with just one end"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:340
+#, python-format
+msgid "You can't invoice a task which is a part of a transfer template"
+msgstr "You can't invoice a task which is a part of a transfer template"
+
+#. module: transfer_service
+#: code:addons/transfer_service/project.py:44
+#, python-format
+msgid "pax./bag."
+msgstr "pax./bag."

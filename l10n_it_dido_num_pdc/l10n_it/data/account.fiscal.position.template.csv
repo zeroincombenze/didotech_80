@@ -1,0 +1,10 @@
+"name","chart_template_id:id","id","note"
+"Italia","l10n_it_chart_template_pkg","it",
+"Regime Intra CEE acquisti","l10n_it_chart_template_pkg","intraacq",
+"Regime Intra CEE vendite","l10n_it_chart_template_pkg","intraven",
+"Regime Extra CEE","l10n_it_chart_template_pkg","estero",
+"Professionisti R.Acc. 20%","l10n_it_chart_template_pkg","professionisti",
+"Professionisti R.Acc. 23% sul 50%","l10n_it_chart_template_pkg","agenti",
+"Italia detr. fisc. 50% IVA agev. 10%","l10n_it_chart_template_pkg","detrazione50iva10","Spese per fini energetici detrazione fiscale del 65% Legge 296/2006 e succ. mod. D.L. 63 del 04.06.13. IVA agevolata ai sensi delle disposizioni della tabella A, parte III, allegata al dpr 633/72."
+"Italia detr. fisc. 65% IVA agev. 10%","l10n_it_chart_template_pkg","detrazione65iva10","Spese per fini energetici detrazione fiscale del 65% Legge 296/2006 e succ. mod. D.L. 63 del 04.06.13. IVA agevolata ai sensi delle disposizioni della tabella A, parte III, allegata al dpr 633/72."
+"Italia detr. fisc. 65% IVA agev. 10% beni significativi","l10n_it_chart_template_pkg","detrazione65iva488","Spese per fini energetici detrazione fiscale del 65% Legge 296/2006 e succ. mod. D.L. 63 del 04.06.13. IVA agevolata ai sensi delle disposizioni di cui alla legge 488/99."

@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+        <record id="view_partner_form_fiscalcode_data" model="ir.ui.view">
+            <field name="name">res.partner.fiscalcode.data</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="before">
+                    <field  name="individual"
+                            colspan="1"
+                            class="oe_inline"/>
+                    <field  name="person_name"
+                            domain="[('individual', '=', True)]"
+                            context="{'default_individual': False}"
+                            attrs="{'invisible': [('individual','!=', True)],'required': [('individual','=', True)]}" />
+                    <field  name="person_surname"
+                            domain="[('individual', '=', True)]"
+                            context="{'default_individual': False}"
+                            attrs="{'invisible': [('individual','!=', True)],'required': [('individual','=', True)]}" />
+                    <field  name="birth_date"
+                            domain="[('individual', '=', True)]"
+                            context="{'default_individual': False}"
+                            attrs="{'invisible': [('individual','!=', True)]}" />
+                    <field  name="birth_city_id"
+                            context="{'default_individual': False}"
+                            attrs="{'invisible': [('individual','!=', True)]}" />
+                    <field  name="sex"
+                            domain="[('individual', '=', True)]"
+                            context="{'default_individual': False}"
+                            attrs="{'invisible': [('individual','!=', True)],'required': [('individual','=', True)]}" />
+                    <field  name="fiscalcode"
+                            domain="[('individual', '=', True)]"
+                            context="{'default_individual': False}" 
+                    		on_change="onchange_fiscalcode(fiscalcode)" />
+                    <button name="compute_fc"
+                            type="object"
+                            string="Compute FC"
+                            colspan="2"
+                            attrs="{'invisible': [('individual','!=', True)]}" />
+                    <button name="compute_fc_inv"
+                            type="object"
+                            string="Compute FC Inv"
+                            colspan="2"
+                            context="{'fiscalcode':fiscalcode}"
+                            attrs="{'invisible': ['|',('individual','!=', True),('fiscalcode','=', None)]}" />
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>

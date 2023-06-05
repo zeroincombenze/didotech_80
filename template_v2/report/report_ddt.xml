@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="l10n_it_ddt.action_report_ddt" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="template_v2.paperformat_big_header"/>
+        </record>
+
+        <template id="delivery_data">
+            <style type="text/css">
+                table.delivery_data td h6 { margin: 0; }
+                .signature { min-height: 4em; }
+            </style>
+
+            <table class="table table-condensed table-bordered delivery_data">
+                <tr>
+                    <td>
+                        <h6>Transportation Reason</h6>
+                        <div class="signature" t-field="ddt.transportation_reason_id"></div>
+                    </td>
+                    <td>
+                        <h6>Carriage Condition</h6>
+                        <div class="signature" t-field="ddt.carriage_condition_id"></div>
+                    </td>
+                    <td>
+                        <h6>Goods Description</h6>
+                        <div class="signature" t-field="ddt.goods_description_id"></div>
+                    </td>
+                    <td>
+                        <h6>Gross Weight</h6>
+                        <div class="signature" t-field="ddt.weight"></div>
+                    </td>
+                    <td>
+                        <h6>Net Weight</h6>
+                        <div class="signature" t-field="ddt.net_weight"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Carrier</h6>
+                        <div class="signature" t-field="ddt.carrier_id.name"></div>
+                    </td>
+                    <td>
+                        <h6>Date</h6>
+                        <!--<div class="signature" t-field="ddt.date_done"></div>-->
+                        <div class="signature" t-esc="ddt.date and datetime.datetime.strptime(ddt.date, '%Y-%m-%d %H:%M:%S').strftime('%d.%m.%Y')"></div>
+                    </td>
+                    <td>
+                        <h6>Pick up time</h6>
+                        <div class="signature" t-esc="ddt.date and context_timestamp(datetime.datetime.strptime(ddt.date, '%Y-%m-%d %H:%M:%S')).strftime('%H:%M:%S')"></div>
+                    </td>
+                    <td>
+                        <h6>Parcels</h6>
+                        <div class="signature" t-field="ddt.parcels"></div>
+                    </td>
+                    <td>
+                        <h6>Size</h6>
+                        <div class="signature" t-field="ddt.volume"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h6>Carrier's Signature</h6>
+                        <div class="signature"></div>
+                    </td>
+                    <td>
+                        <h6>Driver's Signature</h6>
+                        <div class="signature"></div>
+                    </td>
+                    <td>
+                        <h6>Recipient's Signature</h6>
+                        <div class="signature"></div>
+                    </td>
+                    <td colspan="2"><h6>Notes</h6>
+                        <div class="signature" t-field="ddt.note"></div>
+                    </td>
+                </tr>
+            </table>
+        </template>
+
+        <template id="report_ddt">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="template_v2.layout_picking">
+                    <div class="page">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th><strong>Description</strong></th>
+                                    <th class="text-right"><strong>Quantity</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td><span t-field="line.name"></span></td>
+                                    <td class="text-right"><span t-field="line.product_uom_qty"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <t t-call="template_v2.delivery_data">
+                            <t t-set="ddt" t-value="o"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="l10n_it_ddt.report_ddt_main">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'template_v2.report_ddt')"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="layout_picking">
+            <t t-name="template_v2.layout_picking">
+                <!-- Multicompany -->
+                <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id"/>
+                </t>
+                <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"/>
+                </t>
+
+                <t t-call="template_v2.picking_header_new"/>
+                <t t-raw="0"/>
+                <t t-call="template_v2.external_layout_footer"/>
+            </t>
+        </template>
+
+        <template id="picking_css" name="additional picking css" inherit_id="report_picking_document">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/template_v2/static/css/invoice.css"/>
+            </xpath>
+        </template>
+
+        <template id="picking_header_new">
+            <t t-name="template_v2.external_layout_header">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 90px; margin-top: 40px;"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div t-if="not company.custom_header" class="col-xs-3">
+                            <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style=""/>
+                        </div>
+                        <div t-if="company.custom_header" class="col-xs-9" style="color: gray; font-size: 11px; margin-top: 25px;">
+                            <div class="row"></div>
+                            <strong><span t-field="company.name" /></strong> <span t-field="company.qweb_header"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 pull-right" style="margin-top: -180px; margin-right: 45px;">
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row header_partner" style="margin-top: 10px;">
+                        <div class="col-xs-4" style="color: blue; font-size: 20px; ">
+                            <span>DDT n.</span>
+                            <span t-field="o.ddt_number"/>
+                            <span t-if="o.date"> del <span t-esc="datetime.datetime.strptime(o.date, '%Y-%m-%d %H:%M:%S').strftime('%d.%m.%Y')"/></span>
+                        </div>
+                        <div t-if="o.partner_shipping_id and not o.partner_shipping_id.use_parent_address" class="col-xs-4" style="font-size: 11px;">
+                            <p><strong>Indirizzo di spedizione</strong></p>
+                            <span t-if="o.partner_shipping_id.street"><span t-field="o.partner_shipping_id.street"/><br/></span>
+                            <span t-if="o.partner_shipping_id.street2"><span t-field="o.partner_shipping_id.street2"/><br/></span>
+                            <span t-if="o.partner_shipping_id.zip"><span t-field="o.partner_shipping_id.zip"/> <span t-field="o.partner_shipping_id.city"/> (<span t-field="o.partner_shipping_id.state_id.code"/>)</span>
+                            <span t-if="o.partner_shipping_id.country_id"> <span t-field="o.partner_shipping_id.country_id.name"/><br/></span>
+
+                            <!--<span t-if="o.order_id.partner_shipping_id.vat">Partita IVA: <span t-field="o.order_id.partner_shipping_id.vat"/><br/></span>-->
+                            <span t-if="o.partner_shipping_id.phone"><strong>T: </strong><span t-field="o.partner_shipping_id.phone"/><br/></span>
+                            <span t-if="o.partner_shipping_id.fax"><strong>F: </strong><span t-field="o.partner_shipping_id.fax"/><br/></span>
+                            <span t-if="o.partner_shipping_id.email"><strong>E: </strong><span t-field="o.partner_shipping_id.email"/><br/></span>
+                            <!--<span t-if="o.order_id.partner_shipping_id.website"><strong>W: </strong><span t-field="o.order_id.partner_shipping_id.website"/></span>-->
+                        </div>
+                        <!--<div t-if="o.order_id.partner_shipping_id == o.order_id.partner_invoice_id" class="col-xs-4" style="font-size: 11px;">-->
+                        <!--</div>-->
+                        <div class="col-xs-4" style="font-size: 11px;">
+                            <p><strong>Indirizzo di fatturazione</strong></p>
+                            <!--<span t-field="o.order_id.partner_invoice_id">-->
+                            <div><strong><span t-field="o.partner_invoice_id" /></strong></div>
+
+                            <span t-if="o.partner_invoice_id and not o.partner_invoice_id.use_parent_address">
+                                <span t-if="o.partner_invoice_id.street"><span t-field="o.partner_invoice_id.street"/><br/></span>
+                                <span t-if="o.partner_invoice_id.street2"><span t-field="o.partner_invoice_id.street2"/><br/></span>
+                                <span t-if="o.partner_invoice_id.zip"><span t-field="o.partner_invoice_id.zip"/> <span t-field="o.partner_invoice_id.city"/> (<span t-field="o.partner_invoice_id.state_id.code"/>)</span>
+                                <span t-if="o.partner_invoice_id.country_id"> <span t-field="o.partner_invoice_id.country_id.name"/><br/></span>
+                            </span>
+
+                            <span t-if="not o.partner_invoice_id or o.partner_invoice_id.use_parent_address">
+                                <span t-if="o.partner_id.street"><span t-field="o.partner_id.street"/><br/></span>
+                                <span t-if="o.partner_id.street2"><span t-field="o.partner_id.street2"/><br/></span>
+                                <span t-if="o.partner_id.zip"><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/> (<span t-field="o.partner_id.state_id.code"/>)</span>
+                                <span t-if="o.partner_id.country_id"> <span t-field="o.partner_id.country_id.name"/><br/></span>
+                            </span>
+
+                            <strong>P.IVA: </strong><span t-field="o.partner_invoice_id.vat"/><br/>
+                            <div t-if="company.cf_in_header">
+                                <span t-if="o.partner_invoice_id.fiscalcode"><strong>Codice Fiscale: </strong><span t-field="o.partner_invoice_id.fiscalcode"/><br/></span>
+                            </div>
+
+                            <span t-if="o.partner_invoice_id.phone"><strong>T: </strong><span t-field="o.partner_invoice_id.phone"/><br/></span>
+                            <span t-if=" not o.partner_invoice_id.phone"><strong>T: </strong><span t-field="o.partner_invoice_id.phone"/><br/></span>
+
+                            <span t-if="o.partner_invoice_id.fax"><strong>F: </strong><span t-field="o.partner_invoice_id.fax"/><br/></span>
+                            <span t-if="not o.partner_invoice_id.fax"><strong>F: </strong><span t-field="o.partner_id.fax"/><br/></span>
+                            <span t-if="o.partner_invoice_id.email"><strong>E: </strong><span t-field="o.partner_invoice_id.email"/><br/></span>
+                            <span t-if="not o.partner_invoice_id.email"><strong>E: </strong><span t-field="o.partner_id.email"/><br/></span>
+                            <!--<span t-if="o.partner_id.website"><strong>W: </strong><span t-field="o.partner_id.website"/></span>-->
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</openerp>

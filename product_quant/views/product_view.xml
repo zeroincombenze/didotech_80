@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="product_template_form_view_quant" model="ir.ui.view">
+            <field name="name">product.template.form.quant</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Product']/sheet/notebook/page[@string='Information']" position="before">
+                    <page string="Quants">
+                        <field name="quant_ids">
+                            <tree>
+                                <field name="lot_id" string="Serial Number"/>
+                                <field name="create_date" />
+                                <field name="product_id" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_normal_form_view_quant" model="ir.ui.view">
+            <field name="name">product.product.form.quant</field>
+            <field name="model">product.product</field>
+            <!--<field name="inherit_id" ref="product.product_normal_form_view"/>-->
+            <field name="inherit_id" ref="product_template_form_view_quant"/>
+            <field name="arch" type="xml">
+                <!--<xpath expr="//form/sheet/notebook/page[@string='Information']" position="before">-->
+                <xpath expr="//form/sheet/notebook/page[@string='Quants']" position="replace">
+                    <page string="Quants">
+                        <field name="quant_ids">
+                            <tree>
+                                <field name="lot_id" string="Serial Number"/>
+                                <field name="create_date" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

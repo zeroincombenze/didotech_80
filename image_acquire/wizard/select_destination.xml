@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_select_destination" model="ir.ui.view">
+            <field name="name">wizard_select_destination</field>
+            <field name="model">wizard.select.image.destination</field>
+            <field name="arch" type="xml">
+                <form string="Move image to...">
+                    <field name="destination" />
+                    <footer>
+                        <button name="action_move_images" string="Select destination" type="object" icon="terp-camera_test" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" colspan="2"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_wizard_select_destination" model="ir.actions.act_window">
+            <field name="name">Select Destination</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.select.image.destination</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="wizard_select_destination"/>
+        </record>
+
+        <record id="menu_wizard_select_destination" model="ir.values">
+            <field eval="'client_action_multi'" name="key2"/>
+            <field eval="'image.acquisition'" name="model"/>
+            <field name="name">Move Selected Images</field>
+            <field eval="'ir.actions.act_window,%d'%act_wizard_select_destination" name="value"/>
+        </record>
+
+    </data>
+</openerp>

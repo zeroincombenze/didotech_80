@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+        <record id="view_partner_form_hostname" model="ir.ui.view">
+            <field name="name">res.partner.hostname</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Partners']/sheet/group/group/field[@name='website']" position="after">
+                    <field name="hostname" />
+                    <field name="domain" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

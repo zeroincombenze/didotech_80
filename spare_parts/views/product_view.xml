@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_product_category_spare_form" model="ir.ui.view">
+            <field name="name">product.category.spare.form</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="parent_id" position="attributes">
+                        <attribute name="on_change">1</attribute>
+                    </field>
+                    <field name="type" position="after">
+                        <!--<field name="spareparts" attrs="{'invisible': [('parent_id', '!=', False)]}"/>-->
+                        <field name="spareparts" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_product_product_spare_form" model="ir.ui.view">
+            <field name="name">product.product.spare.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="active" position="after">
+                        <field name="oe_code" />
+                    </field>
+                    <field name="description" position="after">
+                        <!--<label for="source" />-->
+                        <!--<field name="source" />-->
+                        <!--<label for="part_number_id" />-->
+                        <!--<field name="part_number_id" context="{'default_description': name}" />-->
+                        <label for="compatibility" />
+                        <field name="compatibility" widget="many2many_tags" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_product_product_spare_tree" model="ir.ui.view">
+            <field name="name">product.product.spare.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="before">
+                        <field name="default_code" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="product_template_part_number_search_view" model="ir.ui.view">
+            <field name="name">product.template.part.number.search</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="name" position="attributes">
+                        <attribute name="filter_domain">['|', '|', '|', '|', ('default_code', 'ilike', self), ('name', 'ilike', self), ('part_number', 'ilike', self), ('serial_number', 'ilike', self), ('note', 'ilike', self)]</attribute>
+                    </field>
+                    <field name="name" position="after">
+                        <field name="compatibility" widget="many2one" />
+                    </field>
+
+                </data>
+            </field>
+        </record>
+
+        <!--<record id="product_compatibility_tree_view" model="ir.ui.view">-->
+            <!--<field name="name">product.compatibility.tree</field>-->
+            <!--<field name="model">product.category</field>-->
+            <!--<field name="field_parent">child_id</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<tree toolbar="True" string="MMV">-->
+                    <!--<field name="name"/>-->
+                <!--</tree>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--<record id="product_compatibility_action" model="ir.actions.act_window">-->
+            <!--<field name="name">Products by Compatibility</field>-->
+            <!--<field name="type">ir.actions.act_window</field>-->
+            <!--<field name="res_model">product.category</field>-->
+            <!--<field name="domain">[('parent_id', '=', False)]</field>-->
+            <!--<field name="view_type">tree</field>-->
+            <!--<field name="view_id" ref="product_compatibility_tree_view" />-->
+            <!--<field name="context">{'compatibility': True}</field>-->
+            <!--<field name="help" type="html">-->
+              <!--<p>-->
+                <!--Here is a list of all your products classified by category. You-->
+                <!--can click a category to get the list of all products linked to-->
+                <!--this category or to a child of this category.-->
+              <!--</p>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--<menuitem-->
+            <!--action="product_compatibility_action"-->
+            <!--id="product.menu_products_compatibility"-->
+            <!--parent="base.menu_product"-->
+            <!--sequence="30"-->
+            <!--groups="base.group_no_one"-->
+        <!--/>-->
+
+        <!--<record id="product.product_normal_action_tree" model="ir.actions.act_window">-->
+            <!--<field name="name">Product Variants</field>-->
+            <!--<field name="type">ir.actions.act_window</field>-->
+            <!--<field name="res_model">product.product</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form,kanban</field>-->
+            <!--<field name="context">{'categ_id': active_id, 'search_default_categ_id': active_id, 'strict': True}</field>-->
+        <!--</record>-->
+
+
+        <record id="quant_compatibility_tree_view" model="ir.ui.view">
+            <field name="name">quant.compatibility.tree</field>
+            <field name="model">product.category</field>
+            <field name="field_parent">child_id</field>
+            <field name="arch" type="xml">
+                <tree toolbar="True" string="MMV">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="quant_compatibility_action" model="ir.actions.act_window">
+            <field name="name">Quants by Compatibility</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.category</field>
+            <field name="domain">[('parent_id', '=', False)]</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="quant_compatibility_tree_view" />
+            <field name="context">{'compatibility': True}</field>
+            <field name="help" type="html">
+              <p>
+                Here is a list of all your quants classified by category. You
+                can click a category to get the list of all quants linked to
+                this category or to a child of this category.
+              </p>
+            </field>
+        </record>
+        <menuitem
+            action="quant_compatibility_action"
+            id="product.menu_quants_compatibility"
+            parent="base.menu_product"
+            sequence="40"
+            groups="base.group_no_one"
+        />
+
+        <record id="quant_normal_action_tree" model="ir.actions.act_window">
+            <field name="name">Quants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.quant</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{'categ_id': active_id}</field>
+        </record>
+        <!--<record id="ir_product_category_open_quant" model="ir.values">-->
+        <record id="product.ir_product_category_open" model="ir.values">
+            <field name="key2" eval="'tree_but_open'"/>
+            <field name="model" eval="'product.category'"/>
+            <field name="name">Quants by Categories</field>
+            <field name="value" eval="'ir.actions.act_window,%d' % quant_normal_action_tree"/>
+        </record>
+
+    </data>
+</openerp>

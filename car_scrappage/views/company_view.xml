@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="scrappage_company" model="ir.ui.view">
+            <field name="name">res.company.scrappage.config</field>
+            <field name="model">res.company</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.task_company"/>
+          	<field name="arch" type="xml">
+                <field name="project_time_mode_id" position="after">
+                   	<field name="default_survey_id"/>
+                   	<field name="default_private_partner_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

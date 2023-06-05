@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_select_image" model="ir.ui.view">
+            <field name="name">wizard_select_image</field>
+            <field name="model">wizard.select.image</field>
+            <field name="arch" type="xml">
+                <form string="Move image to...">
+                    <field name="image_ids" widget="one2many_selectable" context="{'wizard_id': id, 'active_id': active_id}"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

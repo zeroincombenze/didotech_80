@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="carrier_form_image" model="ir.ui.view">
+            <field name="name">delivery.carrier.form.image</field>
+            <field name="model">delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.view_delivery_carrier_form" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="image" widget="image" class="oe_avatar oe_left"/>
+                    <field name="image_medium" invisible="True" />
+                    <field name="image_small" invisible="True" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_carrier_tree_image" model="ir.ui.view">
+            <field name="name">delivery.carrier.tree.image</field>
+            <field name="model">delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.view_delivery_carrier_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="image_small" widget="image" height="64" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

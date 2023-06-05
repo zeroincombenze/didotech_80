@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="partner_export_form" model="ir.ui.view">
+            <field name="name">wizard.export.partner.form</field>
+            <field name="model">wizard.export.partner</field>
+            <field name="arch" type="xml">
+                <form string="List export">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="export">
+                        <field name="partner_id" />
+                    </group>
+                    <group colspan="4" col="4" states="export">
+                        <group>
+                            <group></group>
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        </group>
+                        <group>
+                            <button type="object" name="action_start_export" string="Start export" icon="gtk-ok"/>
+                        </group>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <field name="info" nolabel="True" states="end" />
+                    <group states="end">
+                        <group>
+                        </group>
+                        <group>
+                            <group>
+                            </group>
+                            <group>
+                                <button icon="gtk-ok" special="cancel" string="Close"/>
+                            </group>
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

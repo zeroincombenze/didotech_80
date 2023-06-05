@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="stock_quant_form_note" model="ir.ui.view">
+            <field name="name">stock.quant.form.note</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_form"/>
+            <field name="arch" type="xml">
+                <field name="inventory_value" position="after">
+                    <field name="lot_id" string="S/N" />
+                    <field name="origin" />
+                    <field name="source" />
+                    <field name="note" />
+                </field>
+
+            </field>
+        </record>
+
+        <record id="stock_quant_tree_note" model="ir.ui.view">
+            <field name="name">stock.quant.tree.note</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree"/>
+            <field name="arch" type="xml">
+                <field name="lot_id" position="replace" />
+                <field name="product_id" position="replace">
+                    <field name="product_code" />
+                    <field name="product_name" />
+                    <field name="product_variant" />
+                    <field name="note" />
+                    <field name="lot_id" string="S/N" />
+                </field>
+                <field name="company_id" position="replace" />
+            </field>
+        </record>
+
+        <record id="view_stock_quant_extended_filter" model="ir.ui.view">
+            <field name="name">stock.quant.extended.select</field>
+            <field name="model">stock.quant</field>
+            <field name="type">search</field>
+            <field name='inherit_id' ref='stock.quant_search_view'/>
+            <field name="arch" type="xml">
+                <search string="Quants" position="inside">
+                    <field name="note" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</openerp>

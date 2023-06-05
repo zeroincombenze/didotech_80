@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openerp>
+    <data>
+
+        <record id="view_mail_parent_rule_form" model="ir.ui.view">
+            <field name="name">mail.parent.rule.form</field>
+            <field name="model">mail.parent.rule</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <!--<h1>-->
+                        <!--<label string="Itinerary"/>-->
+                    <!--</h1>-->
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="model" />
+                            <field name="domain" />
+                            <field name="prefix" />
+                        </group>
+                        <group>
+                            <field name="subject" />
+                            <field name="body" />
+                            <separator string="" colspan="4"/>
+                            <label string="--------------" /><label string=" " />
+                            <field name="suffix" />
+                        </group>
+                    </group>
+
+                    <label string="Pattern:" />
+                    <field name="pattern" nolabel="0" />
+                    <button name="action_match_test" string="Test" type="object"/>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_mail_parent_rule_tree" model="ir.ui.view">
+            <field name="name">mail.parent.rule.tree</field>
+            <field name="model">mail.parent.rule</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="model" />
+                <field name="domain" />
+                <field name="pattern" />
+            </field>
+        </record>
+
+        <record id="action_view_thread_rules" model="ir.actions.act_window">
+            <field name="name">Thread Rules</field>
+            <field name="res_model">mail.parent.rule</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="context">{'search_default_outgoing': 1}</field>-->
+            <!--<field name="search_view_id" ref="view_mail_search"/>-->
+        </record>
+
+        <!-- Add menu entry in Settings/Email -->
+        <menuitem name="Thread Rules" id="menu_thread_rule" parent="base.menu_email" action="action_view_thread_rules" />
+
+    </data>
+</openerp>

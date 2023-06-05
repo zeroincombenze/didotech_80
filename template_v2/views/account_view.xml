@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_invoice_origin_orders" model="ir.ui.view">
+            <field name="name">account.invoice.origin.orders</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="origin_orders" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

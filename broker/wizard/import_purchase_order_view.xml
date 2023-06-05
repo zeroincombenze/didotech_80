@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="import_purchase_order_form" model="ir.ui.view">
+            <field name="name">wizard.import.purchase.order.form</field>
+            <field name="model">wizard.import.purchase.order</field>
+            <field name="arch" type="xml">
+                <form string="List import">
+                    <!-- Invisible field used for hiding and showing widgets based on state value -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="import">
+                        <group>
+                            <field name="name" invisible="True"/>
+                            <field name="data" filename="name"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group colspan="4" col="4" states="import">
+                        <group>
+                            <group></group>
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        </group>
+                        <group>
+                            <button type="object" name="action_start_import" string="Start import" icon="gtk-ok"/>
+                        </group>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <field name="info" nolabel="True" states="end" />
+                    <group states="end">
+                        <group>
+
+                        </group>
+                        <group>
+                            <separator string="" colspan="4"/>
+                            <separator string="" colspan="4"/>
+                            <group>
+                            </group>
+                            <group>
+                                <button icon="gtk-ok" special="cancel" string="Close"/>
+                            </group>
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

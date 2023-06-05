@@ -1,0 +1,53 @@
+$(document).ready(function () {
+    $('.oe_website_sale #add_to_cart, .oe_website_sale #products_grid .a-submit')
+        .off('click')
+        .removeClass('a-submit')
+        .click(function (event) {
+        //alert("Alert from Website_sale_show_qty module");
+        var $link = $(event.currentTarget);
+        var $input = $link.parent().find("input[name='add_qty']");
+        var $input_product = $link.parent().find("input[name='product_id']");
+        var $product_id = parseInt($input_product.val(),10);
+        if(!$product_id) {
+            $product_id = parseInt($input.data('product-id'),10);
+        }        
+        var value = parseInt($input.val(), 10);
+        var line_id = parseInt($input.data('line-id'),10);
+        if (isNaN(value)) value = 0;
+        openerp.jsonRpc("/shop/cart/update_json", 'call', {
+            'line_id': line_id,
+            'product_id': $product_id,
+            'set_qty': value})
+            .then(function (data) {
+                if (!data.quantity) {
+                    location.reload();
+                    return;
+                }
+                var $q = $(".my_cart_quantity");
+                $q.parent().parent().removeClass("hidden", !data.quantity);
+                $q.html(data.cart_quantity).hide().fadeIn(600);
+
+                $input.val(data.quantity);
+                
+                $('.css_quantity[data-product-id='+parseInt($input.data('product-id'),10)+']').removeClass("hidden", !data.quantity)
+                
+                $('.js_quantity[data-line-id='+line_id+']').val(data.quantity).html(data.quantity);
+                $("#cart_total").replaceWith(data['website_sale.total']);
+            });
+        
+        //$(this).closest('form').submit();
+    });
+    
+    $(oe_website_sale).on('click', 'a.js_add_cart_json', function (ev) {
+        ev.preventDefault();
+          var $link = $(ev.currentTarget);
+        var $input = $link.parent().parent().find("input");
+        var min = parseFloat($input.data("min") || 0);
+        var max = parseFloat($input.data("max") || Infinity);
+        var quantity = ($link.has(".fa-minus").length ? -1 : 1) + parseFloat($input.val(),10);
+        $input.val(quantity > min ? (quantity < max ? quantity : max) : min);
+        //$('input[name="'+$input.attr("name")+'"]').val(quantity > min ? (quantity < max ? quantity : max) : min);
+        $input.change();
+        return false;
+    });
+});

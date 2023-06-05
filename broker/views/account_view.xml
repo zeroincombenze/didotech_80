@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+        <record id="invoice_client_supplier_form" model="ir.ui.view">
+            <field name="name">account.client.supplier.invoice.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='Invoice']/sheet[@string='Invoice']/group/group/field[@name='partner_id']" position="before">
+                    <field name="supplier_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="invoice_client_supplier_tree" model="ir.ui.view">
+            <field name="name">account.invoice.client.supplier.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree" />
+            <field name="arch" type="xml">
+                <tree position="attributes">
+                    <attribute name="colors">red:expired == True;blue:state == 'draft';black:state in ('proforma','proforma2','open');gray:state == 'cancel'</attribute>
+                </tree>
+                <field name="partner_id" position="before">
+                    <field name="supplier_id" />
+                    <field name="expired" invisible="True" />
+                </field>
+                <field name="residual" position="before">
+                    <field name="delivery_date" />
+                    <field name="credit_limit" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_supplier_filter" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.select</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//search[@string='Search Invoice']/group[@string='Group By']/filter[@name='group_by_partner_id']" position="before" >
+                    <filter string="Supplier" context="{'group_by': 'supplier_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

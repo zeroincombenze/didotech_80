@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="acquirer_form_bank_gateway" model="ir.ui.view">
+            <field name="name">acquirer.form.bank.gateway</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="acquirer_display"]' position='after'>
+                    <group attrs="{'invisible': [('provider', '!=', 'bank_gateway')]}">
+                        <group>
+                            <group>
+                                <field name="bank_name"/>
+                                <field name="bank_api_username"/>
+                                <field name="bank_api_password"/>
+                            </group>
+                            <group>
+                                <field name="bank_test_enabled"/>
+                                <field name="bank_test_username" attrs="{'invisible': [('bank_test_enabled', '!=', True)]}"/>
+                                <field name="bank_test_password" attrs="{'invisible': [('bank_test_enabled', '!=', True)]}"/>
+                            </group>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

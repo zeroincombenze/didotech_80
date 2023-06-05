@@ -1,0 +1,431 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* template_v2
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-03 16:38+0000\n"
+"PO-Revision-Date: 2017-02-03 16:38+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "% iva"
+msgstr "% iva"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "% sc"
+msgstr "% sc"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_footer
+msgid "&bull;"
+msgstr "&bull;"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Cancelled Invoice"
+msgstr "Fattura annullata"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Carriage Condition"
+msgstr "Resa merce"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Carrier"
+msgstr "Corriere"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Carrier's Signature"
+msgstr "Firma del Corriere"
+
+#. module: template_v2
+#: code:addons/template_v2/models/company.py:14
+#: field:res.company,cf_in_header:0
+#, python-format
+msgid "Codice Fiscale in Header"
+msgstr "Codice Fiscale in Header"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+#: view:website:template_v2.picking_header_new
+msgid "Codice Fiscale:"
+msgstr "Codice Fiscale:"
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_res_company
+msgid "Companies"
+msgstr "Aziende"
+
+#. module: template_v2
+#: code:addons/template_v2/models/company.py:12
+#: field:res.company,custom_header:0
+#, python-format
+msgid "Custom Header"
+msgstr "Custom Header"
+
+#. module: template_v2
+#: model:ir.actions.report.xml,name:template_v2.picking_report_qweb
+msgid "Custom Picking"
+msgstr "Custom Picking"
+
+#. module: template_v2
+#: view:website:template_v2.picking_header_new
+msgid "DDT n."
+msgstr "DDT n."
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Date"
+msgstr "Data"
+
+#. module: template_v2
+#: view:website:template_v2.report_ddt
+msgid "Description"
+msgstr "Descrizione"
+
+#. module: template_v2
+#: view:product.template:template_v2.product_description_form_view
+msgid "Description appears under the product name in invoice..."
+msgstr "Description appears under the product name in invoice..."
+
+#. module: template_v2
+#: code:addons/template_v2/models/product.py:13
+#: field:product.template,description_in_invoice:0
+#, python-format
+msgid "Description visible in invoice"
+msgstr "Description visible in invoice"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+msgid "Descrizione Imposte:"
+msgstr "Descrizione Imposte:"
+
+#. module: template_v2
+#: field:sale.order.line,discounted_price:0
+msgid "Discounted price"
+msgstr "Discounted price"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Driver's Signature"
+msgstr "Firma Conducente"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_footer
+msgid "Email:"
+msgstr "Email:"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Fattura di vendita n."
+msgstr "Fattura di vendita n."
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Fattura fornitore"
+msgstr "Fattura fornitore"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Fattura in bozza"
+msgstr "Fattura in bozza"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_footer
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+msgid "Fiscal Position Remark:"
+msgstr "Fiscal Position Remark:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Goods Description"
+msgstr "Aspetto esteriore dei beni"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Gross Weight"
+msgstr "Peso Lordo"
+
+#. module: template_v2
+#: code:addons/template_v2/models/company.py:13
+#: field:res.company,qweb_header:0
+#, python-format
+msgid "Header (QWeb)"
+msgstr "Header (QWeb)"
+
+#. module: template_v2
+#: view:website:template_v2.picking_header
+#: view:website:template_v2.picking_header_new
+msgid "Indirizzo di fatturazione"
+msgstr "Indirizzo di fatturazione"
+
+#. module: template_v2
+#: view:website:template_v2.picking_header
+#: view:website:template_v2.picking_header_new
+msgid "Indirizzo di spedizione"
+msgstr "Indirizzo di spedizione"
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Righe Fattura"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "Modalità di pagamento:"
+msgstr "Modalità di pagamento:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Net Weight"
+msgstr "Peso Netto"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Nota di Credito"
+msgstr "Nota di Credito"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Nota di Credito Fornitore"
+msgstr "Nota di Credito Fornitore"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_picking_document
+#: view:website:template_v2.report_saleorder_document
+msgid "Note:"
+msgstr "Note:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Notes"
+msgstr "Note"
+
+#. module: template_v2
+#: field:sale.order,order_date:0
+msgid "Order date"
+msgstr "Order date"
+
+#. module: template_v2
+#: field:account.invoice,origin_orders:0
+#: code:addons/template_v2/models/account.py:29
+#: code:addons/template_v2/models/stock.py:31
+#: field:stock.picking,order_id:0
+#, python-format
+msgid "Orders"
+msgstr "Orders"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Ordine di vendita n."
+msgstr "Ordine di vendita n."
+
+#. module: template_v2
+#: view:website:template_v2.picking_header
+#: view:website:template_v2.picking_header_new
+msgid "P.IVA:"
+msgstr "P.IVA:"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "PRO-FORMA"
+msgstr "Pro-Forma"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Parcels"
+msgstr "Colli"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Partita IVA:"
+msgstr "Partita IVA:"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_footer
+msgid "Phone:"
+msgstr "Telefono:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Pick up time"
+msgstr "Ora ritiro"
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_stock_picking
+msgid "Picking List"
+msgstr "Documento di trasporto"
+
+#. module: template_v2
+#: field:stock.picking,picking_date:0
+msgid "Picking date"
+msgstr "Picking date"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Preventivo di vendita n."
+msgstr "Preventivo di vendita n."
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_product_template
+msgid "Product Template"
+msgstr "Modello Prodotto"
+
+#. module: template_v2
+#: field:sale.order,proforma:0
+msgid "Proforma"
+msgstr "Proforma"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Proforma n."
+msgstr "Proforma n."
+
+#. module: template_v2
+#: view:website:template_v2.report_ddt
+msgid "Quantity"
+msgstr "Quantità"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Recipient's Signature"
+msgstr "Firma destinatario"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+#: view:website:template_v2.picking_header_new
+msgid "Riferimento Ordine N."
+msgstr "Riferimento Ordine N."
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+
+#. module: template_v2
+#: model:ir.model,name:template_v2.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Riga d'ordine di vendita"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+msgid "Scadenza delle rate:"
+msgstr "Scadenza delle rate:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Size"
+msgstr "Dimensioni"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+msgid "Spettabile"
+msgstr "Spettabile"
+
+#. module: template_v2
+#: field:account.invoice.line,tax_digits:0
+#: code:addons/template_v2/models/account.py:72
+#: code:addons/template_v2/models/sale.py:46
+#: field:sale.order.line,tax_digits:0
+#, python-format
+msgid "Tax Digits"
+msgstr "Tax Digits"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "Totale IVA:"
+msgstr "Totale IVA:"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "Totale fattura:"
+msgstr "Totale fattura:"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "Totale imponibile:"
+msgstr "Totale imponibile:"
+
+#. module: template_v2
+#: view:website:template_v2.delivery_data
+msgid "Transportation Reason"
+msgstr "Causale del trasporto"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_footer
+msgid "Website:"
+msgstr "Sito web:"
+
+#. module: template_v2
+#: view:website:template_v2.report_picking_document
+msgid "codice"
+msgstr "codice"
+
+#. module: template_v2
+#: view:website:template_v2.external_layout_header
+#: view:website:template_v2.picking_header
+#: view:website:template_v2.picking_header_new
+msgid "del"
+msgstr "del"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_picking_document
+#: view:website:template_v2.report_saleorder_document
+msgid "descrizione"
+msgstr "descrizione"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "imponibile"
+msgstr "imponibile"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_picking_document
+#: view:website:template_v2.report_saleorder_document
+msgid "q.tà"
+msgstr "q.tà"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_picking_document
+#: view:website:template_v2.report_saleorder_document
+msgid "udm"
+msgstr "udm"
+
+#. module: template_v2
+#: view:website:template_v2.report_invoice_document
+#: view:website:template_v2.report_saleorder_document
+msgid "valore"
+msgstr "valore"
+

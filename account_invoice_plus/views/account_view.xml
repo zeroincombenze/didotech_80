@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_plus_order_form" model="ir.ui.view">
+            <field name="name">sale.order.plus.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree[@string='Invoice Lines']" position="attributes">
+                        <attribute name="editable" />
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

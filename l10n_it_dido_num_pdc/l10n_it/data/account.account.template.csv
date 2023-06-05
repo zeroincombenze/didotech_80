@@ -1,0 +1,870 @@
+id,code,name,parent_id:id,user_type:id,type,reconcile
+0,0,Azienda,,account.data_account_type_view,view,FALSE
+A,A,ATTIVITA',0,account.data_account_type_view,view,FALSE
+P,P,PASSIVITA',0,account.data_account_type_view,view,FALSE
+1,1,CREDITI VERSO SOCI,A,account.data_account_type_view,view,FALSE
+0101,0101,SOCI C/APPORTI,1,account.data_account_type_view,view,FALSE
+010101,010101,Crediti verso soci per cap.sottoscritto,0101,account.data_account_type_asset,other,TRUE
+010103,010103,Crediti verso soci per cap. richiamato,0101,account.data_account_type_asset,other,TRUE
+010109,010109,Soci c/trasformazione societaria,0101,account.data_account_type_asset,other,TRUE
+11,11,IMMOBILIZZAZIONI IMMATERIALI,A,account.data_account_type_view,view,FALSE
+1101,1101,COSTI D'IMPIANTO E DI AMPLIAMENTO,11,account.data_account_type_view,view,FALSE
+110101,110101,Spese societarie,1101,account.data_account_type_asset,other,FALSE
+110103,110103,Spese organizzative,1101,account.data_account_type_asset,other,FALSE
+110105,110105,Spese avviamento impianti o produzione,1101,account.data_account_type_asset,other,FALSE
+110107,110107,Costi di impianto e di ampliamento,1101,account.data_account_type_asset,other,FALSE
+1103,1103,BENI IMMATERIALI,11,account.data_account_type_view,view,FALSE
+110302,110302,Software di proprieta' capitalizzato,1103,account.data_account_type_asset,other,FALSE
+110304,110304,Software,1103,account.data_account_type_asset,other,FALSE
+110305,110305,Dir.brev.industr.e utilizz.opere ingegno,1103,account.data_account_type_asset,other,FALSE
+110309,110309,Concessioni e licenze,1103,account.data_account_type_asset,other,FALSE
+110311,110311,Avviamento,1103,account.data_account_type_asset,other,FALSE
+110351,110351,Altri beni immater. migliorie beni terzi,1103,account.data_account_type_asset,other,FALSE
+1105,1105,SPESE PLURIENNALI,11,account.data_account_type_view,view,FALSE
+110502,110502,Costi di ricerca e sviluppo,1105,account.data_account_type_asset,other,FALSE
+110503,110503,Oneri Pluriennali Internet,1105,account.data_account_type_asset,other,FALSE
+110505,110505,Spese di manutenzione da ammortizzare,1105,account.data_account_type_asset,other,FALSE
+110506,110506,Spese plurienn. su beni di terzi,1105,account.data_account_type_asset,other,FALSE
+110507,110507,Spese finanziarie da ammortizzare,1105,account.data_account_type_asset,other,FALSE
+110552,110552,Altre spese pluriennali,1105,account.data_account_type_asset,other,FALSE
+1107,1107,IMMOBILIZZ. IMMAT.IN CORSO E ACCONTI,11,account.data_account_type_view,view,FALSE
+110701,110701,Brevetti in corso,1107,account.data_account_type_asset,other,FALSE
+110703,110703,Costi ricerca e sviluppo in corso,1107,account.data_account_type_asset,other,FALSE
+110705,110705,Software in corso,1107,account.data_account_type_asset,other,FALSE
+110751,110751,Altre immobilizz. immateriali in corso,1107,account.data_account_type_asset,other,FALSE
+13,13,IMMOBILIZZAZIONI MATERIALI,A,account.data_account_type_view,view,FALSE
+1301,1301,TERRENI E FABBRICATI,13,account.data_account_type_view,view,FALSE
+130101,130101,Terreni edificabili,1301,account.data_account_type_asset,other,FALSE
+130105,130105,Fabbricati civili,1301,account.data_account_type_asset,other,FALSE
+130108,130108,Fabbricati industriali,1301,account.data_account_type_asset,other,FALSE
+130112,130112,Costruzioni leggere,1301,account.data_account_type_asset,other,FALSE
+130115,130115,Costruzioni pesanti,1301,account.data_account_type_asset,other,FALSE
+130151,130151,Altri terreni e fabbricati,1301,account.data_account_type_asset,other,FALSE
+1303,1303,IMPIANTI E MACCHINARI,13,account.data_account_type_view,view,FALSE
+130301,130301,Impianti di condizionamento,1303,account.data_account_type_asset,other,FALSE
+130303,130303,Impianti idrotermosanitari,1303,account.data_account_type_asset,other,FALSE
+130304,130304,Impianto audio video sala conferenze,1303,account.data_account_type_asset,other,FALSE
+130305,130305,Impianti elettrici,1303,account.data_account_type_asset,other,FALSE
+130307,130307,Impianti telefonici,1303,account.data_account_type_asset,other,FALSE
+130322,130322,Impianti generici,1303,account.data_account_type_asset,other,FALSE
+130332,130332,Macchinari non automatici,1303,account.data_account_type_asset,other,FALSE
+130342,130342,Macchinari automatici,1303,account.data_account_type_asset,other,FALSE
+130351,130351,Altri impianti e macchinari,1303,account.data_account_type_asset,other,FALSE
+1305,1305,ATTREZZATURE INDUSTRIALI E COMMERCIALI,13,account.data_account_type_view,view,FALSE
+130502,130502,Attrezzature,1305,account.data_account_type_asset,other,FALSE
+130551,130551,Attrezzatura varia e minuta,1305,account.data_account_type_asset,other,FALSE
+1307,1307,ALTRE IMMOBILIZZAZIONI MATERIALI,13,account.data_account_type_view,view,FALSE
+130702,130702,Mobili e arredi,1307,account.data_account_type_asset,other,FALSE
+130703,130703,Scaffalature,1307,account.data_account_type_asset,other,FALSE
+130706,130706,Mobili e macchine ordinarie d'ufficio,1307,account.data_account_type_asset,other,FALSE
+130708,130708,Macchine d'ufficio elettroniche,1307,account.data_account_type_asset,other,FALSE
+130721,130721,Telefonia mobile,1307,account.data_account_type_asset,other,FALSE
+130732,130732,Automezzi,1307,account.data_account_type_asset,other,FALSE
+130739,130739,Autoveicoli,1307,account.data_account_type_asset,other,FALSE
+1309,1309,IMMOBILIZZ.MATERIALI IN CORSO E ACCONTI,13,account.data_account_type_view,view,FALSE
+130902,130902,Fabbricati in corso,1309,account.data_account_type_asset,other,FALSE
+130904,130904,Impianti e macchinari in corso,1309,account.data_account_type_asset,other,FALSE
+130905,130905,Attrezzat. industr. e commerc. in corso,1309,account.data_account_type_asset,other,FALSE
+130906,130906,Mobili e arredi in corso,1309,account.data_account_type_asset,other,FALSE
+130911,130911,Acconti per imm.immateriali,1309,account.data_account_type_asset,other,FALSE
+130951,130951,Altri beni materiali in corso,1309,account.data_account_type_asset,other,FALSE
+15,15,IMMOBILIZZAZIONI FINANZIARIE,A,account.data_account_type_view,view,FALSE
+1501,1501,PARTECIPAZIONI IMMOBILIZZATE,15,account.data_account_type_view,view,FALSE
+150121,150121,Partecipazioni in altre imprese,1501,account.data_account_type_asset,other,TRUE
+1503,1503,FINANZIAM. ATTIVI E ALTRI CRED. IMMOBIL.,15,account.data_account_type_view,view,FALSE
+150321,150321,Finanziamenti attivi a terzi,1503,account.data_account_type_asset,other,TRUE
+150331,150331,Crediti v/assic.per tratt.fine rapporto,1503,account.data_account_type_asset,other,TRUE
+21,21,RIMANENZE,A,account.data_account_type_view,view,FALSE
+2101,2101,RIMANENZE DI MAGAZZINO,21,account.data_account_type_view,view,FALSE
+210101,210101,Rimanenze di prodotti finiti,2101,account.data_account_type_asset,other,FALSE
+210111,210111,Rimanenze di merci,2101,account.data_account_type_asset,other,FALSE
+210121,210121,Riman. prod.in corso lavoraz. e semilav.,2101,account.data_account_type_asset,other,FALSE
+210131,210131,"Riman. mat.prime, sussid. e di consumo",2101,account.data_account_type_asset,other,FALSE
+210133,210133,Rimanenze imballaggi,2101,account.data_account_type_asset,other,FALSE
+2103,2103,LAVORI IN CORSO,21,account.data_account_type_view,view,FALSE
+210301,210301,Lavori in corso su ordinazione,2103,account.data_account_type_asset,other,FALSE
+23,23,CREDITI COMMERCIALI,A,account.data_account_type_view,view,FALSE
+2301,2301,FATTURE/NOTE CREDITO DA EMETTERE,23,account.data_account_type_view,view,FALSE
+230101,230101,Fatture da emettere a clienti terzi,2301,account.data_account_type_asset,other,TRUE
+230102,230102,Fatture da emettere soci,2301,account.data_account_type_asset,other,TRUE
+230121,230121,Note credito da emettere a clienti terzi,2301,account.data_account_type_liability,other,TRUE
+2303,2303,CLIENTI,23,account.data_account_type_view,view,FALSE
+230301,230301,Clienti,2303,account.data_account_type_receivable,receivable,TRUE
+2313,2313,PORTAFOGLIO CLIENTI,23,account.data_account_type_view,view,FALSE
+231301,231301,Effetti attivi,2313,account.data_account_type_receivable,receivable,TRUE
+231303,231303,Effetti all'incasso,2313,account.data_account_type_receivable,receivable,TRUE
+231305,231305,Effetti anticipati,2313,account.data_account_type_receivable,receivable,TRUE
+231307,231307,Effetti richiamati o insoluti,2313,account.data_account_type_receivable,receivable,TRUE
+2317,2317,CLIENTI C/SPESE ANTICIPATE,23,account.data_account_type_view,view,FALSE
+231701,231701,Clienti terzi c/spese anticipate,2317,account.data_account_type_asset,other,TRUE
+27,27,CREDITI VARI,A,account.data_account_type_view,view,FALSE
+2701,2701,ANTICIPI A FORNITORI,27,account.data_account_type_view,view,FALSE
+270107,270107,Anticipi a fornitori terzi,2701,account.data_account_type_asset,other,TRUE
+270108,270108,Fornitori c/anticipi,2701,account.data_account_type_asset,other,TRUE
+270109,270109,Anticipi per acq.immobilizz.immateriali,2701,account.data_account_type_asset,other,TRUE
+270111,270111,Anticipi per acq.immobilizz. materiali,2701,account.data_account_type_asset,other,TRUE
+270113,270113,Anticipi acquisti per magazzino,2701,account.data_account_type_asset,other,TRUE
+270151,270151,Anticipi diversi,2701,account.data_account_type_asset,other,TRUE
+2705,2705,CREDITI VARI V/TERZI,27,account.data_account_type_view,view,FALSE
+270501,270501,Depositi cauzionali per utenze,2705,account.data_account_type_asset,other,TRUE
+270503,270503,Depositi cauzionali vari,2705,account.data_account_type_asset,other,TRUE
+270505,270505,Caparre confirmatorie,2705,account.data_account_type_asset,other,TRUE
+270511,270511,Costi anticipati,2705,account.data_account_type_asset,other,TRUE
+270513,270513,Clienti c/anticipaz.in nome e per conto,2705,account.data_account_type_asset,other,TRUE
+270514,270514,Crediti vs soci,2705,account.data_account_type_asset,other,TRUE
+270521,270521,Crediti per risarcimenti,2705,account.data_account_type_asset,other,TRUE
+270529,270529,Crediti per interessi di mora v/terzi,2705,account.data_account_type_asset,other,TRUE
+270535,270535,Crediti v/factor,2705,account.data_account_type_asset,other,TRUE
+270551,270551,Crediti vari v/terzi,2705,account.data_account_type_asset,other,TRUE
+2707,2707,CREDITI VERSO IL PERSONALE,27,account.data_account_type_view,view,FALSE
+270701,270701,Anticipi in c/retribuzione,2707,account.data_account_type_asset,other,FALSE
+270707,270707,Prestiti a dipendenti,2707,account.data_account_type_asset,other,FALSE
+270709,270709,Personale c/arrotondamenti,2707,account.data_account_type_asset,other,FALSE
+2709,2709,CREDITI VERSO ENTI PREVIDENZIALI,27,account.data_account_type_view,view,FALSE
+270901,270901,INPS c/assegni famigliari,2709,account.data_account_type_asset,other,FALSE
+270902,270902,Crediti INAIL,2709,account.data_account_type_asset,other,FALSE
+270903,270903,Crediti inps amministratore,2709,account.data_account_type_asset,other,FALSE
+29,29,ATTIVITA' FINANZIARIE NON IMMOBILIZZATE,A,account.data_account_type_view,view,FALSE
+2901,2901,PARTECIPAZIONI NON IMMOBILIZZATE,29,account.data_account_type_view,view,FALSE
+290107,290107,Partecipazioni in altre imprese,2901,account.data_account_type_asset,other,FALSE
+2903,2903,TITOLI NEGOZIABILI E AZIONI PROPRIE,29,account.data_account_type_view,view,FALSE
+290301,290301,Titoli di Stato,2903,account.data_account_type_asset,other,FALSE
+290303,290303,Obbligazioni ordinarie,2903,account.data_account_type_asset,other,FALSE
+290305,290305,Obbligazioni convertibili,2903,account.data_account_type_asset,other,FALSE
+290307,290307,Altre obbligazioni private,2903,account.data_account_type_asset,other,FALSE
+290311,290311,Quote fondi comuni di investimento,2903,account.data_account_type_asset,other,FALSE
+290331,290331,Altri titoli negoziabili,2903,account.data_account_type_asset,other,FALSE
+31,31,DISPONIBILITA' LIQUIDE,A,account.data_account_type_view,view,FALSE
+3101,3101,BANCHE C/C,31,account.data_account_type_view,view,FALSE
+310101,310101,Banca Popolare di Sondrio,3101,account.data_account_type_bank,liquidity,FALSE
+310121,310121,Posta c/c,3101,account.data_account_type_bank,liquidity,FALSE
+3103,3103,CASSA,31,account.data_account_type_view,view,FALSE
+310303,310303,Cassa contanti,3103,account.data_account_type_cash,liquidity,FALSE
+39,39,RATEI E RISCONTI ATTIVI,A,account.data_account_type_view,view,FALSE
+3901,3901,RATEI E RISCONTI ATTIVI,39,account.data_account_type_view,view,FALSE
+390101,390101,Ratei attivi,3901,account.data_account_type_asset,other,FALSE
+390103,390103,Risconti attivi,3901,account.data_account_type_asset,other,FALSE
+41,41,CAPITALE E RISERVE,P,account.data_account_type_view,view,FALSE
+4101,4101,CAPITALE E RISERVE,41,account.data_account_type_view,view,FALSE
+410101,410101,Capitale sociale,4101,account.data_account_type_liability,other,FALSE
+410102,410102,Capitale sociale formato con utili,4101,account.data_account_type_liability,other,FALSE
+410103,410103,Cap.soc.formato da riserve in sosp.d'imp,4101,account.data_account_type_liability,other,FALSE
+410105,410105,Riserva da rivalutazioni,4101,account.data_account_type_liability,other,FALSE
+410108,410108,Riserva legale,4101,account.data_account_type_liability,other,FALSE
+410110,410110,Riserva per azioni proprie,4101,account.data_account_type_liability,other,FALSE
+410112,410112,Riserva statutaria,4101,account.data_account_type_liability,other,FALSE
+410113,410113,Riserva copertura perdite,4101,account.data_account_type_liability,other,FALSE
+410115,410115,Riserva da sovrapprezzo,4101,account.data_account_type_liability,other,FALSE
+410121,410121,Riserva in sospensione d'imposta,4101,account.data_account_type_liability,other,FALSE
+410124,410124,Riserva straordinaria,4101,account.data_account_type_liability,other,FALSE
+410125,410125,Riserva da versamenti in c/capitale,4101,account.data_account_type_liability,other,FALSE
+410139,410139,Riserva da utili su cambi,4101,account.data_account_type_liability,other,FALSE
+410152,410152,Altre riserve,4101,account.data_account_type_liability,other,FALSE
+410155,410155,Soci c/prelevamenti,4101,account.data_account_type_liability,other,FALSE
+410157,410157,Titolare c/prelevamenti,4101,account.data_account_type_liability,other,FALSE
+410173,410173,Versam.in conto futuro aumento di capit.,4101,account.data_account_type_liability,other,FALSE
+410175,410175,Riserva da trasformazione ex soc.persone,4101,account.data_account_type_liability,other,FALSE
+410177,410177,Riserva da riduzione capitale sociale,4101,account.data_account_type_liability,other,FALSE
+43,43,RISULTATI DELL'ESERCIZIO,A,account.data_account_type_view,view,FALSE
+4301,4301,RISULTATI PORTATI A NUOVO,43,account.data_account_type_view,view,FALSE
+430103,430103,Perdita portata a nuovo,4301,account.data_account_type_asset,other,FALSE
+430106,430106,Utile portato a nuovo,4301,account.data_account_type_liability,other,FALSE
+430109,430109,Avanzo utili,4301,account.data_account_type_liability,other,FALSE
+4303,4303,RISULTATO D'ESERCIZIO,43,account.data_account_type_view,view,FALSE
+430301,430301,Utile d'esercizio,4303,account.data_account_type_liability,other,FALSE
+430303,430303,Perdita d'esercizio,4303,account.data_account_type_asset,other,FALSE
+51,51,FONDI RISCHI E ONERI,P,account.data_account_type_view,view,FALSE
+5101,5101,FONDI DI QUIESCENZA E SIMILI,51,account.data_account_type_view,view,FALSE
+510101,510101,F.do pensione integrativa personale dip.,5101,account.data_account_type_liability,other,FALSE
+510103,510103,Fondo indennita' di cessazione co.co.co.,5101,account.data_account_type_liability,other,FALSE
+510105,510105,F.do indenn. cessaz. rapporti di agenzia,5101,account.data_account_type_liability,other,FALSE
+510109,510109,Fondo TFM amministratori,5101,account.data_account_type_liability,other,FALSE
+5103,5103,FONDI IMPOSTE,51,account.data_account_type_view,view,FALSE
+510301,510301,Fondo imposte,5103,account.data_account_type_liability,other,FALSE
+510303,510303,Fondo imposte differite,5103,account.data_account_type_liability,other,FALSE
+510305,510305,Fondo imposte contenzioso tributario,5103,account.data_account_type_liability,other,FALSE
+510307,510307,Fondo imposte differite IRES,5103,account.data_account_type_liability,other,FALSE
+510309,510309,Fondo imposte differite IRAP,5103,account.data_account_type_liability,other,FALSE
+53,53,FONDO T.F.R.,P,account.data_account_type_view,view,FALSE
+5301,5301,FONDO T.F.R.,53,account.data_account_type_view,view,FALSE
+530101,530101,Fondo T.F.R.,5301,account.data_account_type_liability,other,FALSE
+530102,530102,Fondo T.F.R. amministratori,5301,account.data_account_type_liability,other,FALSE
+530103,530103,Fondo ferie,5301,account.data_account_type_liability,other,FALSE
+530104,530104,Fondo indennita' lavoratori autonomi,5301,account.data_account_type_liability,other,FALSE
+530105,530105,Anticipi su TFR,5301,account.data_account_type_asset,other,FALSE
+55,55,FINANZIAMENTI DI TERZI,P,account.data_account_type_view,view,FALSE
+5501,5501,PRESTITI OBBLIGAZIONARI,55,account.data_account_type_view,view,FALSE
+5503,5503,MUTUI E FINANZIAMENTI,55,account.data_account_type_view,view,FALSE
+550307,550307,Effetti passivi finanziari,5503,account.data_account_type_liability,other,TRUE
+550309,550309,Banche c/finanziamenti valut.,5503,account.data_account_type_liability,other,TRUE
+550321,550321,Mutui ipotecari di terzi,5503,account.data_account_type_liability,other,TRUE
+550323,550323,Finanz.a medio/lungo termine di terzi,5503,account.data_account_type_liability,other,TRUE
+550330,550330,Debiti v/factor,5503,account.data_account_type_liability,other,TRUE
+550351,550351,Debiti vs soci,5503,account.data_account_type_liability,other,TRUE
+5504,5504,BANCA C/ANTICIPAZIONI,55,account.data_account_type_view,view,FALSE
+550401,550401,Banca c/anticipi sbf,5504,account.data_account_type_receivable,receivable,TRUE
+57,57,DEBITI COMMERCIALI,P,account.data_account_type_view,view,FALSE
+5701,5701,FATTURE/NOTE CREDITO DA RICEVERE,57,account.data_account_type_view,view,FALSE
+570102,570102,Fatture da ricevere,5701,account.data_account_type_liability,other,TRUE
+570121,570121,Note credito da ricevere,5701,account.data_account_type_asset,other,TRUE
+5703,5703,FORNITORI,57,account.data_account_type_view,view,FALSE
+570301,570301,Fornitori,5703,account.data_account_type_payable,payable,TRUE
+5707,5707,DEBITI FINANZIARI V/FORNITORI,57,account.data_account_type_view,view,FALSE
+570701,570701,Debiti finanziari v/fornitori,5707,account.data_account_type_liability,other,TRUE
+5713,5713,DEBITI CAMBIARI,57,account.data_account_type_view,view,FALSE
+571301,571301,Effetti passivi verso fornitori,5713,account.data_account_type_liability,other,TRUE
+59,59,CONTI ERARIALI,P,account.data_account_type_view,view,FALSE
+5901,5901,ERARIO C/IVA,59,account.data_account_type_view,view,FALSE
+590101,590101,Iva su acquisti,5901,account.data_account_type_asset,other,FALSE
+590103,590103,Iva su vendite,5901,account.data_account_type_liability,other,FALSE
+590105,590105,Iva su corrispettivi,5901,account.data_account_type_liability,other,FALSE
+590109,590109,Erario c/liquidazione Iva,5901,account.data_account_type_asset,other,FALSE
+590110,590110,Erario c/ Iva compensabile,5901,account.data_account_type_asset,other,FALSE
+590111,590111,Iva in attesa di rimborso,5901,account.data_account_type_asset,other,FALSE
+590113,590113,Interessi su Iva in attesa di rimborso,5901,account.data_account_type_asset,other,FALSE
+590121,590121,IVA a debito acquisti intracomunitari,5901,account.data_account_type_liability,other,FALSE
+590123,590123,IVA a credito acquisti intracomunitari,5901,account.data_account_type_asset,other,FALSE
+590131,590131,Erario c/sanzioni Iva,5901,account.data_account_type_liability,other,FALSE
+5903,5903,ERARIO C/SOSTITUTO D'IMPOSTA,59,account.data_account_type_view,view,FALSE
+590301,590301,Erario c/riten.su redd.lav.dipend.e assi,5903,account.data_account_type_liability,other,FALSE
+590302,590302,Erario c/rit.add.irpef comunale,5903,account.data_account_type_liability,other,FALSE
+590303,590303,Erario c/ritenute su redditi lav. auton.,5903,account.data_account_type_liability,other,FALSE
+590304,590304,Erarioc c/rit.add.le irpef regionale,5903,account.data_account_type_liability,other,FALSE
+590305,590305,Erario c/ritenute agenti e rappresentan.,5903,account.data_account_type_liability,other,FALSE
+590307,590307,Erario c/ritenute su redditi di capitale,5903,account.data_account_type_liability,other,FALSE
+590309,590309,Erario c/ritenute su redd.amministr.,5903,account.data_account_type_liability,other,FALSE
+590311,590311,Erario c/vers.imposte da sostituto (730),5903,account.data_account_type_liability,other,FALSE
+590313,590313,Erario c/imposte sostitutive su TFR,5903,account.data_account_type_liability,other,FALSE
+5905,5905,ERARIO C/RIT. SUBITE E CREDITI D'IMPOSTA,59,account.data_account_type_view,view,FALSE
+590501,590501,Ritenute subite su interessi attivi,5905,account.data_account_type_asset,other,TRUE
+590503,590503,Ritenute subite su provvigioni,5905,account.data_account_type_asset,other,TRUE
+590507,590507,Erario c/rimb.rit.subite e cred.imposta,5905,account.data_account_type_asset,other,TRUE
+590525,590525,Erario c/crediti d'imposta su T.F.R.,5905,account.data_account_type_asset,other,TRUE
+590531,590531,Erario c/crediti d'imposta vari,5905,account.data_account_type_asset,other,TRUE
+590533,590533,Erario c/crediti 4% fotovoltaico,5905,account.data_account_type_asset,other,TRUE
+590535,590535,Crediti d'imposta,5905,account.data_account_type_asset,other,TRUE
+590541,590541,Altre ritenute subite,5905,account.data_account_type_asset,other,TRUE
+5907,5907,ERARIO C/IMPOSTE,59,account.data_account_type_view,view,FALSE
+590701,590701,Erario c/IRES,5907,account.data_account_type_liability,other,FALSE
+590702,590702,Erario c/acconti IRES,5907,account.data_account_type_asset,other,FALSE
+590703,590703,Erario c/IRAP,5907,account.data_account_type_liability,other,FALSE
+590704,590704,Erario c/acconti IRAP,5907,account.data_account_type_asset,other,FALSE
+590705,590705,Erario c/imposte sostitutive 3%,5907,account.data_account_type_liability,other,FALSE
+590706,590706,Erario c/imposte sostitutive 1.5%,5907,account.data_account_type_liability,other,FALSE
+590707,590707,Esattoria,5907,account.data_account_type_liability,other,FALSE
+590708,590708,ERARIO C/IMPOSTE SOST. SU FINANZIAMENTI,5907,account.data_account_type_liability,other,FALSE
+590711,590711,Erario c/rimborsi imposte 730,5907,account.data_account_type_liability,other,FALSE
+590715,590715,Erario c/sanzioni,5907,account.data_account_type_liability,other,FALSE
+590719,590719,Erario c/interessi da rateizzazione,5907,account.data_account_type_liability,other,FALSE
+590723,590723,Erario c/imposte sospese - rateizzate,5907,account.data_account_type_liability,other,FALSE
+590725,590725,Crediti per imposte anticipate,5907,account.data_account_type_asset,other,FALSE
+590727,590727,Crediti IRES per imposte anticipate,5907,account.data_account_type_asset,other,FALSE
+590729,590729,Crediti IRAP per imposte anticipate,5907,account.data_account_type_asset,other,FALSE
+590751,590751,Erario c/altri tributi,5907,account.data_account_type_liability,other,FALSE
+61,61,ENTI PREVIDENZIALI,P,account.data_account_type_view,view,FALSE
+6101,6101,ENTI PREVIDENZIALI,61,account.data_account_type_view,view,FALSE
+610101,610101,INPS dipendenti,6101,account.data_account_type_liability,other,FALSE
+610102,610102,INPS Amministratori  e co.co.co,6101,account.data_account_type_liability,other,FALSE
+610103,610103,INPS collaboratori,6101,account.data_account_type_liability,other,FALSE
+610104,610104,Inps dipendenti rol/ferie,6101,account.data_account_type_liability,other,FALSE
+610105,610105,INAIL dipendenti/collaboratori,6101,account.data_account_type_liability,other,FALSE
+610106,610106,INAIL dipendenti/collab.(da liquidare),6101,account.data_account_type_liability,other,FALSE
+610107,610107,Enasarco,6101,account.data_account_type_liability,other,FALSE
+610108,610108,INAIL dipendenti rol/ferie,6101,account.data_account_type_liability,other,FALSE
+610109,610109,Ritenute subite Enasarco,6101,account.data_account_type_asset,other,FALSE
+610151,610151,F.do contrib.bilaterale ENEA,6101,account.data_account_type_liability,other,FALSE
+610152,610152,F.do contrib.org.paritetico.naz.confapi,6101,account.data_account_type_liability,other,FALSE
+63,63,ALTRI DEBITI,P,account.data_account_type_view,view,FALSE
+6305,6305,DEBITI VARI,63,account.data_account_type_view,view,FALSE
+630501,630501,Depositi cauzionali ricevuti,6305,account.data_account_type_liability,other,TRUE
+630505,630505,Debiti v/amministratori,6305,account.data_account_type_liability,other,TRUE
+630507,630507,Debiti v/collaboratori,6305,account.data_account_type_liability,other,TRUE
+630509,630509,Debiti verso CONAI per contributi,6305,account.data_account_type_liability,other,TRUE
+630511,630511,Sindacati c/ritenute,6305,account.data_account_type_liability,other,TRUE
+630541,630541,Debiti per contributi ambientali,6305,account.data_account_type_liability,other,TRUE
+630545,630545,Debiti v/enti prev e assist(enasarco),6305,account.data_account_type_liability,other,TRUE
+630546,630546,Debiti tributari saldo irap,6305,account.data_account_type_liability,other,TRUE
+630547,630547,Debiti per trattenute c/terzi,6305,account.data_account_type_liability,other,TRUE
+630548,630548,Debiti tributari saldo ires,6305,account.data_account_type_liability,other,TRUE
+630551,630551,Debiti diversi verso terzi,6305,account.data_account_type_liability,other,TRUE
+630552,630552,Debiti vs associazioni di categoria,6305,account.data_account_type_liability,other,TRUE
+6307,6307,DEBITI VERSO IL PERSONALE,63,account.data_account_type_view,view,FALSE
+630701,630701,Personale c/retribuzioni,6307,account.data_account_type_liability,other,TRUE
+630702,630702,PERSONALE DIPENDENTE,6307,account.data_account_type_liability,other,TRUE
+630703,630703,Personale c/nota spese,6307,account.data_account_type_liability,other,TRUE
+630704,630704,Personale c/retribuzione rol/ferie,6307,account.data_account_type_liability,other,TRUE
+630705,630705,Personale c/liquidazione,6307,account.data_account_type_liability,other,TRUE
+630707,630707,Personale c/arrotondamenti,6307,account.data_account_type_liability,other,TRUE
+630708,630708,Cessione di quinto,6307,account.data_account_type_liability,other,TRUE
+630709,630709,Dipendenti c/retribuzioni differite,6307,account.data_account_type_liability,other,TRUE
+6309,6309,COMPETENZE SOCI,63,account.data_account_type_view,view,FALSE
+630903,630903,Soci c/utili,6309,account.data_account_type_liability,other,TRUE
+630905,630905,Soci c/interessi su finanziamenti,6309,account.data_account_type_liability,other,TRUE
+630907,630907,Debiti vs soci per capitale da rimbors.,6309,account.data_account_type_liability,other,TRUE
+65,65,F.DI AMMORTAMENTO IMMOBILIZZAZIONI,P,account.data_account_type_view,view,FALSE
+6501,6501,F.DI AMMORT. IMMOBILIZZAZ. IMMATERIALI,65,account.data_account_type_view,view,FALSE
+650101,650101,F.do ammortamento spese societarie,6501,account.data_account_type_liability,other,FALSE
+650103,650103,F.do ammort.oneri plurien.internet,6501,account.data_account_type_liability,other,FALSE
+650105,650105,F.do amm. avviamento impianti o produz.,6501,account.data_account_type_liability,other,FALSE
+650106,650106,F.do amm.to costi di impianto e ampliam.,6501,account.data_account_type_liability,other,FALSE
+650107,650107,F.do ammortam. costi di ric.e sviluppo,6501,account.data_account_type_liability,other,FALSE
+650109,650109,F.do ammortamento costi di pubblicita',6501,account.data_account_type_liability,other,FALSE
+650111,650111,F.do amm.dir.brev.e utilizz.opere ingeg.,6501,account.data_account_type_liability,other,FALSE
+650115,650115,F.do ammortamento concessioni e licenze,6501,account.data_account_type_liability,other,FALSE
+650117,650117,F.do ammortamento avviamento,6501,account.data_account_type_liability,other,FALSE
+650121,650121,F.do amm.to sw di proprieta' capitalizz.,6501,account.data_account_type_liability,other,FALSE
+650124,650124,F.do amm.to costi controllo qualita',6501,account.data_account_type_liability,other,FALSE
+650131,650131,F.do amm.to spese di manutenzione,6501,account.data_account_type_liability,other,FALSE
+650133,650133,F.do amm.to spese di manut.beni di terzi,6501,account.data_account_type_liability,other,FALSE
+650141,650141,F.do amm.to costi plurien.beni di terzi,6501,account.data_account_type_liability,other,FALSE
+650153,650153,F.do amm. altre spese pluriennali,6501,account.data_account_type_liability,other,FALSE
+6503,6503,FONDI AMMORTAMENTO FABBRICATI,65,account.data_account_type_view,view,FALSE
+650301,650301,F.do ammortamento fabbricati civili,6503,account.data_account_type_liability,other,FALSE
+650304,650304,F.do ammort.fabbricati industriali ,6503,account.data_account_type_liability,other,FALSE
+650305,650305,F.do ammortamento costruzioni leggere,6503,account.data_account_type_liability,other,FALSE
+650307,650307,F.do ammort. costruzioni pesanti,6503,account.data_account_type_liability,other,FALSE
+650351,650351,F.do ammort.fabbricati strument.indeduc.,6503,account.data_account_type_liability,other,FALSE
+650355,650355,F.do amm.to altri terreni e fabbricati,6503,account.data_account_type_liability,other,FALSE
+6505,6505,FONDI AMMORTAMENTO IMPIANTI E MACCHINARI,65,account.data_account_type_view,view,FALSE
+650501,650501,F.do ammort. impianti di condizionamento,6505,account.data_account_type_liability,other,FALSE
+650502,650502,F.do ammort. macchinari,6505,account.data_account_type_liability,other,FALSE
+650503,650503,F.do ammort. impianti idrotermosanitari,6505,account.data_account_type_liability,other,FALSE
+650505,650505,F.do ammort. impianti elettrici,6505,account.data_account_type_liability,other,FALSE
+650507,650507,F.do ammort. impianti comunicazione,6505,account.data_account_type_liability,other,FALSE
+650509,650509,F.do ammortamento impianti specifici,6505,account.data_account_type_liability,other,FALSE
+650511,650511,F.do ammort. macchinari non automatici,6505,account.data_account_type_liability,other,FALSE
+650513,650513,F.do ammort. macchinari automatici,6505,account.data_account_type_liability,other,FALSE
+650552,650552,F.do ammort.ant. Macchinari,6505,account.data_account_type_liability,other,FALSE
+6507,6507,FONDI AMMORT.ATTREZZ.INDUSTR.E COMMERC.,65,account.data_account_type_view,view,FALSE
+650702,650702,F.do amm.attrezzature,6507,account.data_account_type_liability,other,FALSE
+650703,650703,F.do ammort. attrezzatura varia e minuta,6507,account.data_account_type_liability,other,FALSE
+6509,6509,FONDI AMMORTAMENTO ALTRI BENI MATERIALI,65,account.data_account_type_view,view,FALSE
+650901,650901,F.do ammortamento mobili e arredi,6509,account.data_account_type_liability,other,FALSE
+650904,650904,F.do amm. mobili e macch.ordin.d'uffic ,6509,account.data_account_type_liability,other,FALSE
+650906,650906,F.do amm.macchine d'ufficio elettron.,6509,account.data_account_type_liability,other,FALSE
+650910,650910,F.do ammortamento automezzi,6509,account.data_account_type_liability,other,FALSE
+650911,650911,F.do ammortamento autoveicoli,6509,account.data_account_type_liability,other,FALSE
+650913,650913,F.do ammortamento telefonia mobile,6509,account.data_account_type_liability,other,FALSE
+650952,650952,Fondo ammortamento altri beni materiali,6509,account.data_account_type_liability,other,FALSE
+67,67,FONDI SVALUTAZIONE,P,account.data_account_type_view,view,FALSE
+6701,6701,FONDI SVALUTAZ. IMMOBILIZZ.IMMATERIALI,67,account.data_account_type_view,view,FALSE
+670101,670101,F.do svalutazione spese societarie,6701,account.data_account_type_liability,other,FALSE
+670103,670103,F.do svalutazione spese organizzative,6701,account.data_account_type_liability,other,FALSE
+670105,670105,F.do sval. avviamento impianti o produz.,6701,account.data_account_type_liability,other,FALSE
+670106,670106,F.do svalut.costi di impianto e ampliam.,6701,account.data_account_type_liability,other,FALSE
+670107,670107,F.do svalutaz. costi di ric.e sviluppo,6701,account.data_account_type_liability,other,FALSE
+670109,670109,F.do svalutazione costi di pubblicita',6701,account.data_account_type_liability,other,FALSE
+670111,670111,F.do sval. diritti brev. e utilizz.opere,6701,account.data_account_type_liability,other,FALSE
+670115,670115,F.do svalutazione concessioni e licenze,6701,account.data_account_type_liability,other,FALSE
+670117,670117,F.do svalutazione avviamento,6701,account.data_account_type_liability,other,FALSE
+670151,670151,F.do sval. altre immobilizz. immateriali,6701,account.data_account_type_liability,other,FALSE
+6703,6703,FONDI SVAL.IMMOBILIZZAZIONI MATERIALI,67,account.data_account_type_view,view,FALSE
+670301,670301,F.do svalutazione terreni edificabili,6703,account.data_account_type_liability,other,FALSE
+670305,670305,F.do svalutazione fabbricati civili,6703,account.data_account_type_liability,other,FALSE
+670307,670307,F.do svalutazione fabbricati industriali,6703,account.data_account_type_liability,other,FALSE
+670309,670309,F.do svalutaz.altri terreni e fabbricati,6703,account.data_account_type_liability,other,FALSE
+670311,670311,F.do svalutazione impianti specifici,6703,account.data_account_type_liability,other,FALSE
+670313,670313,F.do svalutaz.macchinari non automatici,6703,account.data_account_type_liability,other,FALSE
+670315,670315,F.do svalutazione macchinari automatici,6703,account.data_account_type_liability,other,FALSE
+670321,670321,F.do svalutaz.attrezzat. varia e minuta,6703,account.data_account_type_liability,other,FALSE
+670323,670323,F.do sval.mobili e macch.ordin.d'ufficio,6703,account.data_account_type_liability,other,FALSE
+670325,670325,F.do svalut.macchine d'ufficio elettron.,6703,account.data_account_type_liability,other,FALSE
+670327,670327,F.do svalutazione automezzi,6703,account.data_account_type_liability,other,FALSE
+670329,670329,F.do svalutazione autoveicoli,6703,account.data_account_type_liability,other,FALSE
+670331,670331,F.di sval. mobili ed arredi,6703,account.data_account_type_liability,other,FALSE
+670335,670335,F.di svalutaz. costruzioni leggere,6703,account.data_account_type_liability,other,FALSE
+670337,670337,F.di sval. impianti generici,6703,account.data_account_type_liability,other,FALSE
+670341,670341,F.di sval.costruzioni pesanti,6703,account.data_account_type_liability,other,FALSE
+670351,670351,F.do svalutazione altri beni materiali,6703,account.data_account_type_liability,other,FALSE
+6705,6705,FONDI SVAL.IMMOBILIZZAZIONI FINANZIARIE,67,account.data_account_type_view,view,FALSE
+670507,670507,F.do svalut. partecip. in altre imprese,6705,account.data_account_type_liability,other,FALSE
+6709,6709,FONDI SVALUTAZIONE RIMANENZE,67,account.data_account_type_view,view,FALSE
+670901,670901,F.di sval.mat.prime sussid. e di consumo,6709,account.data_account_type_liability,other,FALSE
+670903,670903,F.di sval.prod.in corso di lav. e semil.,6709,account.data_account_type_liability,other,FALSE
+670905,670905,F.di sval.lavori in corso su ordinazione,6709,account.data_account_type_liability,other,FALSE
+670907,670907,F.di sval.prodotti finiti,6709,account.data_account_type_liability,other,FALSE
+670909,670909,F.di svalutazione merci,6709,account.data_account_type_liability,other,FALSE
+6711,6711,FONDI SVALUTAZIONE CREDITI,67,account.data_account_type_view,view,FALSE
+671111,671111,Fondo svalutazione crediti diversi,6711,account.data_account_type_liability,other,FALSE
+69,69,RATEI E RISCONTI PASSIVI,P,account.data_account_type_view,view,FALSE
+6901,6901,RATEI E RISCONTI PASSIVI,69,account.data_account_type_view,view,FALSE
+690101,690101,Ratei passivi,6901,account.data_account_type_liability,other,FALSE
+690103,690103,Risconti passivi,6901,account.data_account_type_liability,other,FALSE
+C,C,COSTI,0,account.data_account_type_view,view,FALSE
+R,R,RICAVI,0,account.data_account_type_view,view,FALSE
+70,70,RICAVI DELLE VENDITE E DELLE PRESTAZIONI,R,account.data_account_type_view,view,FALSE
+7001,7001,VENDITE PRODOTTI FINITI E MERCI,70,account.data_account_type_view,view,FALSE
+700101,700101,Vendita prodotti finiti,7001,account.data_account_type_income,other,FALSE
+700111,700111,Lavorazioni c/terzi,7001,account.data_account_type_income,other,FALSE
+700121,700121,Vendita merci,7001,account.data_account_type_income,other,FALSE
+700128,700128,Contributo CONAI addebitato a Clienti,7001,account.data_account_type_income,other,FALSE
+700150,700150,Ricavi per addebiti a clienti,7001,account.data_account_type_income,other,FALSE
+7003,7003,VENDITE SEMILAVORATI,70,account.data_account_type_view,view,FALSE
+700301,700301,Vendite semilavorati,7003,account.data_account_type_income,other,FALSE
+7005,7005,VENDITE MATERIE PRIME E SUSSIDIARIE,70,account.data_account_type_view,view,FALSE
+700501,700501,Vendite materie prime,7005,account.data_account_type_income,other,FALSE
+700521,700521,Vendite materie sussidiarie,7005,account.data_account_type_income,other,FALSE
+700541,700541,Vendite materiali di consumo,7005,account.data_account_type_income,other,FALSE
+700545,700545,Addebito bancali,7005,account.data_account_type_income,other,FALSE
+7007,7007,RICAVI ACCESSORI DI VENDITA,70,account.data_account_type_view,view,FALSE
+700701,700701,Rivalsa spese di trasporto e installaz.,7007,account.data_account_type_income,other,FALSE
+700702,700702,Rivalsa spese impianto stampa,7007,account.data_account_type_income,other,FALSE
+700703,700703,Rivalsa spese fustella,7007,account.data_account_type_income,other,FALSE
+700704,700704,Rivalsa spese avviamento,7007,account.data_account_type_income,other,FALSE
+700721,700721,Rivalsa spese di incasso,7007,account.data_account_type_income,other,FALSE
+700741,700741,Ricavi accessori diversi,7007,account.data_account_type_income,other,FALSE
+7009,7009,RICAVI DA PRESTAZIONI,70,account.data_account_type_view,view,FALSE
+700921,700921,Provvigioni attive,7009,account.data_account_type_income,other,FALSE
+7011,7011,VARIAZIONI PASSIVE SU VENDITE,70,account.data_account_type_view,view,FALSE
+701101,701101,Resi su vendite,7011,account.data_account_type_expense,other,FALSE
+701111,701111,Sconti commerciali su vendite,7011,account.data_account_type_expense,other,FALSE
+701121,701121,Ribassi e abbuoni passivi,7011,account.data_account_type_expense,other,FALSE
+701131,701131,Premi su vendite,7011,account.data_account_type_expense,other,FALSE
+701141,701141,Sconti pagamento su vendite,7011,account.data_account_type_expense,other,FALSE
+71,71,VARIAZ.RIM.FINALI E COSTRUZIONI INTERNE,R,account.data_account_type_view,view,FALSE
+7101,7101,RIMANENZE FINALI,71,account.data_account_type_view,view,FALSE
+710101,710101,Rimanenze finali prodotti finiti,7101,account.data_account_type_income,other,FALSE
+710111,710111,Rimanenze finali di merci,7101,account.data_account_type_income,other,FALSE
+710121,710121,Rim.finali prod.in corso lavor. e semil.,7101,account.data_account_type_income,other,FALSE
+710131,710131,"Rim.finali mat.prime,sussid.e di consumo",7101,account.data_account_type_income,other,FALSE
+710133,710133,Rimanenze finali imballaggi,7101,account.data_account_type_income,other,FALSE
+72,72,VARIAZ. RIMANENZE INIZIALI,C,account.data_account_type_view,view,FALSE
+7205,7205,RIMANENZE INIZIALI,72,account.data_account_type_view,view,FALSE
+720501,720501,Rimanenze iniziali prodotti finiti,7205,account.data_account_type_expense,other,FALSE
+720511,720511,Rimanenze iniziali di merci,7205,account.data_account_type_expense,other,FALSE
+720521,720521,Rim.iniz.prod.in corso lavoraz.e semil.,7205,account.data_account_type_expense,other,FALSE
+720531,720531,"Rim.iniz.mat.prime, sussid.e di consumo",7205,account.data_account_type_expense,other,FALSE
+720533,720533,Rimanenze iniziali imballaggi,7205,account.data_account_type_expense,other,FALSE
+73,73,ALTRI RICAVI E PROVENTI,R,account.data_account_type_view,view,FALSE
+7301,7301,PROVENTI DIVERSI,73,account.data_account_type_view,view,FALSE
+730101,730101,Proventi immobiliari,7301,account.data_account_type_income,other,FALSE
+730107,730107,Rimborsi spese di trasferta da clienti,7301,account.data_account_type_income,other,FALSE
+730111,730111,Rivalsa costi diversi,7301,account.data_account_type_income,other,FALSE
+730113,730113,Risarcim.danni /sinistri,7301,account.data_account_type_income,other,FALSE
+730114,730114,Risarcim. danni perdita prodotti,7301,account.data_account_type_income,other,FALSE
+730119,730119,Sopravvenienze attive da gestione ordin.,7301,account.data_account_type_income,other,FALSE
+730122,730122,"Sopravvenienze attive art.88, c.2",7301,account.data_account_type_income,other,FALSE
+730125,730125,Contributi in conto esercizio,7301,account.data_account_type_income,other,FALSE
+730127,730127,Contributi in c/esercizio non impon.IRAP,7301,account.data_account_type_income,other,FALSE
+730128,730128,Contributi in c/esercizio non imponibili,7301,account.data_account_type_income,other,FALSE
+730135,730135,Arrotondamenti attivi diversi,7301,account.data_account_type_income,other,FALSE
+730137,730137,Penali attive,7301,account.data_account_type_income,other,FALSE
+730151,730151,Altri ricavi e proventi,7301,account.data_account_type_income,other,FALSE
+7303,7303,PLUSVAL.DA ALIENAZIONE CESPITI,73,account.data_account_type_view,view,FALSE
+730301,730301,Plusvalenze da alienazione cespiti,7303,account.data_account_type_income,other,FALSE
+730303,730303,Plusval.rateizzabili da alien.cespiti,7303,account.data_account_type_income,other,FALSE
+730311,730311,Ricavi per cessione cespiti ammortizzati,7303,account.data_account_type_income,other,FALSE
+75,75,ACQUISTI DI BENI,C,account.data_account_type_view,view,FALSE
+7501,7501,ACQ. PER PRODUZ.DI BENI E PER RIVENDITA,75,account.data_account_type_view,view,FALSE
+750101,750101,Acquisti materie prime,7501,account.data_account_type_expense,other,FALSE
+750102,750102,Acquisti impianti,7501,account.data_account_type_expense,other,FALSE
+750103,750103,Acquisti materie sussidiarie,7501,account.data_account_type_expense,other,FALSE
+750104,750104,Acquisti fustelle,7501,account.data_account_type_expense,other,FALSE
+750105,750105,Acquisti materiali di consumo,7501,account.data_account_type_expense,other,FALSE
+750106,750106,Acquisto merci,7501,account.data_account_type_expense,other,FALSE
+750108,750108,Acquisti e riparazione bancali,7501,account.data_account_type_expense,other,FALSE
+750111,750111,Confezioni e imballi,7501,account.data_account_type_expense,other,FALSE
+750121,750121,Acquisti materiali per campionature,7501,account.data_account_type_expense,other,FALSE
+750150,750150,Costi,7501,account.data_account_type_expense,other,FALSE
+750151,750151,Costi da imputare,7501,account.data_account_type_expense,other,FALSE
+7503,7503,ACQUISTI PER LA PRODUZIONE DI SERVIZI,75,account.data_account_type_view,view,FALSE
+750301,750301,Acq.beni materiali per produz. servizi,7503,account.data_account_type_expense,other,FALSE
+750331,750331,Oneri accessori su servizi,7503,account.data_account_type_expense,other,FALSE
+7505,7505,VARIAZIONI ATTIVE SU ACQUISTI,75,account.data_account_type_view,view,FALSE
+750501,750501,Sconti su acquisti,7505,account.data_account_type_income,other,FALSE
+750503,750503,Abb.e arrotond.attivi su acquisti,7505,account.data_account_type_income,other,FALSE
+750505,750505,Premi su acquisti,7505,account.data_account_type_income,other,FALSE
+750507,750507,Resi su acquisti,7505,account.data_account_type_income,other,FALSE
+7507,7507,ACQUISTI DIVERSI,75,account.data_account_type_view,view,FALSE
+750701,750701,"Acquisto beni strumentali <  516,46 euro",7507,account.data_account_type_expense,other,FALSE
+750703,750703,"Acq.beni strum<516,46 telef.fissa/mobile",7507,account.data_account_type_expense,other,FALSE
+750711,750711,Attrezzatura minuta,7507,account.data_account_type_expense,other,FALSE
+750715,750715,Materiali manut. fabbricati,7507,account.data_account_type_expense,other,FALSE
+750721,750721,Materiali manut. impianti e macchinari,7507,account.data_account_type_expense,other,FALSE
+750722,750722,Materiali manut.carrelli elevatori,7507,account.data_account_type_expense,other,FALSE
+750725,750725,Materiali manutenzioni diverse,7507,account.data_account_type_expense,other,FALSE
+76,76,ACQUISTI DI SERVIZI,C,account.data_account_type_view,view,FALSE
+7601,7601,SERVIZI PER LA PRODUZIONE,76,account.data_account_type_view,view,FALSE
+760101,760101,Lavorazioni di terzi assemblaggio,7601,account.data_account_type_expense,other,FALSE
+760102,760102,Lavorazioni di terzi stampa,7601,account.data_account_type_expense,other,FALSE
+760103,760103,Lavorazioni di terzi plastifica,7601,account.data_account_type_expense,other,FALSE
+760104,760104,Lavorazioni di terzi varie,7601,account.data_account_type_expense,other,FALSE
+760105,760105,Lavorazioni di terzi accoppiatura,7601,account.data_account_type_expense,other,FALSE
+760106,760106,Lavorazioni di terzi incollaggio,7601,account.data_account_type_expense,other,FALSE
+760107,760107,Lavorazioni di terzi fustellatura,7601,account.data_account_type_expense,other,FALSE
+760152,760152,Addebito spese non conformità,7601,account.data_account_type_expense,other,FALSE
+760153,760153,Acq.servizi diversi (attiv.di servizi),7601,account.data_account_type_expense,other,FALSE
+7603,7603,COSTI ACCESSORI PER VENDITE,76,account.data_account_type_view,view,FALSE
+760301,760301,Trasporti su vendite,7603,account.data_account_type_expense,other,FALSE
+760303,760303,Spese doganali su vendite,7603,account.data_account_type_expense,other,FALSE
+760305,760305,Magazzinaggio su vendite,7603,account.data_account_type_expense,other,FALSE
+760307,760307,Costi di spedizione prodotti,7603,account.data_account_type_expense,other,FALSE
+7605,7605,COSTI ACCESSORI PER ACQUISTI,76,account.data_account_type_view,view,FALSE
+760501,760501,Trasporti su acquisti,7605,account.data_account_type_expense,other,FALSE
+760502,760502,Trasporti di terzi (attivit. servizi),7605,account.data_account_type_expense,other,FALSE
+760503,760503,Spese doganali,7605,account.data_account_type_expense,other,FALSE
+760504,760504,Spese doganali (attivit. servizi),7605,account.data_account_type_expense,other,FALSE
+760505,760505,Magazzinaggio su acquisti,7605,account.data_account_type_expense,other,FALSE
+7607,7607,COSTI PER INTERMEDIAZIONE VENDITE,76,account.data_account_type_view,view,FALSE
+760701,760701,Provvigioni passive,7607,account.data_account_type_expense,other,FALSE
+760703,760703,Quote ENASARCO,7607,account.data_account_type_expense,other,FALSE
+760721,760721,Altri costi di intermediazione,7607,account.data_account_type_expense,other,FALSE
+7609,7609,COSTI PER UTENZE,76,account.data_account_type_view,view,FALSE
+760901,760901,Assistenza software,7609,account.data_account_type_expense,other,FALSE
+760902,760902,Spese telefoniche ordinarie,7609,account.data_account_type_expense,other,FALSE
+760904,760904,Spese telefoniche radiomobili,7609,account.data_account_type_expense,other,FALSE
+760907,760907,Servizi internet,7609,account.data_account_type_expense,other,FALSE
+760911,760911,Forza motrice,7609,account.data_account_type_expense,other,FALSE
+760921,760921,Acqua potabile,7609,account.data_account_type_expense,other,FALSE
+760923,760923,Gas,7609,account.data_account_type_expense,other,FALSE
+760931,760931,Pulizia locali,7609,account.data_account_type_expense,other,FALSE
+7610,7610,COSTI CERTIFICAZIONE,76,account.data_account_type_view,view,FALSE
+761001,761001,ISO 9001,7610,account.data_account_type_expense,other,FALSE
+761002,761002,FSC,7610,account.data_account_type_expense,other,FALSE
+7611,7611,MANUTENZIONI MACCHINARI E ATTREZZATURE,76,account.data_account_type_view,view,FALSE
+761101,761101,Manut. impianti e macchinari,7611,account.data_account_type_expense,other,FALSE
+761102,761102,Manut. carrello elevatore,7611,account.data_account_type_expense,other,FALSE
+761103,761103,Manutenz. attrezzature,7611,account.data_account_type_expense,other,FALSE
+761109,761109,Canoni di assistenza fotocopiatrice,7611,account.data_account_type_expense,other,FALSE
+761117,761117,Manut. impianti e macch. terzi,7611,account.data_account_type_expense,other,FALSE
+761119,761119,Manutenz. attrezzature di terzi,7611,account.data_account_type_expense,other,FALSE
+761123,761123,Manut.telef.mobile di terzi autotrasp.,7611,account.data_account_type_expense,other,FALSE
+7613,7613,MANUTENZIONE FABBRICATI,76,account.data_account_type_view,view,FALSE
+761301,761301,Manutenz. fabbricati,7613,account.data_account_type_expense,other,FALSE
+761309,761309,Manut. su immob.di terzi,7613,account.data_account_type_expense,other,FALSE
+77,77,GESTIONE VEICOLI AZIENDALI,C,account.data_account_type_view,view,FALSE
+7701,7701,ESERCIZIO AUTOMEZZI,77,account.data_account_type_view,view,FALSE
+770101,770101,Carburanti e lubrif. automezzi,7701,account.data_account_type_expense,other,FALSE
+770103,770103,Premi di assicurazione automezzi,7701,account.data_account_type_expense,other,FALSE
+770105,770105,Altre spese automezzi,7701,account.data_account_type_expense,other,FALSE
+770106,770106,Multe automezzi,7701,account.data_account_type_expense,other,FALSE
+770107,770107,Tassa di possesso automezzi,7701,account.data_account_type_expense,other,FALSE
+770111,770111,Spese manut. automezzi proprietà,7701,account.data_account_type_expense,other,FALSE
+770113,770113,Spese manut. automezzi terzi,7701,account.data_account_type_expense,other,FALSE
+7703,7703,ESERCIZIO AUTOVETTURE E ALTRI VEICOLI,77,account.data_account_type_view,view,FALSE
+770301,770301,Carburanti e lubrif. autovetture,7703,account.data_account_type_expense,other,FALSE
+770326,770326,Premi di assicurazione autovetture,7703,account.data_account_type_expense,other,FALSE
+770329,770329,Spese manut. autovetture proprietà,7703,account.data_account_type_expense,other,FALSE
+770330,770330,Spese manut. autovetture terzi,7703,account.data_account_type_expense,other,FALSE
+770331,770331,Premi di assicuraz autovet.dipendenti,7703,account.data_account_type_expense,other,FALSE
+770339,770339,Altre spese autovetture,7703,account.data_account_type_expense,other,FALSE
+770349,770349,Multe autovetture,7703,account.data_account_type_expense,other,FALSE
+770351,770351,Tassa possesso autovetture,7703,account.data_account_type_expense,other,FALSE
+78,78,PRESTAZIONI DI LAVORO NON DIPENDENTE,C,account.data_account_type_view,view,FALSE
+7801,7801,PRESTAZIONI DI LAVORO AUTONOMO,78,account.data_account_type_view,view,FALSE
+780101,780101,Consulenze amministrative e fiscali,7801,account.data_account_type_expense,other,FALSE
+780102,780102,Consulenze e studi tecnici,7801,account.data_account_type_expense,other,FALSE
+780103,780103,Consulenze tecniche,7801,account.data_account_type_expense,other,FALSE
+780104,780104,Consulenze peritali,7801,account.data_account_type_expense,other,FALSE
+780105,780105,Consulenze  legali,7801,account.data_account_type_expense,other,FALSE
+780106,780106,Consulenze sistema qualita',7801,account.data_account_type_expense,other,FALSE
+780107,780107,Consulenze  Notarili,7801,account.data_account_type_expense,other,FALSE
+780111,780111,Consulenze marketing e pubblicitarie,7801,account.data_account_type_expense,other,FALSE
+780113,780113,Consulenze selez. personale,7801,account.data_account_type_expense,other,FALSE
+7803,7803,ALTRE PRESTAZIONI DI LAVORO,78,account.data_account_type_view,view,FALSE
+780301,780301,Compensi per co.co.co.,7803,account.data_account_type_expense,other,FALSE
+780303,780303,Compensi collaboratori,7803,account.data_account_type_expense,other,FALSE
+780370,780370,Contributi INAIL co.co.co,7803,account.data_account_type_expense,other,FALSE
+780373,780373,Compensi per lavoro interinale,7803,account.data_account_type_expense,other,FALSE
+7805,7805,COMPENSI ORGANI SOCIALI,78,account.data_account_type_view,view,FALSE
+780521,780521,Contributi amministratori,7805,account.data_account_type_expense,other,FALSE
+780532,780532,Rimb.spese pi' di lista a amministratori,7805,account.data_account_type_expense,other,FALSE
+780541,780541,Compensi collegio sindacale,7805,account.data_account_type_expense,other,FALSE
+79,79,"SPESE AMMIN.,COMM. E DI RAPPRESENTANZA",C,account.data_account_type_view,view,FALSE
+7901,7901,SPESE COMMERCIALI E DI VIAGGIO,79,account.data_account_type_view,view,FALSE
+790101,790101,"Pubblicit., Inserzioni e affissioni",7901,account.data_account_type_expense,other,FALSE
+790103,790103,Spese per alberghi e ristoranti,7901,account.data_account_type_expense,other,FALSE
+790117,790117,Materiale pubblicitario,7901,account.data_account_type_expense,other,FALSE
+790121,790121,Pedaggi autostradali autovetture,7901,account.data_account_type_expense,other,FALSE
+790122,790122,Pedaggi autostradali automezzi,7901,account.data_account_type_expense,other,FALSE
+790131,790131,"Fiere, mostre, convegni",7901,account.data_account_type_expense,other,FALSE
+790171,790171,Spese di viaggio,7901,account.data_account_type_expense,other,FALSE
+790192,790192,Spese commerciali varie,7901,account.data_account_type_expense,other,FALSE
+7903,7903,SPESE DI RAPPRESENTANZA,79,account.data_account_type_view,view,FALSE
+790301,790301,Somministrazione di bevande,7903,account.data_account_type_expense,other,FALSE
+790310,790310,Omaggi a dipendenti,7903,account.data_account_type_expense,other,FALSE
+790311,790311,Omaggi con valore unit.<lim.art.108 c.2,7903,account.data_account_type_expense,other,FALSE
+790319,790319,Omaggi con val.unit.>lim.art.108 c.2 ded,7903,account.data_account_type_expense,other,FALSE
+790321,790321,Omaggi con val.unit>lim.art.108 c.2 inde,7903,account.data_account_type_expense,other,FALSE
+7905,7905,SPESE AMMINISTRATIVE E GENERALI,79,account.data_account_type_view,view,FALSE
+790501,790501,Spese postali,7905,account.data_account_type_expense,other,FALSE
+790502,790502,Spese per sicurezza e 626,7905,account.data_account_type_expense,other,FALSE
+790511,790511,Altre spese amministrative,7905,account.data_account_type_expense,other,FALSE
+790513,790513,Cancelleria varia,7905,account.data_account_type_expense,other,FALSE
+790522,790522,Assicurazioni vita e infortuni soci,7905,account.data_account_type_expense,other,FALSE
+790523,790523,Assicurazioni obbligatorie,7905,account.data_account_type_expense,other,FALSE
+790531,790531,Pulizie e vigilanza,7905,account.data_account_type_expense,other,FALSE
+790533,790533,Servizi smaltimento rifiuti,7905,account.data_account_type_expense,other,FALSE
+790534,790534,Servizi di derattizzazione,7905,account.data_account_type_expense,other,FALSE
+790541,790541,Vidimazioni e certificati,7905,account.data_account_type_expense,other,FALSE
+790543,790543,Valori bollati,7905,account.data_account_type_expense,other,FALSE
+790545,790545,Costi di ricerca e sviluppo,7905,account.data_account_type_expense,other,FALSE
+790551,790551,Spese generali varie,7905,account.data_account_type_expense,other,FALSE
+80,80,COSTI PER GODIMENTO BENI DI TERZI,C,account.data_account_type_view,view,FALSE
+800002,800002,Canoni leasing immob deduc. IRPEF/IRAP,80,account.data_account_type_expense,other,FALSE
+8003,8003,LOCAZ. E CANONI AUTOV. E ALTRI VEICOLI,80,account.data_account_type_view,view,FALSE
+800301,800301,Canoni leasing autovett.e altri veicoli,8003,account.data_account_type_expense,other,FALSE
+800302,800302,Canoni leasing veicoli aziend.deducib.,8003,account.data_account_type_expense,other,FALSE
+800305,800305,Canoni leasing veicoli promiscui dipend.,8003,account.data_account_type_expense,other,FALSE
+800322,800322,Can./spese access.noleg.veicoli deduc.,8003,account.data_account_type_expense,other,FALSE
+8005,8005,LOCAZIONI E CANONI IMPIANTI E ATTREZZ.,80,account.data_account_type_view,view,FALSE
+800502,800502,Canoni leasing apparecchi telefonici,8005,account.data_account_type_expense,other,FALSE
+800505,800505,Canoni leasing attrezzature deducibili,8005,account.data_account_type_expense,other,FALSE
+81,81,COSTI PERSONALE DIPENDENTE,C,account.data_account_type_view,view,FALSE
+8101,8101,COSTI PERSONALE DIPENDENTE,81,account.data_account_type_view,view,FALSE
+810101,810101,Retribuzioni lorde,8101,account.data_account_type_expense,other,FALSE
+810103,810103,Retrib.lorde dipend.disab./formaz./R&S,8101,account.data_account_type_expense,other,FALSE
+810105,810105,Retribuzioni lorde apprendisti,8101,account.data_account_type_expense,other,FALSE
+810111,810111,Contributi INPS amm.e co.co.co,8101,account.data_account_type_expense,other,FALSE
+810112,810112,Contributi INPS dipendenti ordinari,8101,account.data_account_type_expense,other,FALSE
+810113,810113,Contrib.INPS collaboratori,8101,account.data_account_type_expense,other,FALSE
+810115,810115,Contributi ente bilaterale ENFEA,8101,account.data_account_type_expense,other,FALSE
+810116,810116,Contribut.paritetico naz.confapi,8101,account.data_account_type_expense,other,FALSE
+810120,810120,Oneri sociali fiscalizzati,8101,account.data_account_type_expense,other,FALSE
+810121,810121,Oneri sociali fiscalizz. dipend.ordinari,8101,account.data_account_type_expense,other,FALSE
+810122,810122,Oneri soc.fiscal.dip. disab./formaz./R&S,8101,account.data_account_type_expense,other,FALSE
+810125,810125,Oneri sociali fiscalizzati apprendisti,8101,account.data_account_type_expense,other,FALSE
+810130,810130,Quote T.F.R. dipendenti,8101,account.data_account_type_expense,other,FALSE
+810131,810131,Quote TFR dipend.ordinari (in azienda),8101,account.data_account_type_expense,other,FALSE
+810132,810132,Quote TFR dipend.ordin.(tesoreria INPS),8101,account.data_account_type_expense,other,FALSE
+810133,810133,Quote TFR dipend.ordin.(previd.complem.),8101,account.data_account_type_expense,other,FALSE
+810134,810134,Quote TFR apprendisti (in azienda),8101,account.data_account_type_expense,other,FALSE
+810135,810135,Quote TFR apprendisti (tesoreria INPS),8101,account.data_account_type_expense,other,FALSE
+810136,810136,Quote TFR apprendisti (previd.complem.),8101,account.data_account_type_expense,other,FALSE
+810137,810137,Quote TFR Corrisposta,8101,account.data_account_type_expense,other,FALSE
+810138,810138,Quote TFR disab./formaz/R&S (tesor.INPS),8101,account.data_account_type_expense,other,FALSE
+810139,810139,Quote TFR disab./form/R&S(previd.compl.),8101,account.data_account_type_expense,other,FALSE
+810147,810147,Contrib.altri enti previdenz./assistenz.,8101,account.data_account_type_expense,other,FALSE
+810149,810149,Premi INAIL,8101,account.data_account_type_expense,other,FALSE
+8103,8103,COSTI DIVERSI PERSONALE DIPENDENTE,81,account.data_account_type_view,view,FALSE
+810301,810301,Rimborsi chilometrici,8103,account.data_account_type_expense,other,FALSE
+810330,810330,Rimborsi spese personale a pie' di lista,8103,account.data_account_type_expense,other,FALSE
+810351,810351,"Ricerca, formazione e addestramento",8103,account.data_account_type_expense,other,FALSE
+810367,810367,Indennit. mancato preavviso,8103,account.data_account_type_expense,other,FALSE
+810371,810371,Altri costi per il personale dipendente,8103,account.data_account_type_expense,other,FALSE
+810372,810372,Vestiario personale dipendente,8103,account.data_account_type_expense,other,FALSE
+810375,810375,Visite mediche period.e di contr.dipend.,8103,account.data_account_type_expense,other,FALSE
+82,82,ACCANTONAMENTI PER RISCHI E ACC.TI VARI,C,account.data_account_type_view,view,FALSE
+8203,8203,ACCANTONAMENTI VARI,82,account.data_account_type_view,view,FALSE
+820301,820301,Acc.to fondo imposte differite ires,8203,account.data_account_type_expense,other,FALSE
+820305,820305,Acc.to fondo manutenzione,8203,account.data_account_type_expense,other,FALSE
+820351,820351,Acc.to altri fondi e spese,8203,account.data_account_type_expense,other,FALSE
+83,83,ONERI DIVERSI DI GESTIONE,C,account.data_account_type_view,view,FALSE
+8305,8305,ONERI TRIBUTARI,83,account.data_account_type_view,view,FALSE
+830501,830501,IVA indetraibile,8305,account.data_account_type_expense,other,FALSE
+830502,830502,IMU,8305,account.data_account_type_expense,other,FALSE
+830511,830511,Diritti camerali,8305,account.data_account_type_expense,other,FALSE
+830521,830521,Imposta di registro e concess. govern.,8305,account.data_account_type_expense,other,FALSE
+830522,830522,Tasse concess.govern.telefonia mobile,8305,account.data_account_type_expense,other,FALSE
+830525,830525,Imposte ipotecarie e catastali,8305,account.data_account_type_expense,other,FALSE
+830531,830531,Tassa raccolta e smaltimento rifiuti,8305,account.data_account_type_expense,other,FALSE
+830549,830549,Altre imposte e tasse deducibili,8305,account.data_account_type_expense,other,FALSE
+8307,8307,ALTRI COSTI DI ESERCIZIO,83,account.data_account_type_view,view,FALSE
+830701,830701,"Spese, perdite e sopravvenienze passive",8307,account.data_account_type_expense,other,FALSE
+830702,830702,"Spese, perdite e sopravv.passive ded.",8307,account.data_account_type_expense,other,FALSE
+830705,830705,Costi indeducibili,8307,account.data_account_type_expense,other,FALSE
+830706,830706,Sopravvenienzrìe passive ind.,8307,account.data_account_type_expense,other,FALSE
+830712,830712,oneri su provvigioni (Enasarco),8307,account.data_account_type_expense,other,FALSE
+830717,830717,Penalit. e multe ravvedimento,8307,account.data_account_type_expense,other,FALSE
+830721,830721,Contributi associativi,8307,account.data_account_type_expense,other,FALSE
+830725,830725,"Abbonamenti, libri e pubblicazioni",8307,account.data_account_type_expense,other,FALSE
+830731,830731,Perdite su crediti,8307,account.data_account_type_expense,other,FALSE
+830735,830735,Arrotondamenti passivi diversi,8307,account.data_account_type_expense,other,FALSE
+830751,830751,Costi e spese diverse,8307,account.data_account_type_expense,other,FALSE
+830761,830761,Erogazioni liberali art.100 c.2,8307,account.data_account_type_expense,other,FALSE
+830762,830762,Erogaz.liberali deducibili art.100 c.2,8307,account.data_account_type_expense,other,FALSE
+830763,830763,Erogaz.liberali non deducib. art.100 c.2,8307,account.data_account_type_expense,other,FALSE
+8309,8309,MINUSVAL. DA ALIENAZ./ELIMINAZ. CESPITI,83,account.data_account_type_view,view,FALSE
+830901,830901,Minusval. da alienaz./eliminaz. cespiti,8309,account.data_account_type_expense,other,FALSE
+830921,830921,Minusv.civil.da alienaz./elim. cespiti,8309,account.data_account_type_expense,other,FALSE
+85,85,PROVENTI FINANZIARI,R,account.data_account_type_view,view,FALSE
+8503,8503,PROVENTI DA PARTEC.IN SOC. DI CAPITALI,85,account.data_account_type_view,view,FALSE
+850301,850301,Dividendi da altre societ. di capitali,8503,account.data_account_type_income,other,FALSE
+850331,850331,Altri proventi da soc.di capitali,8503,account.data_account_type_income,other,FALSE
+8504,8504,PROVENTI DA PARTEC.IN TRASPAR. FISCALE,85,account.data_account_type_view,view,FALSE
+850401,850401,Divid.da soc.controllate in reg.di trasp,8504,account.data_account_type_income,other,FALSE
+850403,850403,Divid.da soc.collegate in reg.di trasp.,8504,account.data_account_type_income,other,FALSE
+850405,850405,Dividendi da soc.cap.in regime di trasp.,8504,account.data_account_type_income,other,FALSE
+8505,8505,PROVENTI DA PARTECIP.IN SOC. DI PERSONE,85,account.data_account_type_view,view,FALSE
+8509,8509,PROVENTI DA TITOLI,85,account.data_account_type_view,view,FALSE
+850901,850901,Proventi da titoli d'investimento,8509,account.data_account_type_income,other,FALSE
+850915,850915,Proventi da titoli negoziabili,8509,account.data_account_type_income,other,FALSE
+8511,8511,PROVENTI FINANZIARI VARI,85,account.data_account_type_view,view,FALSE
+851111,851111,Interessi att. su crediti verso clienti,8511,account.data_account_type_income,other,FALSE
+851113,851113,Interessi attivi su c/c bancari,8511,account.data_account_type_income,other,FALSE
+851115,851115,Interessi attivi postali,8511,account.data_account_type_income,other,FALSE
+851117,851117,Interessi attivi diversi,8511,account.data_account_type_income,other,FALSE
+851123,851123,Differenze attive su cambi,8511,account.data_account_type_income,other,FALSE
+86,86,ONERI FINANZIARI,C,account.data_account_type_view,view,FALSE
+8601,8601,ONERI FINANZIARI VERSO BANCHE,86,account.data_account_type_view,view,FALSE
+860101,860101,Interessi passivi bancari,8601,account.data_account_type_expense,other,FALSE
+860103,860103,Sconti passivi di portafoglio,8601,account.data_account_type_expense,other,FALSE
+860105,860105,Commissioni e spese bancarie,8601,account.data_account_type_expense,other,FALSE
+860111,860111,Commissioni e spese su factoring,8601,account.data_account_type_expense,other,FALSE
+8603,8603,ONERI FINANZIARI DIVERSI,86,account.data_account_type_view,view,FALSE
+860301,860301,Interessi passivi su finanziam. di soci,8603,account.data_account_type_expense,other,FALSE
+860305,860305,Interessi passivi su mutui,8603,account.data_account_type_expense,other,FALSE
+860307,860307,Interessi/commissioni passive factoring,8603,account.data_account_type_expense,other,FALSE
+860308,860308,Interessi su derivati,8603,account.data_account_type_expense,other,FALSE
+860313,860313,Interessi passivi versam.iva trimestrali,8603,account.data_account_type_expense,other,FALSE
+860323,860323,Differenze passive su cambi,8603,account.data_account_type_expense,other,FALSE
+860345,860345,Interessi passivi di mora,8603,account.data_account_type_expense,other,FALSE
+860346,860346,Interessi passivi tributari,8603,account.data_account_type_expense,other,FALSE
+860347,860347,Inter.pass.per dilaz. pagamento imposte,8603,account.data_account_type_expense,other,FALSE
+860351,860351,Oneri finanziari diversi,8603,account.data_account_type_expense,other,FALSE
+860357,860357,Perdite su titoli,8603,account.data_account_type_expense,other,FALSE
+87,87,PROVENTI STRAORDINARI,R,account.data_account_type_view,view,FALSE
+8701,8701,PROVENTI STRAORDINARI,87,account.data_account_type_view,view,FALSE
+870101,870101,Plusvalenze straordinarie,8701,account.data_account_type_income,other,FALSE
+870106,870106,Plusv.da cessione immobili,8701,account.data_account_type_income,other,FALSE
+870133,870133,Sopravvenienze attive,8701,account.data_account_type_income,other,FALSE
+870141,870141,Risarcimento danni perdita cespiti,8701,account.data_account_type_income,other,FALSE
+870171,870171,Altri proventi straordinari,8701,account.data_account_type_income,other,FALSE
+88,88,ONERI STRAORDINARI,C,account.data_account_type_view,view,FALSE
+8801,8801,ONERI STRAORDINARI,88,account.data_account_type_view,view,FALSE
+880101,880101,Minusvalenze e perdite straordinarie,8801,account.data_account_type_expense,other,FALSE
+880131,880131,Sopravvenienze passive ,8801,account.data_account_type_expense,other,FALSE
+880151,880151,Imposte relative esercizi precedenti,8801,account.data_account_type_expense,other,FALSE
+880161,880161,Altri oneri straordinari,8801,account.data_account_type_expense,other,FALSE
+90,90,AMMORTAMENTI,C,account.data_account_type_view,view,FALSE
+9011,9011,AMMORT.CIVILISTICI IMMOBILIZZ. MATERIALI,90,account.data_account_type_view,view,FALSE
+901101,901101,Amm.ti civilistici fabbricati civili,9011,account.data_account_type_expense,other,FALSE
+901103,901103,Amm.ti civilistici fabbricati industriali,9011,account.data_account_type_expense,other,FALSE
+901105,901105,Amm.ti civilistici altri fabbricati,9011,account.data_account_type_expense,other,FALSE
+901107,901107,Amm.civilistici imp.di condizionamento,9011,account.data_account_type_expense,other,FALSE
+901111,901111,Amm.ti civilistici impianti elettrici,9011,account.data_account_type_expense,other,FALSE
+901115,901115,Amm.ti civilistici impianti generici,9011,account.data_account_type_expense,other,FALSE
+901117,901117,Amm.ti civilistici macchinari non automatici,9011,account.data_account_type_expense,other,FALSE
+901119,901119,Amm.ti civilistici macchinari automatici,9011,account.data_account_type_expense,other,FALSE
+901121,901121,Amm.ti civil.altri impianti e macchinari,9011,account.data_account_type_expense,other,FALSE
+901125,901125,Amm.ti civilistici attrez.varia e minuta,9011,account.data_account_type_expense,other,FALSE
+901126,901126,Ammort.civilist. attrezzatura scaffalat.,9011,account.data_account_type_expense,other,FALSE
+901127,901127,Amm.ti civilistici mobili e arredi,9011,account.data_account_type_expense,other,FALSE
+901129,901129,Amm.ti civilistici macchine d'ufficio ordinarie,9011,account.data_account_type_expense,other,FALSE
+901131,901131,Amm.ti civilistici macchine d'ufficio elettroniche,9011,account.data_account_type_expense,other,FALSE
+901133,901133,Amm.ti civilistici costruzioni leggere,9011,account.data_account_type_expense,other,FALSE
+901135,901135,Amm.ti civilistici costruzioni pesanti,9011,account.data_account_type_expense,other,FALSE
+901137,901137,Amm.ti civilistici automezzi,9011,account.data_account_type_expense,other,FALSE
+901143,901143,Amm.ti civilistici telefonia mobile,9011,account.data_account_type_expense,other,FALSE
+901151,901151,Amm.ti civilistici autovetture,9011,account.data_account_type_expense,other,FALSE
+901167,901167,Amm.ti civilistici altri beni materiali,9011,account.data_account_type_expense,other,FALSE
+9013,9013,AMMORT.TI CIV.IMMOBILIZZ.IMMATERIALI,90,account.data_account_type_view,view,FALSE
+901301,901301,Amm.to civilistico spese societarie,9013,account.data_account_type_expense,other,FALSE
+901303,901303,Amm.to civilistico spese organizzative,9013,account.data_account_type_expense,other,FALSE
+901305,901305,Amm.civilistico avviam.impianti o produz,9013,account.data_account_type_expense,other,FALSE
+901306,901306,Amm.to civil.costi di impianto e ampliam,9013,account.data_account_type_expense,other,FALSE
+901307,901307,Amm.civilistico costi ricerca e sviluppo,9013,account.data_account_type_expense,other,FALSE
+901309,901309,Amm.to civilistico costi di pubblicita',9013,account.data_account_type_expense,other,FALSE
+901311,901311,Amm.civil.dir.brev.ind.e util.opere ing.,9013,account.data_account_type_expense,other,FALSE
+901313,901313,"Amm.to civilistico concessioni, licenze",9013,account.data_account_type_expense,other,FALSE
+901317,901317,Amm.to civilistico avviamento,9013,account.data_account_type_expense,other,FALSE
+901321,901321,Amm.to civil. Software,9013,account.data_account_type_expense,other,FALSE
+901331,901331,Amm.civilistico spese manut.da ammort.,9013,account.data_account_type_expense,other,FALSE
+901341,901341,Amm.civil.oneri plurien.su finanz.,9013,account.data_account_type_expense,other,FALSE
+901351,901351,Amm. civilist.costi plurien.beni di terz,9013,account.data_account_type_expense,other,FALSE
+901353,901353,Amm. civilistico altre spese pluriennali,9013,account.data_account_type_expense,other,FALSE
+91,91,RIVALUTAZIONI,R,account.data_account_type_view,view,FALSE
+9101,9101,RIVALUTAZIONI IMMOBILIZZAZ. FINANZIARIE,91,account.data_account_type_view,view,FALSE
+910103,910103,Rivalutaz. partecipaz.in altre imprese,9101,account.data_account_type_income,other,FALSE
+92,92,SVALUTAZIONI,C,account.data_account_type_view,view,FALSE
+9201,9201,SVALUTAZ.IMMOBILIZZAZIONI IMMATERIALI,92,account.data_account_type_view,view,FALSE
+920101,920101,Svalutazione avviamento,9201,account.data_account_type_expense,other,FALSE
+920111,920111,Svalutazione spese pluriennali,9201,account.data_account_type_expense,other,FALSE
+920113,920113,Svalutazione beni immateriali,9201,account.data_account_type_expense,other,FALSE
+9203,9203,SVALUTAZ.IMMOBILIZZ. MATERIALI,92,account.data_account_type_view,view,FALSE
+920303,920303,Svalutaz.terreni e fabbricati,9203,account.data_account_type_expense,other,FALSE
+920307,920307,Svalutaz.attrezzatura ind.le e commerc.,9203,account.data_account_type_expense,other,FALSE
+920309,920309,Svalutaz.veicoli,9203,account.data_account_type_expense,other,FALSE
+920351,920351,Svalutaz. altri beni materiali,9203,account.data_account_type_expense,other,FALSE
+9205,9205,SVALUTAZ.IMMOBILIZZAZIONI FINANZIARIE,92,account.data_account_type_view,view,FALSE
+920503,920503,Sval.partecipaz.in altre imprese,9205,account.data_account_type_expense,other,FALSE
+9207,9207,SVALUT. ATTIVITA' FINANZIARIE NON IMMOB.,92,account.data_account_type_view,view,FALSE
+920703,920703,Svalutaz.altre partecip. non immobilizz.,9207,account.data_account_type_expense,other,FALSE
+9209,9209,SVALUTAZIONE CREDITI,92,account.data_account_type_view,view,FALSE
+920901,920901,Acc.ti sval. crediti v/clienti,9209,account.data_account_type_expense,other,FALSE
+920909,920909,Acc.ti sval. crediti diversi,9209,account.data_account_type_expense,other,FALSE
+9211,9211,SVALUTAZIONI RIMANENZE,92,account.data_account_type_view,view,FALSE
+921101,921101,Sval.mater.prime sussid.di cons.e merci,9211,account.data_account_type_expense,other,FALSE
+921103,921103,Sval.prod.in corso di lavoraz.e semilav.,9211,account.data_account_type_expense,other,FALSE
+921105,921105,Sval.lavori in corso su ordinaz.,9211,account.data_account_type_expense,other,FALSE
+921107,921107,Svalutazione prodotti finiti,9211,account.data_account_type_expense,other,FALSE
+93,93,IMPOSTE DELL'ESERCIZIO,C,account.data_account_type_view,view,FALSE
+9301,9301,IMPOSTE DELL'ESERCIZIO,93,account.data_account_type_view,view,FALSE
+930101,930101,IRES corrente,9301,account.data_account_type_expense,other,FALSE
+930103,930103,IRAP corrente,9301,account.data_account_type_expense,other,FALSE
+930105,930105,IRES differita di competenza,9301,account.data_account_type_expense,other,FALSE
+930107,930107,IRAP differita di competenza,9301,account.data_account_type_expense,other,FALSE
+930109,930109,IRES anticipata di competenza,9301,account.data_account_type_expense,other,FALSE
+930111,930111,IRAP anticipata di competenza,9301,account.data_account_type_expense,other,FALSE
+930113,930113,IRES anticipata da trasparenza,9301,account.data_account_type_expense,other,FALSE
+930115,930115,IRES differita da trasparenza,9301,account.data_account_type_expense,other,FALSE
+930117,930117,IRES anticipata da esercizi precedenti,9301,account.data_account_type_expense,other,FALSE
+930118,930118,IRAP anticipata da esercizi precedenti,9301,account.data_account_type_expense,other,FALSE
+930119,930119,IRES differita da esercizi precedenti,9301,account.data_account_type_expense,other,FALSE
+930120,930120,IRAP differita da esercizi precedenti,9301,account.data_account_type_expense,other,FALSE
+930121,930121,Altre imposte dell'esercizio,9301,account.data_account_type_expense,other,FALSE
+930122,930122,A.ccc.to IRES ant.eserc,9301,account.data_account_type_expense,other,FALSE
+O,O,Conti d'ordine,0,account.data_account_type_view,view,FALSE
+94,94,CONTI D'ORDINE,O,account.data_account_type_view,view,FALSE
+9410,9410,BILANCIO DI APERTURA / CHIUSURA,94,account.data_account_type_view,view,FALSE
+941001,941001,BILANCIO DI APERTURA / CHIUSURA,9410,account.data_account_type_liability,other,FALSE
+95,95,GARANZIE PRESTATE,O,account.data_account_type_view,view,FALSE
+9501,9501,FIDEIUSSIONI PRESTATE,95,account.data_account_type_view,view,FALSE
+950107,950107,Fideiussioni prestate a terzi,9501,account.data_account_type_liability,other,FALSE
+950115,950115,Terzi per fideiussioni prestate,9501,account.data_account_type_liability,other,FALSE
+9505,9505,ALTRE GARANZIE PRESTATE,95,account.data_account_type_view,view,FALSE
+950507,950507,Altre garanzie prestate a terzi,9505,account.data_account_type_liability,other,FALSE
+950515,950515,Terzi per altre garanzie prestate,9505,account.data_account_type_liability,other,FALSE
+9507,9507,GARANZIE REALI PRESTATE,95,account.data_account_type_view,view,FALSE
+950707,950707,Garanzie reali prestate a terzi,9507,account.data_account_type_liability,other,FALSE
+950715,950715,Terzi per garanzie reali prestate,9507,account.data_account_type_liability,other,FALSE
+96,96,GARANZIE RICEVUTE,O,account.data_account_type_view,view,FALSE
+9601,9601,FIDEIUSSIONI RICEVUTE,96,account.data_account_type_view,view,FALSE
+960107,960107,Fideiussioni ricevute da terzi,9601,account.data_account_type_asset,other,FALSE
+960115,960115,Terzi per fideiussioni ricevute,9601,account.data_account_type_asset,other,FALSE
+9605,9605,ALTRE GARANZIE RICEVUTE,96,account.data_account_type_view,view,FALSE
+960507,960507,Altre garanzie ricevute da terzi,9605,account.data_account_type_asset,other,FALSE
+960515,960515,Terzi per altre garanzie ricevute,9605,account.data_account_type_asset,other,FALSE
+9607,9607,GARANZIE REALI RICEVUTE,96,account.data_account_type_view,view,FALSE
+960707,960707,Garanzie reali ricevute da terzi,9607,account.data_account_type_asset,other,FALSE
+960715,960715,Terzi per garanzie reali ricevute,9607,account.data_account_type_asset,other,FALSE
+97,97,ALTRI CONTI D'ORDINE,O,account.data_account_type_view,view,FALSE
+9701,9701,NOSTRI IMPEGNI,97,account.data_account_type_view,view,FALSE
+970101,970101,Beni e servizi da ricevere,9701,account.data_account_type_liability,other,FALSE
+970103,970103,Beni da consegnare e servizi da prestare,9701,account.data_account_type_liability,other,FALSE
+970105,970105,Terzi per beni e servizi da ricevere,9701,account.data_account_type_liability,other,FALSE
+970107,970107,Terzi per beni da cons.e serv.da prest.,9701,account.data_account_type_liability,other,FALSE
+970109,970109,Canoni di leasing residui,9701,account.data_account_type_liability,other,FALSE
+970111,970111,Altri impegni,9701,account.data_account_type_liability,other,FALSE
+970113,970113,Terzi per canoni di leasing residui,9701,account.data_account_type_liability,other,FALSE
+970115,970115,Terzi per altri impegni,9701,account.data_account_type_liability,other,FALSE
+9703,9703,NOSTRI RISCHI,97,account.data_account_type_view,view,FALSE
+970301,970301,Rischi per titoli di credito trasferiti,9703,account.data_account_type_liability,other,FALSE
+970303,970303,Rischi su crediti ceduti,9703,account.data_account_type_liability,other,FALSE
+970305,970305,Terzi per rischi su titoli di cred.ced.,9703,account.data_account_type_liability,other,FALSE
+970307,970307,Terzi per rischi su crediti trasferiti,9703,account.data_account_type_liability,other,FALSE
+9705,9705,BENI DI TERZI PRESSO DI NOI,97,account.data_account_type_view,view,FALSE
+970501,970501,Beni di terzi in c/deposito,9705,account.data_account_type_liability,other,FALSE
+970503,970503,Beni di terzi in c/lavorazione,9705,account.data_account_type_liability,other,FALSE
+970505,970505,Beni di terzi in leasing,9705,account.data_account_type_liability,other,FALSE
+970507,970507,Terzi per loro beni in c/deposito,9705,account.data_account_type_liability,other,FALSE
+970509,970509,Terzi per loro beni in c/lavorazione,9705,account.data_account_type_liability,other,FALSE
+970511,970511,Terzi per loro beni in leasing,9705,account.data_account_type_liability,other,FALSE
+9707,9707,NOSTRI BENI PRESSO TERZI,97,account.data_account_type_view,view,FALSE
+970701,970701,Beni presso terzi in c/deposito,9707,account.data_account_type_asset,other,FALSE
+970703,970703,Beni presso terzi in c/lavorazione,9707,account.data_account_type_asset,other,FALSE
+970705,970705,Depositari nostri beni presso terzi,9707,account.data_account_type_asset,other,FALSE
+970707,970707,Fornitori per ns. beni in c/lavorazione,9707,account.data_account_type_asset,other,FALSE
+98,98,CONTI TRANSITORI,O,account.data_account_type_view,view,FALSE
+9801,9801,SOCIETA' CONSOCIATE C/TRANSITORI,98,account.data_account_type_view,view,FALSE
+99,99,CONTI DI CHIUSURA E RIAPERTURA,O,account.data_account_type_view,view,FALSE
+9901,9901,STATO PATRIMONIALE INIZIALE,99,account.data_account_type_view,view,FALSE
+990101,990101,STATO PATRIMONIALE INIZIALE,9901,account.data_account_type_view,view,FALSE
+9903,9903,CONTO ECONOMICO,99,account.data_account_type_view,view,FALSE
+990301,990301,Conto economico,9903,account.data_account_type_asset,other,FALSE
+9905,9905,STATO PATRIMONIALE FINALE,99,account.data_account_type_view,view,FALSE
+990501,990501,Stato patrimoniale finale,9905,account.data_account_type_asset,other,FALSE
+9906,9906,PROFITTI E PERDITE,99,account.data_account_type_view,view,FALSE
+990601,990601,PROFITTI E PERDITE,9906,account.data_account_type_view,view,FALSE
+9999,9999,RIPRESA SALDI,99,account.data_account_type_view,view,FALSE
+999999,999999,Ripresa Saldi in corso di anno,9999,account.data_account_type_asset,other,FALSE

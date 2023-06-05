@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <report
+        id="invoice_template_report"
+        model="account.invoice"
+        string="Transfer Detail List"
+        report_type="qweb-pdf"
+        name="transfer_service.report_account_invoice_list"
+        file="transfer_service.report_account_invoice_list"
+        attachment_use="0"
+        attachment="('ATT_' + (object.number or '').replace('/', '') + '.pdf')"
+    />
+
+    <record id="transfer_service.invoice_template_report" model="ir.actions.report.xml">
+        <field name="attachment_use" eval="False"/>
+        <field name="paperformat_id" ref="template_transfer.paperformat_big_header"/>
+    </record>
+
+    <template id="report_account_invoice_list">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="detail" t-value="True" />
+                <t t-call="template_transfer.external_layout">
+                    <div class="page" style="clear: both; font-size: 10px;">
+                        <table class="table table-condensed">
+                            <thead style="display: table-row-group;">
+                                <tr>
+                                    <th>data</th>
+                                    <th>descrizione</th>
+                                    <th>passeggeri</th>
+                                    <th>servizio</th>
+                                    <th>prezzo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.sorted_order_ids" t-as="sale_order">
+                                    <t t-if="sale_order.task_ids">
+                                        <tr>
+                                            <td><strong><span t-field="sale_order.client_order_ref"/>:</strong></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                        <t t-foreach="sale_order.task_ids" t-as="task">
+                                            <t t-if="task.sale_line_id.has_template and not task.sale_line_id.id == sale_line_id">
+                                                <tr>
+                                                    <td><span t-field="task.transfer_date"/></td>
+                                                    <td><span t-field="task.itinerary_id.name"/></td>
+                                                    <t t-set="sale_line_id" t-value="task.sale_line_id.id"/>
+                                                    <td><span t-field="task.passengers"/></td>
+                                                    <td><span t-field="task.sale_line_id.product_id.name"/></td>
+                                                    <td><span t-esc="task.sale_line_id.price_unit * task.sale_line_id.product_uom_qty" /></td>
+                                                </tr>
+                                            </t>
+                                            <t t-if="not task.sale_line_id.has_template">
+                                                <tr>
+                                                    <td><span t-field="task.transfer_date"/></td>
+                                                    <td><span t-field="task.itinerary_id.name"/></td>
+                                                    <td><span t-field="task.passengers"/></td>
+                                                    <td><span t-field="task.sale_line_id.product_id.name"/></td>
+                                                    <!--<t t-if="task.sale_line_id.has_template">-->
+                                                        <!--<td></td>-->
+                                                    <!--</t>-->
+                                                    <!--<t t-if="task.sale_line_id.has_template == False">-->
+                                                    <td><span t-esc="task.sale_line_id.price_unit * task.sale_line_id.product_uom_qty" /></td>
+                                                    <!--</t>-->
+                                                </tr>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</data>
+</openerp>

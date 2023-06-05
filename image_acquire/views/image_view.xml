@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_image_acquisition_form" model="ir.ui.view">
+            <field name="name">image.acquisition.form</field>
+            <field name="model">image.acquisition</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <sheet>
+                    <h1><field name="name" /></h1>
+                    <group>
+                        <group>
+                            <field name="image" widget="image" nolabel="1" height="250" />
+                        </group>
+                        <group>
+                            <field name="destination" />
+                        </group>
+                    </group>
+                     <button name="%(act_wizard_select_destination)d" string="Move image" type="action" icon="terp-camera_test"/>
+                </sheet>
+            </field>
+        </record>
+
+        <record id="view_image_acquisition_tree" model="ir.ui.view">
+            <field name="name">image.acquisition.tree</field>
+            <field name="model">image.acquisition</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="image" widget="image" height="64" />
+                    <field name="name" />
+                    <field name="model" />
+                    <field name="destination" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_image_acquisition_action" model="ir.actions.act_window">
+            <field name="name">Acquired images</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">image.acquisition</field>
+            <field name="domain">[]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_image_acquisition_tree" />
+            <field name="help" type="html">
+              <p>
+                Here is a list of all acquired images that are not yet associated to any record.
+              </p>
+            </field>
+        </record>
+        <menuitem
+            action="view_image_acquisition_action"
+            id="image_acquire.menu_acquired_images"
+            parent="base.menu_config"
+            sequence="40"
+            groups="base.group_no_one"
+        />
+    </data>
+</openerp>

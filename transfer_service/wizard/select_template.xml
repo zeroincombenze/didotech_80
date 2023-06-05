@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_select_template_form" model="ir.ui.view">
+            <field name="name">wizard.select.template.form</field>
+            <field name="model">wizard.select.template</field>
+            <field name="arch" type="xml">
+                <form string="Select Template">
+                    <group>
+                        <field name="order_id" invisible="True"/>
+                        <field name="template_id" />
+                    </group>
+                    <button name="action_set_details" string="Ok" type="object"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

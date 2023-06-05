@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+       <record id="view_vat_protocol" model="ir.ui.view">
+            <field name="name">account.vat.protocol.form</field>
+            <field name="model">vat.registries.isa</field>
+            <field name="arch" type="xml">
+                <form string="create vat registry" version="7.0">
+                    <group>
+                        <field name="name" required="1" />
+                        <field name="layout_type" required="1" />
+                        <field name="sequence_iva_registry_id" required="1" on_change="onchange_sequence_iva_registry_id(sequence_iva_registry_id)" />
+                    </group>
+                </form>
+            </field>
+        </record>
+  </data>
+</openerp>

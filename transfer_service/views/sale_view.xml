@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_transfer_order_form" model="ir.ui.view">
+            <field name="name">sale.order.transfer.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="state" position="before">
+                        <button name="action_create_additional_order" string="Create Additional Order" type="object"/>
+                    </field>
+
+                    <field name="partner_id" position="after">
+                        <field name="transfer" />
+                    </field>
+                    <notebook position="before">
+                        <button name="add_template" string="Add Template" type="object"/>
+                    </notebook>
+                    <page string="Order Lines" position="after" >
+                        <page string="Transfer" attrs="{'invisible': [('transfer', '=', False)]}">
+                            <group>
+                                <group>
+                                    <field name="transfer_date" />
+                                    <field name="passenger_qty" />
+                                    <field name="bag_qty" />
+                                    <field name="passengers" />
+                                </group>
+                                <group>
+                                    <field name="passenger_name" />
+                                    <field name="passenger_phone" />
+                                    <field name="passenger_email" />
+                                </group>
+                            </group>
+                        </page>
+                    </page>
+
+                    <page string="Other Information" position="after" >
+                        <page string="Tasks">
+                            <field name="task_ids" />
+                        </page>
+                    </page>
+
+                    <xpath expr="//tree[@string='Sales Order Lines']" position="attributes">
+                        <attribute name="editable" />
+                    </xpath>
+
+                    <xpath expr="//tree[@string='Sales Order Lines']/field[@name='product_id']" position="before">
+                        <field name="template_or_transfer_date" />
+                        <field name="itinerary_id" />
+                    </xpath>
+
+                    <!--route is added by sale_stock-->
+                    <!--<xpath expr="//tree[@string='Sales Order Lines']/field[@name='route_id']" position="replace" />-->
+
+                    <xpath expr="//tree[@string='Sales Order Lines']/field[@name='price_subtotal']" position="after">
+                        <field name="has_template" invisible="True" />
+                        <button name="sale_order_line_copy"
+                                class="oe_edit_only"
+                                attrs="{'invisible':[('state','!=','draft')]}"
+                                type="object"
+                                icon="STOCK_COPY"
+                                help="Create a Copy this line"/>
+                        <button name="sale_order_line_mirror"
+                                class="oe_edit_only"
+                                attrs="{'invisible':['|', ('state','!=','draft'), ('has_template', '=', True)]}"
+                                type="object"
+                                icon="STOCK_REFRESH"
+                                help="Create a Mirror of this line"/>
+                    </xpath>
+
+                    <xpath expr="//field[@name='order_line']" position="attributes">
+                        <attribute name="context">{
+                            'default_transfer_date': transfer_date,
+                            'default_passenger_qty': passenger_qty,
+                            'default_bag_qty': bag_qty,
+                            'default_passengers': passengers,
+                            'default_passenger_name': passenger_name,
+                            'default_passenger_phone': passenger_phone,
+                            'default_passenger_email': passenger_email
+                            }
+                        </attribute>
+                    </xpath>
+
+                    <xpath expr="//form[@string='Sales Order Lines']/group/group/div/field[@name='product_uom_qty']" position="attributes">
+                        <attribute name="on_change">1</attribute>
+                    </xpath>
+
+                    <!--Attention!!! Unfortunately this can be overwritten by other modules!-->
+                    <xpath expr="//form[@string='Sales Order Lines']/group/group/field[@name='product_id']" position="attributes">
+                        <attribute name="context">{'itinerary_id': itinerary_id, 'partner_id': parent.partner_id, 'quantity': product_uom_qty, 'pricelist': parent.pricelist_id, 'uom': product_uom}</attribute>
+                    </xpath>
+
+                    <xpath expr="//form[@string='Sales Order Lines']/field[@name='name']" position="after">
+                        <!--<field name="transfer" />-->
+                        <notebook>
+                            <page string="Transfer Information">
+                            <!--<page string="Transfer Information" attrs="{'invisible': [('transfer', '=', False)]}">-->
+                                <group>
+                                    <group>
+                                        <label for="itinerary_id" colspan="2" />
+                                        <field name="itinerary_id" nolabel="1" on_change="1" options="{'create': False}" colspan="4" context="{'default_partner_id': parent.partner_id}"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="start_address" colspan="1" readonly="False" />
+                                        <label for="connection" colspan="2" />
+                                        <field name="connection" nolabel="1" colspan="2" />
+                                        <field name="note" />
+                                        <!--<field name="show_details" />-->
+                                    </group>
+                                    <group>
+                                        <field name="finish_address" colspan="1" readonly="0" />
+                                        <field name="service_supplier_id" context="{'default_supplier': True, 'default_customer': False, 'default_product_id': product_id}" />
+                                        <field name="service_supplier_ids" invisible="True" />
+                                        <field name="driver_id"  context="{'default_supplier': True, 'default_customer': False, 'default_service_supplier_id': service_supplier_id}" />
+                                        <field name="driver_ids" invisible="True" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Transfer Details">
+                                <group>
+                                    <group>
+                                        <field name="transfer_date" />
+                                        <field name="passenger_qty" />
+                                        <field name="bag_qty" />
+                                        <field name="passengers" />
+                                    </group>
+                                    <group>
+                                        <field name="passenger_name" />
+                                        <field name="passenger_phone" />
+                                        <field name="passenger_email" />
+                                        <field name="taking" />
+                                        <field name="commissions" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Template Lines" attrs="{'invisible': [('has_template', '=', False)]}" >
+                                <field name="has_template" invisible="True" />
+                                <field name="template_line">
+                                    <tree>
+                                        <field name="transfer_date" />
+                                        <field name="product_id" />
+                                        <field name="itinerary_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </xpath>
+
+                    <xpath expr="//field[@name='th_weight']" position="replace" />
+                    <xpath expr="//field[@name='address_allotment_id']" position="replace" />
+                    <xpath expr="//field[@name='invoice_lines']" position="replace" />
+
+                </data>
+            </field>
+        </record>
+
+        <record id="view_order_transfer_tree" model="ir.ui.view">
+            <field name="name">sale.order.transfer.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="client_order_ref" />
+                    <field name="next_transfer_date" />
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="computed_passengers" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_transfer_quotation_tree" model="ir.ui.view">
+            <field name="name">sale.order.transfer.quotation.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="client_order_ref" />
+                    <field name="next_transfer_date" />
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="computed_passengers" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

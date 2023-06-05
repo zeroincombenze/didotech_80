@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Vat Registry Sequences -->
+        <record id="sequence_sale_registry" model="ir.sequence">
+            <field name="name">Registro IVA Vendite</field>
+            <field eval="0" name="padding"/>
+            <field name="prefix"></field>
+            <field name="implementation">no_gap</field>
+        </record>
+        <record id="sequence_purchase_registry" model="ir.sequence">
+            <field name="name">Registro IVA Acquisti</field>
+            <field eval="0" name="padding"/>
+            <field name="prefix"></field>
+            <field name="implementation">no_gap</field>
+        </record>
+        <record id="sequence_self-billed-invoice_registry" model="ir.sequence">
+            <field name="name">Registro IVA Corrispettivi</field>
+            <field eval="0" name="padding"/>
+            <field name="prefix"></field>
+            <field name="implementation">no_gap</field>
+        </record>
+
+    </data>
+</openerp>

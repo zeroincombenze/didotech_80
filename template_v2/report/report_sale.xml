@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!--<report-->
+        <!--id="saleorder_report_qweb"-->
+        <!--string="Custom Sale Orders"-->
+        <!--model="sale.order"-->
+        <!--report_type="qweb-pdf"-->
+        <!--name="sale.report_saleorder"-->
+        <!--file="template_v2.report_sale"-->
+     <!--/>-->
+
+    <!--<record id="template_v2.saleorder_report_qweb" model="ir.actions.report.xml">-->
+    <record id="sale.report_sale_order" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="template_v2.paperformat_big_header"/>
+    </record>
+
+    <template id="report_saleorder_document">
+        <t t-name="report_saleorder_document">
+            <t t-call="template_v2.external_layout">
+                <!--http://odoo.guide/report-design-workshop/-->
+                <div class="page" style="clear: both;">
+                    <table class="table table-condensed">
+                        <thead style="display: table-row-group;">
+                            <tr>
+                                <!--<th style='width:8%'>codice</th>-->
+                                <th>descrizione</th>
+                                <th>udm</th>
+                                <th>q.tà</th>
+                                <th class="text-right" style="width:7%;">% iva</th>
+                                <th class="text-right" style="width: 11%;">valore</th>
+                                <th class="text-right" style="width:7%;">% sc</th>
+                                <th class="text-right" style="width: 11%;">imponibile</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.order_line" t-as="l">
+                                <!--<td>-->
+                                    <!--<span t-if="l.product_id">-->
+                                        <!--<span t-field="l.product_id.default_code"/>-->
+                                    <!--</span>-->
+                                <!--</td>-->
+                                <td>
+                                    <strong><span t-field="l.name"/></strong>
+                                    <span style="font-size: smaller;">
+                                        <span t-if="l.description">
+                                            <br/>
+                                            <p t-field="l.description" />
+                                        </span>
+                                        <span t-if="not l.description and l.product_id and l.product_id.description">
+                                            <br/>
+                                            <p t-field="l.product_id.description" />
+                                        </span>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-if="l.product_uom">
+                                        <span t-field="l.product_uom.name"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-esc="l.product_uom_qty == int(l.product_uom_qty) and int(l.product_uom_qty) or l.product_uom_qty"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.tax_digits" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="l.italian_price(l.price_unit)" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-if="l.discount">
+                                        <span t-field="l.discount"/>
+                                    </span>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="l.italian_price(l.price_subtotal)"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div t-if="o.note" class="row">
+                        <div class="col-xs-11" style="margin-left: 5px;">
+                            <strong>Note:</strong> <span t-field="o.note" />
+                        </div>
+                    </div>
+                    <hr style="border-top: 1px solid #8c8b8b;" />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <table class="table borderless" style="border: none;">
+                            <!--<table class="table" style="border: solid;">-->
+                                <tr>
+                                    <td style="border: none; width: 44%">Modalità di pagamento:</td>
+                                    <td style="border: none;">
+                                        <!--<span t-if="o.payment_term.type"><span t-field="o.payment_term.type" /></span>-->
+                                        <span t-if="o.payment_term.name"><span t-field="o.payment_term.name" /></span>
+                                        <span t-if="not o.payment_term.type"><span t-field="o.payment_term.note" /></span>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-4">
+                            <table class="table borderless">
+                                <tr style="border: none;">
+                                    <td style="border: none;">Totale imponibile:</td>
+                                    <td class="text-right" style="border: none;">
+                                        <span t-esc="o.italian_price(o.amount_untaxed)" />
+                                    </td>
+                                </tr>
+                                <tr style="border: none;">
+                                    <td style="border: none;">Totale IVA:</td>
+                                    <td class="text-right" style="border: none;">
+                                        <span t-esc="o.italian_price(o.amount_tax)" />
+                                    </td>
+                                </tr>
+                                <tr class="normal_plus" style="border: none; border-top: solid; border-top-width: thin;">
+                                    <td style="border: none;"><strong>Totale fattura:</strong></td>
+                                    <td class="text-right" style="border: none;">
+                                         <strong>
+                                             <span t-esc="o.italian_price(o.amount_total)" />
+                                         </strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!--<p t-if="o.payment_term.note">-->
+                        <!--<strong>Modalità di pagamento:</strong>-->
+                        <!--<span t-field="o.payment_term.note"/>-->
+                    <!--</p>-->
+                    <!--<p t-if="o.fiscal_position.note">-->
+                        <!--<strong>Fiscal Position Remark:</strong>-->
+                        <!--<span t-field="o.fiscal_position.note"/>-->
+                    <!--</p>-->
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="sale.report_saleorder">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'template_v2.report_saleorder_document')"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="saleorder_css" name="additional saleorder css" inherit_id="report_saleorder_document">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/template_v2/static/css/invoice.css"/>
+        </xpath>
+    </template>
+
+</data>
+</openerp>

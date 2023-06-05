@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="emissione_riba_view" model="ir.ui.view">
+            <field name="name">riba.emissione.wizard</field>
+            <field name="model">riba.emissione</field>
+            <field name="arch" type="xml">
+                <form string="Issue Ri.Ba." version="7.0">
+                    <separator string="This wizard generates the Ri.Ba. list, do you confirm?" colspan="4"/>
+                    <group>
+                        <group>
+                            <field name="configurazione"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Create" name="crea_distinta" type="object" icon="gtk-ok" colspan="2" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" colspan="2"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="emissione_riba_action" model="ir.actions.act_window">
+            <field name="name">Issue Ri.Ba.</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">riba.emissione</field>
+            <field name="src_model">account.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="emissione_riba_view"/>
+        </record>
+
+        <record model="ir.values" id="emissione_riba_client_action">
+            <!--field name="model_id" ref="sale.model_sale_order" /
+            <field name="object" eval="1" /> -->
+            <field name="name">Issue Ri.Ba.</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('emissione_riba_action'))" />
+            <field name="key">action</field>
+            <field name="model">account.move.line</field>
+        </record>
+
+    </data>
+</openerp>

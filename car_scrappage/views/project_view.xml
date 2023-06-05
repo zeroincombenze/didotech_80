@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--<record id="view_project_kanban" model="ir.ui.view">-->
+        <!--<field name="name">project.project.kanban.inherited</field>-->
+        <!--<field name="model">project.project</field>-->
+        <!--<field name="inherit_id" ref="project.view_project_kanban"/>-->
+        <!--<field name="arch" type="xml">-->
+        <!--&lt;!&ndash;<kanban position="replace">&ndash;&gt;-->
+        <!--&lt;!&ndash;<kanban default_group_by="stage_id" class="oe_background_grey" />&ndash;&gt;-->
+        <!--&lt;!&ndash;</kanban>&ndash;&gt;-->
+        <!--<field name="name" position="after">-->
+        <!--<field name="stage_id" invisible="1"/>-->
+        <!--</field>-->
+        <!--<xpath expr="//div[contains(@class, 'text-center oe_kanban_alias')]" position="before">-->
+        <!--<h4 class="text-center">-->
+        <!--<img t-att-src="kanban_image('project.project', 'image_small', record.id.value)" class="oe_kanban_image"/>-->
+        <!--<h4 class="text-center"><field name="car_type_id"/>-->
+        <!--<h4 class="text-center"><strong><field name="engine_type"/></strong>-->
+        <!--</h4>-->
+        <!--</h4>-->
+        <!--</h4>-->
+        <!--</xpath>-->
+        <!--</field>-->
+        <!--</record>-->
+
+        <record id="project.view_project_scrap" model="ir.ui.view">
+            <field name="name">project.project.scrap</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+
+                <field name="state" position="replace">
+                    <field name="state" invisible="1"/>
+                    <field name="stage_id" widget="statusbar" clickable="True"
+                           options="{'fold_field': 'fold'}"/>
+                </field>
+
+                <field name="name" position="replace">
+                    <field name="name" placeholder="VIM Number"/>
+                </field>
+
+                <field name="partner_id" position="after">
+                        <newline/>
+                        <field name="dossier_number" />
+                        <newline/>
+                        <field name="plate" />
+                </field>
+
+                <page name="team" position="before">
+                    <page string="Auto">
+                        <field name="image" widget="image" class="oe_avatar oe_left"/>
+                        <field name="car_type_id" placeholder="Car Type"/>
+                        <field name="engine_type" placeholder="Engine Type"/>
+                        <field name="survey" placeholder="Choose Survey Test "/>
+                        <field name="response_id" invisible="1"/>
+                        <field name="car_color" placeholder="Color" />
+                    </page>
+                </page>
+
+                <field name="parent_id" position="after">
+                    <field name="date_registration" />
+                    <field name="date_action" />
+                </field>
+
+                <button name="attachment_tree_view" position="after">
+                    <button name="action_start_survey"
+                            class="oe_stat_button"
+                            icon="fa-user"
+                            type="object"
+                            help="Answer related job question"
+                            context="{'survey_id': survey}"
+                            attrs="{'invisible':[('survey','=',False)]}">
+                        <div>Start<br/>Interview
+                        </div>
+                    </button>
+                    <button name="action_print_survey"
+                            class="oe_stat_button"
+                            icon="fa-print"
+                            type="object"
+                            help="Print interview report"
+                            attrs="{'invisible':[('response_id', '=',False)]}">
+                        <div>Print<br/>Interview
+                        </div>
+                    </button>
+
+                </button>
+
+                <page name="team" position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </page>
+
+                <page name="project_stages" position="attributes">
+                    <attribute name="attrs">{'invisible': True}</attribute>
+                </page>
+
+            </field>
+        </record>
+
+        <record id="project.tree_project_scrap" model="ir.ui.view">
+            <field name="name">project.project.tree.scrap</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before" >
+                    <field name="dossier_number" />
+                </field>
+                <field name="name" position="after">
+                    <field name="car_type_id" />
+                    <field name="engine_type" />
+                    <field name="car_color" />
+                    <field name="date_start" />
+                </field>
+                <field name="user_id" position="replace" />
+                <field name="planned_hours" position="replace" />
+                <field name="total_hours" position="replace" />
+                <field name="effective_hours" position="replace" />
+                <field name="progress_rate" position="replace" />
+                <field name="state" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="state" position="after">
+                    <field name="response_id" invisible="1"/>
+                    <button name="action_print_survey" string="Print survey" type="object" icon="STOCK_PRINT" attrs="{'invisible': [('response_id', '=', False)]}"/>
+                    <field name="has_image" invisible="1"/>
+                    <button name="action_dummy" string="Image" type="object" icon="color-picker" attrs="{'invisible': [('has_image', '=', False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_project_project_scrapage_filter" model="ir.ui.view">
+            <field name="name">project.project.scrappage.select</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="car_type_id" string="Marca/Modello/Versione" />
+                    <field name="engine_type" string="Engine type" />
+                    <field name="dossier_number" string="Dossier number" />
+                    <field name="name" string="Project Name"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="project.view_project_kanban" model="ir.ui.view">
+            <field name="name">project.project.kanban</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey" default_group_by="stage_id">
+                    <field name="effective_hours"/>
+                    <field name="planned_hours"/>
+                    <field name="name"/>
+                    <field name="members"/>
+                    <field name="use_tasks"/>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="color"/>
+                    <field name="task_count"/>
+                    <field name="task_ids"/>
+                    <field name="alias_id"/>
+                    <field name="alias_name"/>
+                    <field name="alias_domain"/>
+                    <field name="doc_count"/>
+                    <field name="stage_id" invisible="1"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_project oe_kanban_global_click">
+                                <div class="oe_dropdown_toggle oe_dropdown_kanban" groups="base.group_user">
+                                    <span class="oe_e">í</span>
+                                    <ul class="oe_dropdown_menu">
+                                        <t t-if="widget.view.is_action_enabled('edit')">
+                                            <li>
+                                                <a type="edit">Project Settings</a>
+                                            </li>
+                                        </t>
+                                        <t t-if="widget.view.is_action_enabled('delete')">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                        </t>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <a type="open">
+                                        <h4 class="text-center">
+                                            <strong>
+                                                <field name="name"/>
+                                            </strong>
+                                        </h4>
+                                    </a>
+                                    <!--<div class="text-center oe_kanban_alias"
+                                         t-if="record.alias_name.value and record.alias_domain.value">
+                                        <small>
+                                            <i class="fa fa-envelope-o"></i>
+                                            <field name="alias_id"/>
+                                        </small>
+                                    </div>
+                                    <div class="oe_kanban_project_list">
+                                        <a t-if="record.use_tasks.raw_value"
+                                           name="%(project.act_project_project_2_project_task_all)d" type="action"
+                                           style="margin-right: 10px">
+                                            <t t-raw="record.task_count.raw_value"/>
+                                            Tasks
+                                        </a>
+                                    </div>-->
+
+                                    <!--<div class="oe_kanban_footer_left">
+                                        <span groups="project.group_time_work_estimation_tasks">
+                                            <span class="oe_e">R</span>
+                                            <t t-esc="Math.round(record.effective_hours.raw_value)"/>/
+                                            <t t-esc="Math.round(record.planned_hours.raw_value)"/>
+                                            <field name="company_uom_id"/>
+                                        </span>
+                                        <span t-if="record.date.raw_value">
+                                            <span class="oe_e">N</span>
+                                            <field name="date"/>
+                                        </span>
+                                    </div>-->
+
+                                    <h4 class="text-center">
+
+                                        <img t-att-src="kanban_image('project.project', 'image_medium', record.id.value)"
+                                             class="oe_kanban_image" style="width:190px;height:190px;" />
+
+                                        <h4 class="text-center">
+                                            <field name="car_type_id"/>
+                                            <h4 class="text-center">
+                                                <strong>
+                                                    <field name="engine_type"/>
+                                                </strong>
+                                            </h4>
+                                        </h4>
+                                    </h4>
+
+
+                                </div>
+
+                                <div class="oe_kanban_project_list">
+                                    <!--<a t-if="record.doc_count.raw_value" name="attachment_tree_view" type="object"-->
+                                       <!--style="margin-right: 10px">-->
+                                        <!--<field name="doc_count"/>-->
+                                        <!--Documents-->
+                                    <!--</a>-->
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</openerp>

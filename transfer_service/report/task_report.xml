@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+            id="transfer_tasks_report"
+            model="project.task"
+            string="Riepilogo Servizi"
+            report_type="qweb-pdf"
+            name="transfer_service.report_project_tasks_template"
+            file="transfer_service.report_project_tasks_template"
+            attachment="('ATT_'+(object.transfer_date or '').replace('/','')+'.pdf')"
+        />
+
+        <record id="transfer_service.transfer_tasks_report" model="ir.actions.report.xml">
+            <field name="attachment_use" eval="False"/>
+        </record>
+
+        <template id="report_project_tasks_template">
+            <style type="text/css">
+                th {
+                    color: white;
+                    background-color: #404040;
+                    font-size: 10px;
+                }
+
+                td {
+                    font-size: 10px;
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+
+            </style>
+            <t t-call="report.html_container">
+                <div class="page">
+                    <h2>Riepilogo servizi dal <span t-field="docs[0].transfer_date_date"/> al <span t-field="docs[-1].transfer_date_date"/></h2>
+                    <table class="table table-condensed table-bordered" style="border: 1px solid black;">
+                        <tr>
+                            <th>ID</th>
+                            <th>Data e ora</th>
+                            <th>Itinerario</th>
+                            <th>Cliente e passeggero</th>
+                            <th>Pratica</th>
+                            <th>pax./bag.</th>
+                            <th>Tipo veicolo</th>
+                            <th>Volo/treno/nave</th>
+                            <th>Note</th>
+                            <th>Incasso</th>
+                            <th>Autista e veicolo</th>
+                        </tr>
+                        <t t-foreach="docs" t-as="o">
+                            <tr style="border: 1px solid black;">
+                                <td style="border: 1px solid black;"><span t-field="o.id"/></td>
+                                <td style="border: 1px solid black;">
+                                    <strong><span t-field="o.transfer_date"/></strong>
+                                    <!--<span t-esc="datetime.datetime.strptime(o.transfer_date, '%Y-%m-%d %H:%M:%S').strftime('%d/%m/%Y')"/>-->
+                                    <!--<strong><span t-esc="datetime.datetime.strptime(o.transfer_date, '%Y-%m-%d %H:%M:%S').strftime('%H:%M')"/></strong>-->
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <strong>
+                                        <span t-field="o.itinerary_id" /><br/>
+                                        Partenza: <span t-field="o.start_address" /><br/>
+                                        Arrivo: <span t-field="o.finish_address" />
+                                    </strong>
+                                </td>
+                                <td style="border: 1px solid black;"><span t-field="o.client_passenger"/></td>
+                                <td style="border: 1px solid black;"><span t-field="o.client_order_ref"/></td>
+                                <td style="border: 1px solid black;"><span t-field="o.pax_bag"/></td>
+                                <td style="border: 1px solid black;"><span t-field="o.product_id"/></td>
+                                <td style="border: 1px solid black;"><span t-field="o.connection"/></td>
+                                <td style="border: 1px solid black;"><span t-field="o.note"/></td>
+                                <td style="border: 1px solid black;">€ <span t-field="o.taking"/></td>
+                                <td style="border: 1px solid black;"><strong><span t-esc="o.supplier and o.supplier.upper()"/></strong></td>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+                <div class="footer">
+                    <div class="text-left" style="border-top: 1px solid black; font-size: 10px;">
+                        <ul class="list-inline text-right" style="font-size: 11px;">
+                            <li><span class="page"/></li>
+                            <li>/</li>
+                            <li><span class="topage"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <record id="paperformat_lowmargin_horizontal" model="report.paperformat">
+            <field name="name">European A4 low margin horizontal</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="transfer_service.transfer_tasks_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="transfer_service.paperformat_lowmargin_horizontal" />
+        </record>
+
+    </data>
+</openerp>

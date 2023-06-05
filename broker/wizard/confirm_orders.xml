@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="confirm_orders_form" model="ir.ui.view">
+            <field name="name">wizard.confirm.orders.form</field>
+            <field name="model">wizard.confirm.orders</field>
+            <field name="arch" type="xml">
+                <form string="Order Confirmation">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <field name="info" nolabel="True" />
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="export">
+                        <group>
+                            <group></group>
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        </group>
+                        <group>
+                            <button type="object" name="action_confirm" string="Confirm and Invoice" icon="gtk-ok"/>
+                        </group>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <group states="end">
+                        <button icon="gtk-ok" special="cancel" string="Close"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

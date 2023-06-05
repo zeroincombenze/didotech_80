@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="contracts_maintanance" forcecreate="True" model="ir.cron">
+            <field name="name">Contracts Maintanance</field>
+            <field name="active" eval="True" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False" />
+            <field name="model" eval="'contract.contract'" />
+            <field name="function" eval="'cron_check_expiry'" />
+            <field name="args" eval="('30', '60', '90')" />
+        </record>
+        <!--<record id="contracts_maintanance_60" forcecreate="True" model="ir.cron">-->
+        <!--    <field name="name">Contracts Maintanance 60</field>-->
+        <!--    <field name="active" eval="True" />-->
+        <!--    <field name="user_id" ref="base.user_root" />-->
+        <!--    <field name="interval_number">1</field>-->
+        <!--    <field name="interval_type">days</field>-->
+        <!--    <field name="numbercall">-1</field>-->
+        <!--    <field name="doall" eval="False" />-->
+        <!--    <field name="model" eval="'contract.contract'" />-->
+        <!--    <field name="function" eval="'check_contracts'" />-->
+        <!--    <field name="args" eval="('60',)" />-->
+        <!--</record>-->
+        <!--<record id="contracts_maintanance_90" forcecreate="True" model="ir.cron">-->
+        <!--    <field name="name">Contracts Maintanance 90</field>-->
+        <!--    <field name="active" eval="True" />-->
+        <!--    <field name="user_id" ref="base.user_root" />-->
+        <!--    <field name="interval_number">1</field>-->
+        <!--    <field name="interval_type">days</field>-->
+        <!--    <field name="numbercall">-1</field>-->
+        <!--    <field name="doall" eval="False" />-->
+        <!--    <field name="model" eval="'contract.contract'" />-->
+        <!--    <field name="function" eval="'check_contracts'" />-->
+        <!--    <field name="args" eval="('90',)" />-->
+        <!--</record>-->
+    </data>
+</openerp>
+
+

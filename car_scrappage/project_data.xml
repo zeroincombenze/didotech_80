@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="project_stage_accettazione" model="project.project.type">
+            <field name="sequence">1</field>
+            <field name="name">In Accettazione</field>
+
+        </record>
+
+        <record id="project_stage_accettate" model="project.project.type">
+            <field name="sequence">2</field>
+            <field name="name">Accettate</field>
+        </record>
+
+        <record id="project_stage_stoccate" model="project.project.type">
+            <field name="sequence">3</field>
+            <field name="name">Stoccate</field>
+        </record>
+
+        <record id="project_stage_pressata" model="project.project.type">
+            <field name="sequence">4</field>
+            <field name="name">Pressata</field>
+            <field name="close" eval="True"/>
+        </record>
+
+    </data>
+</openerp>

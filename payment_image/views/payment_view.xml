@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="acquirer_form_image" model="ir.ui.view">
+            <field name="name">payment.acquirer.form.image</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="image" widget="image" class="oe_avatar oe_left"/>
+                    <field name="image_medium" invisible="True" />
+                    <field name="image_small" invisible="True" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_acquirer_tree_image" model="ir.ui.view">
+            <field name="name">payment.acquirer.tree.image</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_list" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="image_small" widget="image" height="64" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

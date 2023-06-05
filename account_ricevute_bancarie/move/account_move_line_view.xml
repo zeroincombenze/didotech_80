@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_move_line_tree_riba" model="ir.ui.view">
+            <field name="name">account.move.line.tree</field>
+            <field name="model">account.move.line</field>
+            <field eval="1" name="priority"/>
+            <field name="arch" type="xml">
+                <tree colors="red:state == 'draft';black:state == 'valid'" string="Journal Items" create="false" version="7.0" editable="">
+                    <field name="journal_id" options='{"no_open":True}' invisible="context.get('journal_id',False)"/>
+                    <field name="period_id" options='{"no_open":True}' invisible="context.get('period_id',False)"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="ref"/>
+                    <field name="statement_id" invisible="1"/>
+                    <field name="partner_id" on_change="onchange_partner_id(move_id, partner_id, account_id, debit, credit, date, journal_id)"/>
+                    <field name="account_id" options='{"no_open":True}' domain="[('journal_id','=',journal_id), ('company_id', '=', company_id)]" on_change="onchange_account_id(account_id, partner_id, context)"/>
+                    <field name="account_tax_id" options='{"no_open":True}' invisible="context.get('journal_type', False) not in ['sale','sale_refund','purchase','purchase_refund','general']"/>
+                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting" domain="[('type','not in',['view','template'])]" invisible="not context.get('analytic_journal_id',False)"/>
+                    <field name="move_id" required="0"/>
+                    <field name="debit" sum="Total Debit"/>
+                    <field name="credit" sum="Total Credit"/>
+                    <field name="date_maturity"/>
+                    <field name="reconcile"/>
+                    <field name="invoice" invisible="1"/>
+                    <field name="amount_currency" readonly="True" invisible="not context.get('currency',False)"/>
+                    <field name="currency_id" readonly="True" invisible="not context.get('currency',False)" />
+                    <field name="state" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_account_moves_riba" model="ir.actions.act_window">
+            <field name="context">{'journal_type':'general'}</field>
+            <field name="domain">[('payment_type_move_line','=','D'),('reconcile_id','in',[False,None]),('credit','=',0.0)]</field>
+            <field name="name">Selezione Movimenti</field>
+            <field name="res_model">account.move.line</field>
+            <field name="view_id" ref="view_move_line_tree_riba"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+            action="action_account_moves_riba"
+            icon="STOCK_JUSTIFY_FILL"
+            id="menu_action_account_moves_riba"
+            parent="menu_riba"
+            sequence="1"
+        />
+
+    </data>
+</openerp>

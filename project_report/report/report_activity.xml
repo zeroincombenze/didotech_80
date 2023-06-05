@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <report
+        id="activity_report_qweb"
+        string="Activities"
+        model="project.task"
+        report_type="qweb-pdf"
+        name="project_report.activity_report"
+        file="project_report.report_activity"
+        attachment="'Activities_' + (object.name or '').replace('/','')+'.pdf'"
+     />
+
+    <record id="project_report.activity_report_qweb" model="ir.actions.report.xml">
+        <field name="paperformat_id" ref="project_report.paperformat_with_header"/>
+        <field name="attachment_use" eval="False"/>
+    </record>
+
+    <template id="report_activity_document">
+        <t t-name="report_activity_document">
+            <t t-call="project_report.external_layout">
+                <!--http://odoo.guide/report-design-workshop/-->
+                <div class="page" style="clear: both;">
+                    <table class="table table-condensed">
+                        <thead style="display: table-row-group;">
+                            <tr>
+                                <th style="width:20%;">Data</th>
+                                <th style="width:60%;">Descrizione dell'attività svolta</th>
+                                <th class="text-right" style="width:20%;">Tempo impiegato</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.work_ids" t-as="w">
+                                <td>
+                                    <span t-esc="w.get_date()"/>
+                                </td>
+                                <td>
+                                    <span t-field="w.name"/>
+                                </td>
+                                <td class="text-right" >
+                                    <span t-esc="w.get_time(w.hours)"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xs-6"></div>
+                        <div class="col-xs-6">
+                            <table class="table table-borderless text-right">
+                                <thead style="display: table-row-group;">
+                                    <tr>
+                                        <th class="col-xs-10"></th>
+                                        <th class="col-xs-2"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Totale ore iniziali:</td>
+                                        <td><span t-esc="o.get_time(o.total_hours)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Totale ore spese:</td>
+                                        <td><span t-esc="o.get_time(o.effective_hours)"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Totale ore rimanenti:</strong></td>
+                                        <td><strong><span t-esc="o.get_time(o.remaining_hours)"/></strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="project_report.activity_report">
+        <t t-call="report.html_container">
+            <t t-foreach="doc_ids" t-as="doc_id">
+                <t t-raw="translate_doc(doc_id, doc_model, 'project_id.partner_id.lang', 'project_report.report_activity_document')"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="activity_css" name="additional activity css" inherit_id="report_activity_document">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/project_report/static/css/activity.css"/>
+        </xpath>
+    </template>
+
+
+    <template id="custom_layout" name="custom activity css" inherit_id="report.minimal_layout">
+        <!-- Add report style -->
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" href="/project_report/static/css/activity.css"/>
+            <link rel="stylesheet" href="/project_report/static/css/local.css"/>
+        </xpath>
+    </template>
+
+
+    <template id="external_layout">
+        <t t-name="project_report.external_layout">
+            <!-- Multicompany -->
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+
+            <t t-call="project_report.external_layout_header"/>
+            <t t-raw="0"/>
+            <t t-call="project_report.external_layout_footer"/>
+        </t>
+    </template>
+
+    <template id="external_layout_header">
+        <t t-name="project_report.external_layout_header">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-3 logo">
+                        <img class="company_logo" t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div t-if="not company.custom_header" class="col-xs-3">
+                        <div t-field="company.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}" style=""/>
+                    </div>
+                    <div t-if="company.custom_header" class="col-xs-9 custom_header">
+                        <div class="row"></div>
+                        <strong><span t-field="company.name" /></strong> <span t-field="company.qweb_header"/>
+                    </div>
+                </div>
+
+                <div class="row header_partner">
+                    <div class="col-xs-7">
+                        <span><strong class="large"><span t-field="o.name"/></strong></span><br/>
+                        <span>Progetto: <span t-field="o.project_id.name" /></span><br/>
+                        <span>Assegnata a: <span t-field="o.user_id.name" /></span><br/>
+                        <span t-if="o.project_id.sale_order_ids">
+                            Rif. ordine: <span t-esc="', '.join(map(lambda x: '{order.name} del {order.order_date}'.format(order=x), o.project_id.sale_order_ids))" />
+                        </span>
+                    </div>
+                    <div class="col-xs-5 small" style="margin-top: -10px;">
+                        <strong><span t-field="o.project_id.partner_id.name"/></strong><br/>
+
+                        <span t-if="o.project_id.partner_id.street"><span t-field="o.project_id.partner_id.street"/><br/></span>
+                        <span t-if="o.project_id.partner_id.street2"><span t-field="o.project_id.partner_id.street2"/><br/></span>
+                        <span t-if="o.project_id.partner_id.zip"><span t-field="o.project_id.partner_id.zip"/></span>
+                        <span t-field="o.project_id.partner_id.city"/>
+                        <span t-if="o.project_id.partner_id.state_id">(<span t-field="o.project_id.partner_id.state_id.code"/>)</span>
+                        <span t-if="o.project_id.partner_id.country_id"> <span t-field="o.project_id.partner_id.country_id.name"/><br/></span>
+                        <span t-if="o.project_id.partner_id.vat">Partita IVA: <span t-field="o.project_id.partner_id.vat"/><br/></span>
+                        <span t-if="not o.project_id.partner_id.vat and o.project_id.partner_id.parent_id and o.project_id.partner_id.parent_id.vat">
+                            Partita IVA: <span t-field="o.project_id.partner_id.parent_id.vat"/><br/>
+                        </span>
+                        <span t-if="o.project_id.partner_id.phone"><strong>T: </strong><span t-field="o.project_id.partner_id.phone"/><br/></span>
+                        <span t-if="not o.project_id.partner_id.phone and o.project_id.partner_id.parent_id and o.project_id.partner_id.parent_id.phone">
+                            <strong>T: </strong><span t-field="o.project_id.partner_id.parent_id.phone"/><br/>
+                        </span>
+                        <span t-if="o.project_id.partner_id.email"><strong>E: </strong><span t-field="o.project_id.partner_id.email"/><br/></span>
+                        <span t-if="not o.project_id.partner_id.email and o.project_id.partner_id.parent_id and o.project_id.partner_id.parent_id.email">
+                            <strong>E: </strong><span t-field="o.project_id.partner_id.parent_id.email"/><br/>
+                        </span>
+                        <span t-if="o.project_id.partner_id.website"><strong>W: </strong><span t-field="o.project_id.partner_id.hostname"/></span>
+                        <span t-if="not o.project_id.partner_id.website and o.project_id.partner_id.parent_id and o.project_id.partner_id.parent_id.website">
+                            <strong>W: </strong><span t-field="o.project_id.partner_id.parent_id.hostname"/>
+                        </span>
+
+                        <br/><br/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="external_layout_footer">
+        <t t-name="project_report.external_layout_footer">
+            <div class="footer">
+                <div class="text-left small" style="border-top: 1px solid black;">
+                    <div class="col-xs-9">
+                        <br />
+                        <span t-if="company.phone">Phone: <span t-field="company.phone"/></span>
+                        <span t-if="company.fax and company.phone">&amp;bull;</span>
+                        <span t-if="company.fax">Fax: <span t-field="company.fax"/></span>
+                        <span t-if="company.email">&amp;bull;</span>
+                        <span t-if="company.email">Email: <span t-field="company.email"/></span>
+                        <span t-if="company.website">&amp;bull;</span>
+                        <span t-if="company.website">Website: <span t-field="company.website"/></span>
+
+                        <!--<ul t-if="not company.custom_footer" class="list-inline" style="font-size: 11px;">-->
+                            <!--<li t-if="company.phone">Phone: <span t-field="company.phone"/></li>-->
+
+                            <!--<li t-if="company.fax and company.phone">&amp;bull;</li>-->
+                            <!--<li t-if="company.fax">Fax: <span t-field="company.fax"/></li>-->
+
+                            <!--<li t-if="company.email">&amp;bull;</li>-->
+                            <!--<li t-if="company.email">Email: <span t-field="company.email"/></li>-->
+
+                            <!--<li t-if="company.website">&amp;bull;</li>-->
+                            <!--<li t-if="company.website">Website: <span t-field="company.website"/></li>-->
+                        <!--</ul>-->
+
+                        <t t-if="company.custom_footer">
+                            <span t-raw="company.rml_footer"/>
+                        </t>
+                    </div>
+                    <div class="col-xs-3">
+                        <br />
+                        <ul class="list-inline text-right small">
+                            <li><span class="page"/></li>
+                            <li>/</li>
+                            <li><span class="topage"/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</data>
+</openerp>

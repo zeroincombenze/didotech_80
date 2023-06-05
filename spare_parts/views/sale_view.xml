@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_destination_order_form" model="ir.ui.view">
+            <field name="name">sale.order.destination.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form[@string='Sales Order Lines']/label[@for='name']" position="before">
+                        <label for="product_destination" />
+                        <field name="product_destination" />
+                    </xpath>
+                    <xpath expr="//tree[@string='Sales Order Lines']/field[@name='name']" position="after">
+                        <field name="product_destination" />
+                    </xpath>
+                    <!--<field name="partner_shipping_id" position="after">-->
+                        <!--<button type="object" name="action_check_spareparts_category" string="Check Spareparts" icon="gtk-ok"/>-->
+                    <!--</field>-->
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

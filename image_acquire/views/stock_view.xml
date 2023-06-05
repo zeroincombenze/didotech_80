@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="action_image_assign_wizard" model="ir.actions.server">
+            <field name="name">Add Images</field>
+            <field name="model_id" ref="model_stock_quant"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = self.action_select_images(cr, uid, [], context=context)
+            </field>
+        </record>
+
+        <record id="assign_image_wizard" model="ir.values">
+            <field name="name">Menu Select Images</field>
+            <field name="model" eval="'stock.quant'"/>
+            <field name="key2" eval="'client_action_multi'"/>
+            <field name="value" eval="'ir.actions.server,%d'%action_image_assign_wizard"/>
+        </record>
+
+    </data>
+</openerp>

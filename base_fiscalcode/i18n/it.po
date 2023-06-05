@@ -1,0 +1,93 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* base_fiscalcode
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20131227-002443\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-27 11:44+0000\n"
+"PO-Revision-Date: 2015-08-03 12:47+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: it\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#. module: base_fiscalcode
+#: help:res.partner,individual:0
+msgid "If checked the C.F. is referred to a Individual Person"
+msgstr "Se selezionato il Cofice Fiscale farà riferimento a quello di una Persona Fisica"
+
+#. module: base_fiscalcode
+#: field:res.partner,person_surname:0
+msgid "Surname"
+msgstr "Cognome"
+
+#. module: base_fiscalcode
+#: field:res.partner,person_name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: base_fiscalcode
+#: field:res.partner,individual:0
+msgid "Individual"
+msgstr "Persona Fisica"
+
+#. module: base_fiscalcode
+#: constraint:res.partner:0
+msgid "The fiscal code doesn't seem to be correct."
+msgstr "Il Codice Fiscale non sembra corretto per una Persona Fisica."
+
+#. module: base_fiscalcode
+#: help:res.partner,fiscalcode:0
+msgid "Italian Fiscal Code"
+msgstr "Codice fiscale Italiano"
+
+#. module: base_fiscalcode
+#: field:res.partner,sex:0
+msgid "Sex"
+msgstr "Sesso"
+
+#. module: base_fiscalcode
+#: field:res.partner,fiscalcode:0
+msgid "Fiscal Code"
+msgstr "Codice Fiscale"
+
+#. module: base_fiscalcode
+#: view:res.partner:0
+msgid "Compute FC Inv"
+msgstr "Codice Fiscale Inverso"
+
+#. module: base_fiscalcode
+#: field:res.partner,birth_city_id:0
+msgid "City of birth"
+msgstr "Città di Nascita"
+
+#. module: base_fiscalcode
+#: selection:res.partner,sex:0
+msgid "Female"
+msgstr "Donna"
+
+#. module: base_fiscalcode
+#: model:ir.model,name:base_fiscalcode.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: base_fiscalcode
+#: selection:res.partner,sex:0
+msgid "Male"
+msgstr "Uomo"
+
+#. module: base_fiscalcode
+#: view:res.partner:0
+msgid "Compute FC"
+msgstr "Calcola C.F."
+
+#. module: base_fiscalcode
+#: field:res.partner,birth_date:0
+msgid "Birth Date"
+msgstr "Data di Nascita"

@@ -1,0 +1,1 @@
+Vampigroup report templates

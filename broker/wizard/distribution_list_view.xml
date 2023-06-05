@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="distribution_list_export_form" model="ir.ui.view">
+            <field name="name">wizard.distribution.list.form</field>
+            <field name="model">wizard.distribution.list</field>
+            <field name="arch" type="xml">
+                <form string="List export">
+                    <!-- Invisible field used for hiding and showing widgets based on state value and accessing preview text -->
+                    <field name="state" invisible="1"/>
+
+                    <!-- Separator -->
+                    <group colspan="4" col="4">
+                        <separator string="" colspan="4"/>
+                    </group>
+
+                    <!-- Items visible in state "export" -->
+                    <group colspan="4" col="4" states="export">
+                        <field name="show_prices" invisible="True" />
+                        <group attrs="{'invisible': [('show_prices', '=', True)]}">
+                            <field name="ignore_truck_info" />
+                            <field name="truck_info_id" widget="selection" attrs="{'required': [('ignore_truck_info', '=', False)], 'invisible': [('ignore_truck_info', '=', True)]}" />
+                            <field name="truck_info_ids" invisible="False" widget="many2many_checkboxes" attrs="{'required': [('ignore_truck_info', '=', False)], 'invisible': [('ignore_truck_info', '=', False)]}" />
+                            <field name="order_truck_info_ids" invisible="True" />
+                            <field name="dvce_required" invisible="True" />
+                        </group>
+                        <group>
+                            <field name="file_format" />
+                            <field name="dvce" attrs="{'required': [('ignore_truck_info', '=', False), ('dvce_required', '=', True)], 'invisible': ['|', ('ignore_truck_info', '=', True), ('dvce_required', '=', False)]}" />
+                            <field name="dry_run" />
+                        </group>
+                    </group>
+                    <group colspan="4" col="4" states="export">
+                        <group>
+                            <group></group>
+                            <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        </group>
+                        <group>
+                            <button type="object" name="action_start_export" string="Start export" icon="gtk-ok"/>
+                        </group>
+                    </group>
+
+                    <!-- Items visible in state "end" -->
+                    <field name="info" nolabel="True" states="end" />
+                    <group states="end">
+                        <group>
+                            <field name="name" invisible="True"/>
+                            <field name="data" filename="name"/>
+                        </group>
+                        <group>
+                            <separator string="" colspan="4"/>
+                            <separator string="" colspan="4"/>
+                            <group>
+                            </group>
+                            <group>
+                                <button icon="gtk-ok" special="cancel" string="Close"/>
+                            </group>
+                        </group>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+    </data>
+</openerp>

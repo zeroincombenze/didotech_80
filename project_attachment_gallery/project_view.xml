@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="edit_project_inherit">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <notebook position="before">
+                    <separator string="Project Images" colspan="4"/>
+                    <field name="image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                            <kanban>
+                                <field name="name" />
+                                <field name="datas_fname" />
+                                <field name="datas" />
+                                <field name="res_id" />
+                                    <templates> 
+                                        <t t-name="kanban-box">
+                                            <div class="oe_module_vignette" style="width:132px;">
+                                              <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-href="kanban_image('ir.attachment','datas', record.id.value)" >
+                                                  <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                      t-att-src="kanban_image('ir.attachment','datas', record.id.value)" />
+                                              </a>
+                                              <div class="oe_module_desc" style="width:132px;height:30px;">
+                                                <t t-esc="record.name.raw_value"/>
+                                              </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                            </kanban>
+                            <form>
+                                <field name="name" />
+                                <field name="datas_fname" />
+                                <field name="datas" />
+                            </form>
+                    </field>
+                </notebook>
+
+                <notebook position="inside">
+                    <page string="Images">
+                            <separator string="Task Images" colspan="4"/>
+                            <field name="task_image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                        <field name="res_id" />
+                                            <templates> 
+                                                <t t-name="kanban-box">
+                                                    <div class="oe_module_vignette" style="width:132px;">
+                                                      <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-title="record.name.raw_value" t-att-href="kanban_image('ir.attachment','datas', record.id.value)" >
+                                                          <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                              t-att-src="kanban_image('ir.attachment','datas', record.id.value)" />
+                                                      </a>
+                                                      <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                        <t t-esc="record.name.raw_value"/>
+                                                      </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                    </kanban>
+                                    <form>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                    </form>
+                            </field>
+                            <separator string="Issue Images" colspan="4"/>
+                            <field name="issue_image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                        <field name="res_id" />
+                                            <templates> 
+                                                <t t-name="kanban-box">
+                                                    <div class="oe_module_vignette" style="width:132px;">
+                                                      <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-title="record.name.raw_value" t-att-href="kanban_image('ir.attachment','datas', record.id.value)" >
+                                                          <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                              t-att-src="kanban_image('ir.attachment','datas', record.id.value)" />
+                                                      </a>
+                                                      <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                        <t t-esc="record.name.raw_value"/>
+                                                      </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                    </kanban>
+                                    <form>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                    </form>
+                            </field>
+                    </page>
+                    <page string="Documents" >
+                            <separator string="Project Documents" colspan="4"/>
+                            <field name="document_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                        <field name="res_id" />
+                                        <field name="url" />
+                                            <templates> 
+                                                <t t-name="kanban-box">
+                                                    <div class="oe_module_vignette" style="width:132px;">
+                                                      <a class="fancybox-binary" t-att-title="record.name.raw_value" t-att-href="widget.session.url('/web/binary/saveas',{'model': 'ir.attachment', 'field': 'datas', 'filename_field': 'name', 'id': record.id.value})" t-att-data_id="record.id.value" >
+                                                          <img class="oe_kanban_image"
+                                                              src="project_attachment_gallery/static/images/doc.png" />
+                                                      </a>
+                                                      <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                        <t t-esc="record.name.raw_value"/>
+                                                      </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                    </kanban>
+                                    <form>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                    </form>
+                            </field>
+                            <separator string="Task Documents" colspan="4"/>
+                            <field name="task_document_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                        <field name="res_id" />
+                                        <field name="url" />
+                                            <templates> 
+                                                <t t-name="kanban-box">
+                                                    <div class="oe_module_vignette" style="width:132px;">
+                                                      <a class="fancybox-binary" t-att-title="record.name.raw_value" t-att-href="widget.session.url('/web/binary/saveas',{'model': 'ir.attachment', 'field': 'datas', 'filename_field': 'name', 'id': record.id.value})" t-att-data_id="record.id.value" >
+                                                          <img class="oe_kanban_image"
+                                                              src="project_attachment_gallery/static/images/doc.png" />
+                                                      </a>
+                                                      <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                        <t t-esc="record.name.raw_value"/>
+                                                      </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                    </kanban>
+                                    <form>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                    </form>
+                            </field>
+                            <separator string="Issue Documents" colspan="4"/>
+                            <field name="issue_document_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                    <kanban>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                        <field name="res_id" />
+                                        <field name="url" />
+                                            <templates> 
+                                                <t t-name="kanban-box">
+                                                    <div class="oe_module_vignette" style="width:132px;">
+                                                      <a class="fancybox-binary" t-att-title="record.name.raw_value" t-att-href="widget.session.url('/web/binary/saveas',{'model': 'ir.attachment', 'field': 'datas', 'filename_field': 'name', 'id': record.id.value})" t-att-data_id="record.id.value" >
+                                                          <img class="oe_kanban_image"
+                                                              src="project_attachment_gallery/static/images/doc.png" />
+                                                      </a>
+                                                      <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                        <t t-esc="record.name.raw_value"/>
+                                                      </div>
+                                                    </div>
+                                                </t>
+                                            </templates>
+                                    </kanban>
+                                    <form>
+                                        <field name="name" />
+                                        <field name="datas_fname" />
+                                        <field name="datas" />
+                                    </form>
+                            </field>
+                    </page>
+                </notebook>
+            
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_task_form2_inherit">
+            <field name="name">project.task.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Images">
+                        <separator string="Task Images" colspan="4"/>
+                        <field name="image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                <kanban>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                    <field name="res_id" />
+                                        <templates> 
+                                            <t t-name="kanban-box">
+                                                <div class="oe_module_vignette" style="width:132px;">
+                                                  <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-title="record.name.raw_value" t-att-href="kanban_image('ir.attachment','datas', record.id.value)" >
+                                                      <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                          t-att-src="kanban_image('ir.attachment','datas', record.id.value)" />
+                                                  </a>
+                                                  <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                    <t t-esc="record.name.raw_value"/>
+                                                  </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                </kanban>
+                                <form>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                </form>
+                        </field>
+                    </page>
+                    <page string="Documents" >
+                        <separator string="Task Documents" colspan="4"/>
+                        <field name="document_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                <kanban>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                    <field name="res_id" />
+                                    <field name="url" />
+                                        <templates> 
+                                            <t t-name="kanban-box">
+                                                <div class="oe_module_vignette" style="width:132px;">
+                                                  <a class="fancybox-binary" t-att-title="record.name.raw_value" t-att-href="widget.session.url('/web/binary/saveas',{'model': 'ir.attachment', 'field': 'datas', 'filename_field': 'name', 'id': record.id.value})" t-att-data_id="record.id.value" >
+                                                      <img class="oe_kanban_image"
+                                                          src="project_attachment_gallery/static/images/doc.png" />
+                                                  </a>
+                                                  <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                    <t t-esc="record.name.raw_value"/>
+                                                  </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                </kanban>
+                                <form>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="project_issue_form_view_inherit">
+            <field name="name">project.issue.form.inherit</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_form_view"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Images">
+                        <separator string="Issue Images" colspan="4"/>
+                        <field name="image_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                <kanban>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                    <field name="res_id" />
+                                        <templates> 
+                                            <t t-name="kanban-box">
+                                                <div class="oe_module_vignette" style="width:132px;">
+                                                  <a class="fancybox" t-att-rel="'document_' + record.res_id.value" t-att-data_id="record.id.value" t-att-title="record.name.raw_value" t-att-href="kanban_image('ir.attachment','datas', record.id.value)" >
+                                                      <img class="oe_kanban_image" style="width:128px;height:128px;"
+                                                          t-att-src="kanban_image('ir.attachment','datas', record.id.value)" />
+                                                  </a>
+                                                  <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                    <t t-esc="record.name.raw_value"/>
+                                                  </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                </kanban>
+                                <form>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                </form>
+                        </field>
+                    </page>
+                    <page string="Documents" >
+                        <separator string="Issue Documents" colspan="4"/>
+                        <field name="document_ids" mode="kanban" context="{'default_res_id': active_id}">
+                                <kanban>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                    <field name="res_id" />
+                                    <field name="url" />
+                                        <templates> 
+                                            <t t-name="kanban-box">
+                                                <div class="oe_module_vignette" style="width:132px;">
+                                                  <a class="fancybox-binary" t-att-title="record.name.raw_value" t-att-href="widget.session.url('/web/binary/saveas',{'model': 'ir.attachment', 'field': 'datas', 'filename_field': 'name', 'id': record.id.value})" t-att-data_id="record.id.value" >
+                                                      <img class="oe_kanban_image"
+                                                          src="project_attachment_gallery/static/images/doc.png" />
+                                                  </a>
+                                                  <div class="oe_module_desc" style="width:132px;height:30  px;">
+                                                    <t t-esc="record.name.raw_value"/>
+                                                  </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                </kanban>
+                                <form>
+                                    <field name="name" />
+                                    <field name="datas_fname" />
+                                    <field name="datas" />
+                                </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        
+        
+    </data>
+</openerp>
