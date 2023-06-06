@@ -72,6 +72,6 @@ Qui https://docs.google.com/document/d/1xCqeTcY6CF-Dgk_Avthhy7iwg_aG86WzNv3E_HHQ
     ],
     'demo': [],
     'test': [],
-    'installable': True,
+    'installable': False,
     'active': False,
 }
